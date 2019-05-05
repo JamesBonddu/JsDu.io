@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	mongdburl = "mongodb://admin:antiy666@10.255.175.88:27017/ACD"
+	mongdburl = "mongodb://user:password@ip:27017/ACD"
 )
 
 func GetSession() (*mgo.Session){
@@ -25,7 +25,7 @@ func GetSession() (*mgo.Session){
 
 func Connect(db, col string)  (*mgo.Session, *mgo.Collection){
 	session := GetSession()
-	user, pass := "admin", "antiy666"
+	user, pass := "user", "password"
 	err := session.DB(db).Login(user, pass)
 	if err != nil {
 		panic(err)

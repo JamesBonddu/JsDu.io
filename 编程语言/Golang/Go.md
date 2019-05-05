@@ -162,6 +162,7 @@ func CountLines(f *os.File, counts map[string]int) {
 
 go tool 命令运行Go工具链的底层可执行程序。 这些底层可执行程序放在
 `$GOROOT/pkg/tool/${GOOS}_${GOARCH}`
+
 参考:
 
 [Go官网](https://go-zh.org/doc/)
@@ -173,6 +174,7 @@ go tool 命令运行Go工具链的底层可执行程序。 这些底层可执行
 [Go 起源和设计动机](https://talks.golang.org/2012/splash.article)
 
 [Go 编码规范](https://golang.org/ref/spec)
+
 [Go 代码评审](https://github.com/golang/go/wiki/CodeReviewComments)
 
 [Go 测试覆盖率的故事](https://brantou.github.io/2017/05/24/go-cover-story/)
@@ -181,24 +183,5 @@ go tool 命令运行Go工具链的底层可执行程序。 这些底层可执行
 
 
 参考:
+
 https://www.cnblogs.com/yxlblogs/p/10115672.html
-
-docker run -d --name kafka --publish 9092:9092  --env KAFKA_ZOOKEEPER_CONNECT=(zookeeper_IP)172.17.0.3:2181 --env KAFKA_ADVERTISED_HOST_NAME=10.255.175.79 --env KAFKA_ADVERTISED_PORT=9092 --volume /etc/localtime:/etc/localtime wurstmeister/kafka:latest
-
-
-docker run -it sequenceiq/phoenix:v4.1onHbase-0.98.5 /etc/bootstrap-phoenix.sh -sqlline
-
-
-172.17.0.4
-kafka
-
-172.17.0.3
-zookeeper
-
-172.17.0.2
-Hbase
-
-
-sqline.py 10.255.175.79:2188
-
-

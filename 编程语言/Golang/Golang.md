@@ -212,9 +212,15 @@ or
 ```
 
 参考:
+
 [Golang 代码提示插件](https://maiyang.me/post/2018-09-14-tips-vscode/)
+
 [Go安装包被墙的解决方法](https://studygolang.com/articles/9490)
+
 [cow二级代理配置](https://131.re/marchives/101)
+
 [window shell](http://www.ntu.edu.sg/home/ehchua/programming/howto/environment_variables.html)
+
 [golang环境配置](https://zhuanlan.zhihu.com/p/52517506)
+
 [vscode golang环境搭建](https://maiyang.me/post/2018-09-14-tips-vscode/)

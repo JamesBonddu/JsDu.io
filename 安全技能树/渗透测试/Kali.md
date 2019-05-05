@@ -46,12 +46,31 @@ msfcli命令行、msfgui图形化界面、armitage图形化界面以及msfapi远
 https://null-byte.wonderhowto.com/how-to/hack-like-pro-ultimate-command-cheat-sheet-for-metasploits-meterpreter-0149146/
 https://null-byte.wonderhowto.com/how-to/hack-like-pro-ultimate-list-hacking-scripts-for-metasploits-meterpreter-0149339/
 
+
+### Msfvenom
+
+移除metasploit-framework版本中的msfencoder和msfpayload，并使用msfvenom取代。
+
+```sh
+./msfvenom -p plateform -x template -f exe -o /tmp/hack.exe
+```
+
 参考:
+
+[Msfvenom](https://www.freebuf.com/sectool/72135.html)
+
+
+参考:
+metasploit 渗透测试魔鬼训练营.pdf
+
 [metasploit体系框架介绍](https://www.cnblogs.com/blacksunny/p/5254904.html)
-[metasploit rapid7(https://metasploit.help.rapid7.com/docs)
+
+[metasploit rapid7](https://metasploit.help.rapid7.com/docs)
+
 [看雪 metasploit](https://bbs.pediy.com/thread-225012.htm)
 
 [MSFconsole](https://www.offensive-security.com/metasploit-unleashed/Msfconsole/)
+
 [metasploit msf](https://www.kalilinux.in/2019/02/metasploit-msf.html)
 
 
