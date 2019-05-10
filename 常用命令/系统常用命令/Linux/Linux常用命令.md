@@ -6,7 +6,14 @@ iptables -I INPUT -p tcp -s ip --dport port -j ACCEPT
 # 添加默认路由
 route add -net 0.0.0.0/24  gw 192.168.18.2 em1
 route del  default gw 192.168.18.2 # 删除默认路由
+# 删除路由规则链
+iptables -F chainname 
+
+# 添加NAT规则
+iptables  -A nat -s 10.255.175.76 -p tcp --dport 8880 -j ACCEPT
 ```
+
+[iptables](http://www.zsythink.net/archives/1199)
 
 ## 访问socket
 
@@ -24,6 +31,8 @@ socat -d -d TCP-LISTEN:8080,fork UNIX /
 参考:
 
 [/how-to-access-unix-domain-sockets-from-the-command-line](https://stackoverflow.com/questions/27195677/how-to-access-unix-domain-sockets-from-the-command-line)
+
+[ss和 netstat区别](https://www.cnblogs.com/kevingrace/p/6211509.html)
 
 ## curl
 ```sh
