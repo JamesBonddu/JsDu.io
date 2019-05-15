@@ -11,10 +11,79 @@ iptables -F chainname
 
 # 添加NAT规则
 iptables  -A nat -s 10.255.175.76 -p tcp --dport 8880 -j ACCEPT
+
+# 内网虚拟机机器通过`10.255.175.96`宿主机能访问外网的机器上网
+iptables -t nat -A POSTROUTING  -s 10.255.175.0/24 -o eth0 -j SNAT --to 10.255.175.96
+
+iptables -t nat -D  POSTROUTING  -s 10.255.175.0/24 -j SNAT --to 10.255.175.96
+
+# 再在内网机器上将GATEWAY设置为`10.255.175.96`
 ```
+
+
+````sh
+# 开启转发并持久化
+sysctl -p /etc/sysctl.conf
+[root@slave02 ~]# cat /etc/sysctl.conf 
+# System default settings live in /usr/lib/sysctl.d/00-system.conf.
+# To override those settings, enter new settings here, or in an /etc/sysctl.d/<name>.conf file
+#
+# For more information, see sysctl.conf(5) and sysctl.d(5).
+vm.max_map_count=262144
+vm.swappiness=10
+net.ipv4.ip_forward = 1
+
+
+# 删掉后原来内网ip由能ping 通 baidu.com转为不能ping通
+iptables -t nat -A POSTROUTING  -s 10.255.175.0/24 -o eth0 -j SNAT --to 10.255.175.96
+# 开机自启保存
+iptables-save > /etc/sysconfig/iptables
+
+
+# 能够上网的机器的nat表配置
+[root@slave02 ~]# iptables -t nat -L
+Chain PREROUTING (policy ACCEPT)
+target     prot opt source               destination
+DOCKER     all  --  anywhere             anywhere             ADDRTYPE match dst-type LOCAL
+
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination
+DOCKER     all  --  anywhere            !loopback/8           ADDRTYPE match dst-type LOCAL
+
+Chain POSTROUTING (policy ACCEPT)
+target     prot opt source               destination
+MASQUERADE  all  --  172.17.0.0/16        anywhere
+MASQUERADE  tcp  --  172.17.0.2           172.17.0.2           tcp dpt:commplex-main
+
+SNAT       all  --  10.255.175.0/24      anywhere             to:10.255.175.96
+
+Chain DOCKER (2 references)
+target     prot opt source               destination
+RETURN     all  --  anywhere             anywhere
+DNAT       tcp  --  anywhere             anywhere             tcp dpt:commplex-main to:172.17.0.2:5000
+
+
+更改完成之后在内网机器(配置默认网关为'能上网的机器ip 96')上执行
+systemctl restart network
+后就可以通过能上网的机器连接baidu.com了
+````
+
 
 [iptables](http://www.zsythink.net/archives/1199)
 
+
+## 修改网卡名称
+
+```sh
+/sbin/ip link set eth1 down
+/sbin/ip link set eth1 name eth123
+/sbin/ip link set eth123 up
+```
+
+[change network interface withou reboot](https://unix.stackexchange.com/questions/205010/centos-7-rename-network-interface-without-rebooting)
 ## 访问socket
 
 ```json

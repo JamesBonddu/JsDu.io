@@ -1,27 +1,5 @@
 # Kubernetes
 
-## 安装kubeadm
-```sh
-cat <<EOF > /etc/yum.repos.d/kubernetes.repo
-[kubernetes]
-name=Kubernetes
-baseurl=http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
-enabled=1
-gpgcheck=0
-repo_gpgcheck=0
-gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg
-        http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
-EOF
-
-# 将 SELinux 设置为 permissive 模式(将其禁用)
-setenforce 0
-sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
-
-yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
-
-systemctl enable kubelet && systemctl start kubelet
-```
-
 
 ## Service
 服务式分布式集群架构的核心, 一个Service对象拥有如下关键特征:
@@ -36,6 +14,6 @@ Pod里运行着一个被称之为Pause的容器,其它容器则为业务容器,�
 并不是每个Pod和它里面运行的容器都能"映射"到一个Service上,只有那些提供服务的一组Pod才会被"映射"成一个服务.
 
 参考:
-https://kubernetes.io/zh/
 
-[kubernetes 阿里云镜像](http://ljchen.net/2018/10/23/%E5%9F%BA%E4%BA%8E%E9%98%BF%E9%87%8C%E4%BA%91%E9%95%9C%E5%83%8F%E7%AB%99%E5%AE%89%E8%A3%85kubernetes/)
+[kubernetes io](https://kubernetes.io/zh/)
+

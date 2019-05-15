@@ -1,7 +1,25 @@
 ## Docker 搭建数据采集环境
 
 
+## Docker Hub
 
+```sh
+/etc/init/docker.conf
+
+# 拉取hub
+docker run -d -p 5000:5000 --restart=always -v /opt/data/registry:/var/lib/registry --name registry registry
+
+# 标记本地镜像
+docker tag nginx:latest hubip:5000/nginx:latest
+
+# 推送
+docker push hubip:5000/nginx:latest
+
+# 拉取
+docker pull hubip:5000/nginx:latest
+```
+
+[]()
 ## Kafka
 
 
