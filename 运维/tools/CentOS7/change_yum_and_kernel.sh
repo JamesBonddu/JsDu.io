@@ -3,7 +3,6 @@
 function ChangeYum()
 {
   cd /etc/yum.repos.d &&
-  echo "curr_path:"${pwd} &&
   mv CentOS-Base.repo CentOS-Base.repo.bk &&
   curl -O http://mirrors.aliyun.com/repo/Centos-7.repo &&
   mv Centos-7.repo CentOS-Base.repo &&
@@ -30,5 +29,4 @@ function UpdateKernel()
 echo "== ChangeYum! =="
 ChangeYum
 UpdateKernel
-
 

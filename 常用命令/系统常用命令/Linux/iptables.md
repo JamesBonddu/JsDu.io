@@ -53,3 +53,5 @@ DNAt: (PREROUTING,修改得到是即将到来的数据包.修改的是目的IP,�
 [iptables详解](https://blog.csdn.net/reyleon/article/details/12976341)
 
 [iptables 分析](http://www.zsythink.net/archives/1199)
+
+[内网上网](http://xstarcd.github.io/wiki/Linux/iptables_forward_internetshare.html)
