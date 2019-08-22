@@ -7,7 +7,7 @@ iptables -I INPUT -p tcp -s ip --dport port -j ACCEPT
 route add -net 0.0.0.0/24  gw 192.168.18.2 em1
 route del  default gw 192.168.18.2 # 删除默认路由
 # 删除路由规则链
-iptables -F chainname 
+iptables -F chainname
 
 # 添加NAT规则
 iptables  -A nat -s 10.255.175.76 -p tcp --dport 8880 -j ACCEPT
@@ -24,7 +24,7 @@ iptables -t nat -D  POSTROUTING  -s 10.255.175.0/24 -j SNAT --to 10.255.175.96
 ````sh
 # 开启转发并持久化
 sysctl -p /etc/sysctl.conf
-[root@slave02 ~]# cat /etc/sysctl.conf 
+[root@slave02 ~]# cat /etc/sysctl.conf
 # System default settings live in /usr/lib/sysctl.d/00-system.conf.
 # To override those settings, enter new settings here, or in an /etc/sysctl.d/<name>.conf file
 #
@@ -153,7 +153,7 @@ split -b fsize fname -d -a 2 prefix_
 ## 检测远程端口是否打开
 ```shell
 telnet ip port
-nmap ip -p port 
+nmap ip -p port
 nc -v host port
 ```
 
@@ -170,3 +170,61 @@ nc -v host port
 ```
 
 [nc常用命令](https://www.ifmicro.com/%E8%AE%B0%E5%BD%95/2017/12/12/netcat-usage/)
+
+
+# 系统操作
+
+
+## sudo 免密执行
+
+使用`sudo visudo`或`vi /etc/sudoers`,在 root ALL=(ALL) ALL下面添加一行 your_user_name ALL=(ALL) ALL
+
+[ubuntu sudoers](https://phpraxis.wordpress.com/2016/09/27/enable-sudo-without-password-in-ubuntudebian/)
+
+
+
+## bash - dash的作用
+
+[dash](https://stackoverflow.com/questions/8045479/whats-the-magic-of-a-dash-in-command-line-parameters)
+
+[special chars](http://tldp.org/LDP/abs/html/special-chars.html#DASHREF2)
+
+
+## 代理
+
+https://wiki.archlinux.org/index.php/Proxy_server
+
+
+
+## GCC 多版本共存
+
+sudo apt install gcc-4.8
+
+sudo apt install g++-4.8
+
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.8 50
+
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-4.8 50
+
+https://www.jianshu.com/p/876934a6401f
+
+https://stackoverflow.com/questions/21530577/fatal-error-python-h-no-such-file-or-directory
+
+
+## tumx
+
+ctrl + b %
+ctrl + <-
+
+http://mingxinglai.com/cn/2012/09/tmux/
+
+
+## node error
+
+```sh
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+```
+
+参考:
+
+https://stackoverflow.com/questions/22475849/node-js-what-is-enospc-error-and-how-to-solve
