@@ -105,3 +105,13 @@ https://docs.djangoproject.com/en/1.9/ref/models/querysets/#django.db.models.que
 
 每次修改完`models.py`时, 需要重新*makemigrations*, 删除数据库中migrations记录,migrations下生成的文件, 之前生成的相关表.
 在执行*python manage.py migrate*
+
+## django auth
+
+django 的权限和分组管理
+
+https://docs.djangoproject.com/en/2.2/ref/contrib/auth/
+
+https://docs.djangoproject.com/en/2.2/topics/auth/
+
+https://www.cnblogs.com/zhumengke/articles/11106179.html

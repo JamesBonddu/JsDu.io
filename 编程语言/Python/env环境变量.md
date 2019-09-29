@@ -2,7 +2,8 @@
 
 ```sh
 PYTHONUNBUFFERED=TRUE
-DJANGO_SETTINGS_MODULE=admin.debug
+# DJANGO_SETTINGS_MODULE=admin.debug
+ENV=dev
 ```
 
 # supervisor

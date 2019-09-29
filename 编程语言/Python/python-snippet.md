@@ -77,6 +77,58 @@ datetime 时间戳转换
 https://blogs.harvard.edu/rprasad/2011/09/21/python-string-to-a-datetime-object/
 
 
+## 获取一个季度 quarter
+
+```python
+def is_leap_year(year):
+    """Determine whether a year is a leap year."""
+    return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
+
+
+def get_quarter(current_date):
+    return (current_date.month - 1) // 3 + 1
+
+
+def get_quarter_delta(current_date):
+    leap_year = is_leap_year(current_date.year)
+    quarter = get_quarter(current_date)
+    delta_time = 0
+    if leap_year and quarter == 1:
+        delta_time = QUARTER_DELTA[str(quarter)] + 1
+    else:
+        delta_time = QUARTER_DELTA[str(quarter)]
+    return delta_time
+
+
+def get_first_day_of_the_quarter(date):
+    quarter = get_quarter(date)
+    return datetime(date.year, 3 * quarter - 2, 1)
+
+"""
+Q1 = get_quarter(now)
+Q2 = get_quarter(now - timedelta(days=days))
+if Q1 == Q2:
+    quarter_first_day = get_first_day_of_the_quarter(last7days)
+    cur_cost_day_str = last7days_str
+else:
+    quarter_first_day = get_first_day_of_the_quarter(now)
+    cur_cost_day_str = now_str
+quarter_first_day_str = quarter_first_day.strftime(DATE_FORMAT)
+"""
+```
+
+https://stackoverflow.com/questions/1406131/is-there-a-python-function-to-determine-which-quarter-of-the-year-a-date-is-in
+
+## argparse
+
+```sh
+parser = argparse.ArgumentParser()
+parser.add_argument('--date', type=lambda d: datetime.strptime(d, '%Y%m%d'))
+args = parser.parse_args()
+```
+
+https://stackoverflow.com/questions/25470844/specify-format-for-input-arguments-argparse-python
+
 ## unboundlocalerror
 
 https://stackoverflow.com/questions/9264763/dont-understand-why-unboundlocalerror-occurs
@@ -124,3 +176,10 @@ https://webkul.com/blog/using-io-for-creating-file-object/
 
 
 https://stackoverflow.com/questions/41790750/writing-files-asynchronously
+
+
+## python3 f 表达式
+
+https://mlln.cn/2018/05/19/python3%20f-string%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/
+
+https://stackoverflow.com/questions/45965007/multiline-f-string-in-python

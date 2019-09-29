@@ -24,3 +24,5 @@ Kubernetes 1.5  <--Docker 1.10.3,  1.11.2,  1.12.3
 [k8s 对docker的兼容性](https://blog.csdn.net/CSDN_duomaomao/article/details/79171027)
 
 [k8s本地开发](https://blog.qikqiak.com/post/skaffold-simple-local-develop-k8s-app-tools/)
+
+https://kubesphere.io/docs/advanced-v2.0/zh-CN/introduction/architecture/

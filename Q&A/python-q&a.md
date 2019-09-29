@@ -70,3 +70,14 @@ https://stackoverflow.com/questions/51680178/asyncio-create-task-vs-await
 https://code-examples.net/en/q/11ccd08
 
 http://farmdev.com/talks/unicode/
+
+
+## RecursionError: maximum recursion depth exceeded while calling a Python object
+
+https://stackoverflow.com/questions/6809402/python-maximum-recursion-depth-exceeded-while-calling-a-python-object
+
+https://stackoverflow.com/questions/12047847/super-object-not-calling-getattr
+
+## __getattr__
+
+https://www.cnblogs.com/xybaby/p/6280313.html

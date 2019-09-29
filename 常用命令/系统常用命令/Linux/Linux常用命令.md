@@ -228,3 +228,64 @@ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo s
 参考:
 
 https://stackoverflow.com/questions/22475849/node-js-what-is-enospc-error-and-how-to-solve
+
+
+## AWK
+
+打印第一列后的列
+awk '{ $1=""; print $0 }'
+
+
+ diff <(sort a.csv|grep 2019-08-27) <(sort b.csv|grep 2019-08-27)
+
+
+https://unix.stackexchange.com/questions/184612/compare-two-csv-files
+
+## [] [[]]
+https://stackoverflow.com/questions/2188199/how-to-use-double-or-single-brackets-parentheses-curly-braces
+
+https://stackoverflow.com/questions/13542832/difference-between-single-and-double-square-brackets-in-bash
+
+## nginx daemon off
+
+https://stackoverflow.com/questions/25970711/what-is-the-difference-between-nginx-daemon-on-off-option
+
+## supervisord
+https://stackoverflow.com/questions/19918177/starting-supervisord-as-root-or-not
+
+## pip install without root
+
+https://askubuntu.com/questions/363300/how-to-install-pip-python-to-user-without-root-access
+https://stackoverflow.com/questions/15028648/is-it-acceptable-and-safe-to-run-pip-install-under-sudo
+
+## can not find python.h
+https://stackoverflow.com/questions/12379929/cant-find-python-h-file-on-centos
+
+
+cd /opt/webeye/hedwig/src/admin/ && . $(pipenv --venv)/bin/activate && pip list|sort|awk '{print $1}' > /tmp/pip-requirements.txt
+
+
+## awk
+
+cat Pipfile| awk '{split($0,a,"="); print a[1]}'
+
+https://stackoverflow.com/questions/8009664/how-to-split-a-delimited-string-into-an-array-in-awk
+
+https://unix.stackexchange.com/questions/156919/splitting-a-column-using-awk
+
+## exec python in bash
+
+https://unix.stackexchange.com/questions/533156/using-python-in-a-bash-script
+
+https://unix.stackexchange.com/questions/184726/how-to-include-python-script-inside-a-bash-script
+
+https://stackoverflow.com/questions/2500436/how-does-cat-eof-work-in-bash?rq=1
+
+https://stackoverflow.com/questions/41990072/how-to-execute-a-bash-script-from-a-python-string-in-jupyter-notebook
+
+python3 - << EOF
+#!/usr/bin/python
+import json
+import os
+print('hi')
+EOF
