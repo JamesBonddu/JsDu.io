@@ -83,3 +83,6 @@ mysqldump db tb1 tb2 > path
 ## like 查询
 
 ['like % 查询'] (https://dataedo.com/kb/query/mysql/find-tables-which-names-start-with-specific-prefix)
+
+
+## 避免笛卡尔积

@@ -8,6 +8,8 @@ Django的密码存储位置
 
 Django authentication and login
 
+python manage.py startapp floder name
+
 参考:
 
 https://docs.djangoproject.com/en/2.2/topics/auth/passwords/
@@ -115,3 +117,8 @@ https://docs.djangoproject.com/en/2.2/ref/contrib/auth/
 https://docs.djangoproject.com/en/2.2/topics/auth/
 
 https://www.cnblogs.com/zhumengke/articles/11106179.html
+
+
+## Django ORM调优
+
+https://ewp.gma.mybluehost.me/2018/11/04/django-orm-optimization-tips/

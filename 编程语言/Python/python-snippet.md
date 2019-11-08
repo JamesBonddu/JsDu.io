@@ -183,3 +183,48 @@ https://stackoverflow.com/questions/41790750/writing-files-asynchronously
 https://mlln.cn/2018/05/19/python3%20f-string%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E9%AB%98%E7%BA%A7%E7%94%A8%E6%B3%95/
 
 https://stackoverflow.com/questions/45965007/multiline-f-string-in-python
+
+## flask struct
+
+https://lepture.com/en/2018/structure-of-a-flask-project
+
+https://exploreflask.com/en/latest/organizing.html
+
+https://pythonise.com/feed/flask/flask-configuration-files
+
+## 进程间通信
+
+socket
+https://stackoverflow.com/questions/6920858/interprocess-communication-in-python
+
+
+https://www.cnblogs.com/aylin/p/5572104.html
+
+https://www.cnblogs.com/hazir/p/python_socket_programming.html
+
+https://www.cnblogs.com/jingzhishen/p/3453727.html
+
+##
+
+```python
+# add proxy current project no other dependency
+
+kill_proxy_cmd = 'pkill Browsermob*'
+status = os.system(kill_proxy_cmd)
+print("proxy killed status {}".format(status))
+proxy_config = {
+    'port': 8090,
+    'log_path': PROXY_LOG_PATH,
+    'log_file': PROXY_LOG_FILE,
+}
+proxy_log = PROXY_LOG_PATH + PROXY_LOG_FILE
+if not os.path.exists(proxy_log):
+    os.mkdir(PROXY_LOG_PATH)
+    os.umask(0)
+    with open(os.open(proxy_log, os.O_CREAT | os.O_WRONLY, 0o777), 'w+') as fh:
+        fh.close()
+context.proxy_server = Server(path=BROWSERMOB_PROXY_PATH, options=proxy_config)
+context.proxy_server.start()
+context.proxy = context.proxy_server.create_proxy()
+print("proxy start... {}".format(context.proxy_server))
+```

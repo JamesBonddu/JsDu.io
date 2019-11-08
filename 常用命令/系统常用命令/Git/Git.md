@@ -178,3 +178,18 @@ git push origin master
 ## 合并之前的提交
 
 git rebase -soft
+
+
+## git-fatal-could-not-read-from-remote-repository
+
+Your ssh key most likely had been removed from ssh agent
+```sh
+ssh-add ~/.ssh/id_rsa
+```
+where id_rsa is a ssh key associated with git repo
+
+https://stackoverflow.com/questions/13509293/git-fatal-could-not-read-from-remote-repository
+
+## git pull
+
+https://www.question-defense.com/2010/04/20/git-error-some-local-refs-could-not-be-updated-try-running-git-remote-prune-origin-to-remove-any-old-conflicting-branches

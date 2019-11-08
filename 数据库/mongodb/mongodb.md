@@ -34,3 +34,15 @@ db.bigfile.update({
 db.version_update.update({'package': 'com.run.workout.music'}, {'$set': {
     'last_version': '2.13',
 }})
+
+## create user
+```js
+db.createUser({
+    user: "username",
+    pwd: 'pwd',
+    roles: [
+        { role: "dbAdmin", db: "testdb" },
+        { role: "readWrite", db: "testdb" },
+    ],
+    })
+```

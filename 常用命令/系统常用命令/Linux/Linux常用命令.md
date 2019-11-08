@@ -252,6 +252,7 @@ https://stackoverflow.com/questions/25970711/what-is-the-difference-between-ngin
 
 ## supervisord
 https://stackoverflow.com/questions/19918177/starting-supervisord-as-root-or-not
+https://github.com/Supervisor/supervisor/issues/173
 
 ## pip install without root
 
@@ -289,3 +290,14 @@ import json
 import os
 print('hi')
 EOF
+
+
+## bash mysql
+
+https://stackoverflow.com/questions/8802131/execute-multiline-mysql-in-shellscript
+
+## mysql store process
+
+https://stackoverflow.com/questions/8149545/pass-array-to-mysql-stored-routine
+
+https://blog.basilediougoant.com/2016/02/06/how-to-pass-an-array-to-mysql-stored-procedure/
