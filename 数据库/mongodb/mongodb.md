@@ -20,6 +20,10 @@ https://stackoverflow.com/questions/11255630/how-to-export-all-collections-in-mo
 
 https://docs.mongodb.com/manual/reference/program/mongoexport/
 
+导入
+mongorestore -d db_name /path/
+
+https://stackoverflow.com/questions/6770498/how-to-import-bson-file-format-on-mongodb
 
 mongoexport --collection bigfile --db bdp_backup --out ~/bigfile.json
 

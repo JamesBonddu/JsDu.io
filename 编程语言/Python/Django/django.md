@@ -122,3 +122,14 @@ https://www.cnblogs.com/zhumengke/articles/11106179.html
 ## Django ORM调优
 
 https://ewp.gma.mybluehost.me/2018/11/04/django-orm-optimization-tips/
+
+
+## exclude some field from values
+
+https://stackoverflow.com/questions/16854659/exclude-field-from-values-or-values-list
+
+## django csrf bypass
+
+https://blog.knownsec.com/2016/10/django-csrf-bypass_cve-2016-7401/
+https://strcpy.me/index.php/archives/753/
+https://www.leavesongs.com/HTML/zhihu-xss-worm.html
