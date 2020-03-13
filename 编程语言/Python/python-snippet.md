@@ -228,3 +228,18 @@ context.proxy_server.start()
 context.proxy = context.proxy_server.create_proxy()
 print("proxy start... {}".format(context.proxy_server))
 ```
+
+# threadpoolexecutor map和 submit的区别
+
+https://stackoverflow.com/questions/20838162/how-does-threadpoolexecutor-map-differ-from-threadpoolexecutor-submit
+
+
+# less-copies-in-python-with-the-buffer-protocol-and-memoryviews
+
+https://eli.thegreenplace.net/2011/11/28/less-copies-in-python-with-the-buffer-protocol-and-memoryviews
+
+https://julien.danjou.info/high-performance-in-python-with-zero-copy-and-the-buffer-protocol/
+
+https://bugs.python.org/issue30193
+
+https://forum.micropython.org/viewtopic.php?t=103

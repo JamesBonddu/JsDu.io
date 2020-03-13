@@ -84,5 +84,69 @@ mysqldump db tb1 tb2 > path
 
 ['like % 查询'] (https://dataedo.com/kb/query/mysql/find-tables-which-names-start-with-specific-prefix)
 
+## mysql Insert ignore into,insert into on duplicate,replace into
 
-## 避免笛卡尔积
+整体上我分为两个大的部分，会分别测试这三种数据写入场景。
+
+> 第一部分基于id,name的数据列，其中id为主键，自增
+
+这三种场景的结果从自增列的处理方式来看是完全对等的，但是对于重复数据的处理方式还是存在差异。
+
+相比而言，**replace into**和**insert into on duplicate**存在本质的区别，**replace into**是覆盖写，即删除原来的，写入新的。不光是主键列，其他列也会保持一致
+
+**insert into on duplicate**则可以根据自己的需求来定制重复数据的处理策略，不会主动改变数据。
+
+**insert ignore into** 在这种场景下最为通用，而且对于数据的侵入性最小。
+
+所以如果要保证源端的数据基于主键完全一致，不管非主键列的数据是否一致，都需要完全覆盖，选择**replace into**是一种好的方法。
+
+否则采用**insert into on duplcate**或者**insert ignore into**
+
+> 第二部分基于id,xid,name的数据列，其中id为主键，自增，xid为唯一性索引
+
+**insert ignore into**如果不指定自增列，尽管没有写入数据，但是自增列依然会自增
+
+**replace into**如果不指定自增列，会看到数据重新写入的效果已经非常明显，而且自增列始终会自动维护。
+
+**insert into on duplicate**对于重复数据依然会消耗自增列值，实现相对更加灵活。
+
+https://mp.weixin.qq.com/s/T4sXXPn-9rXSSag0hP9zwg
+
+
+## mysql 死锁
+
+```mysql
+mysql> show variables like '%innodb%lock%timeout%';
++--------------------------+-------+
+| Variable_name            | Value |
++--------------------------+-------+
+| innodb_lock_wait_timeout | 50    |
++--------------------------+-------+
+1 row in set (0.01 sec)
+
+mysql> show variables like '%innodb%deadlock%';
++----------------------------+-------+
+| Variable_name              | Value |
++----------------------------+-------+
+| innodb_print_all_deadlocks | OFF   |
++----------------------------+-------+
+1 row in set (0.02 sec)
+```
+
+InnoDb 的监控主要分为四种：标准监控（Standard InnoDB Monitor）、锁监控（InnoDB Lock Monitor）、表空间监控（InnoDB Tablespace Monitor）和表监控（InnoDB Table Monitor）。后两种监控已经基本上废弃了，关于各种监控的作用可以参考 MySQL 的官方文档 Enabling InnoDB Monitors [https://dev.mysql.com/doc/refman/5.6/en/innodb-enabling-monitors.html] 或者 [http://yeshaoting.cn/article/database/%E5%BC%80%E5%90%AFInnoDB%E7%9B%91%E6%8E%A7/] 这篇文章.
+
+常见锁的类型:
+- 记录锁（LOCK_REC_NOT_GAP）: lock_mode X locks rec but not gap
+- 间隙锁（LOCK_GAP）: lock_mode X locks gap before rec
+- Next-key 锁（LOCK_ORNIDARY）: lock_mode X
+- 插入意向锁（LOCK_INSERT_INTENTION）: lock_mode X locks gap before rec insert intention
+
+https://ketao1989.github.io/2014/10/09/Mysql-Delete-Insert-Deadlock-Analyse/
+
+https://juejin.im/post/5d04b33e6fb9a07ee1692653
+
+https://leokongwq.github.io/2017/07/06/mysql-deadlock-detection.html
+
+https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html
+
+https://www.aneasystone.com/archives/2018/04/solving-dead-locks-four.html

@@ -301,3 +301,10 @@ https://stackoverflow.com/questions/8802131/execute-multiline-mysql-in-shellscri
 https://stackoverflow.com/questions/8149545/pass-array-to-mysql-stored-routine
 
 https://blog.basilediougoant.com/2016/02/06/how-to-pass-an-array-to-mysql-stored-procedure/
+
+## mysql export remote database data
+```sql
+mysql -umysqlusername -pmysqlpass databasename -B -e "select * from \`tablename\`;" | sed 's/\t/","/g;s/^/"/;s/$/"/;s/\n//g' > mysql_exported_table.csv
+```
+
+https://stackoverflow.com/questions/16834880/mysql-export-resultset-as-csv-from-remote-server

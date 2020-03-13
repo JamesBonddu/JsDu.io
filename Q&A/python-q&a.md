@@ -81,3 +81,13 @@ https://stackoverflow.com/questions/12047847/super-object-not-calling-getattr
 ## __getattr__
 
 https://www.cnblogs.com/xybaby/p/6280313.html
+
+
+## 65192 Task was destroyed but it is pending!
+https://stackoverflow.com/questions/33505066/python3-asyncio-task-was-destroyed-but-it-is-pending-with-some-specific-condit
+
+
+https://stackoverflow.com/questions/27402796/multiple-loops-with-asyncio
+
+
+GCP 9 10 2天数据

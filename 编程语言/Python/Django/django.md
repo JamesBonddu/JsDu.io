@@ -133,3 +133,39 @@ https://stackoverflow.com/questions/16854659/exclude-field-from-values-or-values
 https://blog.knownsec.com/2016/10/django-csrf-bypass_cve-2016-7401/
 https://strcpy.me/index.php/archives/753/
 https://www.leavesongs.com/HTML/zhihu-xss-worm.html
+
+## 不能添加外键约束
+
+https://stackoverflow.com/questions/15534977/mysql-cannot-add-foreign-key-constraint
+https://stackoverflow.com/questions/18391034/cannot-resolve-table-name-close-to
+https://www.percona.com/blog/2017/04/06/dealing-mysql-error-code-1215-cannot-add-foreign-key-constraint/
+
+https://stackoverflow.com/questions/10028214/add-foreign-key-to-existing-table?rq=1
+
+https://stackoverflow.com/questions/14122031/how-to-remove-constraints-from-my-mysql-table
+
+https://stackoverflow.com/questions/18930084/mysql-error-1215-hy000-cannot-add-foreign-key-constraint
+
+
+## django filter !=
+https://stackoverflow.com/questions/844556/filtering-for-empty-or-null-names-in-a-queryset
+
+
+## Django debug panel
+
+https://www.bedjango.com/blog/how-debug-django-useful-tips/
+
+
+## django signals
+https://docs.djangoproject.com/en/3.0/topics/signals/
+
+
+## django backends log
+
+https://docs.djangoproject.com/en/3.0/topics/logging/
+
+
+## django 的traceback机制
+
+
+https://pycoders-weekly-chinese.readthedocs.io/en/latest/issue8/Notes-on-tracing-code-execution-in-Django-and-Python.html
