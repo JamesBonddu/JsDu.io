@@ -148,8 +148,10 @@ https://stackoverflow.com/questions/18930084/mysql-error-1215-hy000-cannot-add-f
 
 
 ## django filter !=
+
 https://stackoverflow.com/questions/844556/filtering-for-empty-or-null-names-in-a-queryset
 
+https://stackoverflow.com/questions/687295/how-do-i-do-a-not-equal-in-django-queryset-filtering
 
 ## Django debug panel
 

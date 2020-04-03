@@ -25,6 +25,8 @@ https://stackoverflow.com/questions/34623610/how-to-use-the-subclasscheck-magic-
 
 `__init_subclass__`
 
+https://stackoverflow.com/questions/45400284/understanding-init-subclass
+
 https://stackoverflow.com/questions/9008444/how-to-warn-about-class-name-deprecation
 
 https://www.hongweipeng.com/index.php/archives/1872/
@@ -57,3 +59,12 @@ inspect.getmembers(Command, predicate=inspect.ismethod)
 
 
 https://jfine-python-classes.readthedocs.io/en/latest/call-a-class.html
+
+
+## requests hook
+
+https://alexwlchan.net/2017/10/requests-hooks/
+
+https://requests-docs-ja.readthedocs.io/en/latest/user/advanced/
+
+https://github.com/psf/requests/blob/bebf5250b0df1b922ff534e987a4481cc4dde99d/docs/user/advanced.rst
