@@ -171,3 +171,17 @@ https://docs.djangoproject.com/en/3.0/topics/logging/
 
 
 https://pycoders-weekly-chinese.readthedocs.io/en/latest/issue8/Notes-on-tracing-code-execution-in-Django-and-Python.html
+
+## django migrations如何检测变化
+
+https://realpython.com/digging-deeper-into-migrations/
+
+https://realpython.com/django-migrations-a-primer/
+
+
+https://stackoverflow.com/questions/1355150/when-saving-how-can-you-check-if-a-field-has-changed
+
+
+## django queryset manager
+
+https://simpleisbetterthancomplex.com/tips/2016/08/16/django-tip-11-custom-manager-with-chainable-querysets.html

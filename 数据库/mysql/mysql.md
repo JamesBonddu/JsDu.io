@@ -150,3 +150,12 @@ https://leokongwq.github.io/2017/07/06/mysql-deadlock-detection.html
 https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html
 
 https://www.aneasystone.com/archives/2018/04/solving-dead-locks-four.html
+
+
+## 放置数据重复读写
+
+参考:
+
+https://cloud.tencent.com/developer/news/458227
+
+https://juejin.im/post/5d7108abe51d453b753a1b37

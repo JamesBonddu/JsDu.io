@@ -129,3 +129,19 @@ flushall
 主从复制
 
 简单事务控制
+
+
+参考资料:
+
+https://redislabs.com/redis-enterprise/redis-time-series/
+
+https://redislabs.com/redis-best-practices/
+
+https://redisbook.readthedocs.io/en/latest/index.html
+
+https://juejin.im/post/5d86cf7f6fb9a06b211724e7
+
+https://stackoom.com/question/2zJ72/%E5%9C%A8%E5%88%86%E5%B1%82%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E4%B8%AD%E4%BD%BF%E7%94%A8Redis%E8%BF%9B%E8%A1%8C%E5%A4%8D%E5%90%88%E7%B4%A2%E5%BC%95
+
+
+https://stackoverflow.com/questions/44164152/composite-indexing-using-redis-in-a-hierarchical-data-model
