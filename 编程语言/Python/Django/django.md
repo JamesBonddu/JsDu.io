@@ -1,5 +1,8 @@
 # Django
 
+django 启动流程
+https://juejin.im/post/5c4d0e916fb9a049ed313f46
+
 ## Django
 
 MTV Model Template View
@@ -61,11 +64,24 @@ http://www.learningaboutelectronics.com/Articles/ForeignKey-in-Django.php
 
 ## django blank is true
 
-https://stackoverflow.com/questions/8609192/differentiate-null-true-blank-true-in-django
+blank=True表示该字段在代码层面可不可以不传值，如果blank=False（默认情况），但是通过Model创建对象时却没有给该字段赋值，Django会报错。
+
+null=True表示该字段在数据库层面可不可以不传值，如果null=False（默认情况），写入数据库时该字段没有赋值，或者赋值为None，则数据库会报错。
+
+那为什么说要尽量少用null=True呢？是因为数据库表的一列中只要有一个null值，那么这一列的索引都会失效。null会导致数据库查询性能的大幅下降。
+
+https://stackoverflow.com/questions/8609192/
+differentiate-null-true-blank-true-in-django
+
+https://cloud.tencent.com/developer/news/359530
 
 ## django admin
 
 https://docs.djangoproject.com/en/2.2/ref/contrib/admin/
+
+## django __unicode__
+
+https://segmentfault.com/q/1010000006121303/
 
 ## django annotate
 

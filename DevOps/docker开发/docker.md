@@ -1,5 +1,8 @@
 ## Docker 搭建数据采集环境
 
+## Docker源码解析
+
+http://blog.daocloud.io/docker-source-code-analysis-part1/
 
 ## Docker Hub
 
@@ -53,12 +56,12 @@ docker exec -it ${CONTAINER ID} /bin/bash
 
 ```
 # cat hbase-env.sh
-export HBASE_CLASSPATH=/hbase/lib/ 
+export HBASE_CLASSPATH=/hbase/lib/
 
 export HBASE_MANAGES_ZK=false
 
 
-bash-4.4# cat /hbase/conf/hbase-site.xml 
+bash-4.4# cat /hbase/conf/hbase-site.xml
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
 <configuration>
@@ -85,7 +88,7 @@ bash-4.4# cat /hbase/conf/hbase-site.xml
 </configuration>
 
 
-bash-4.4# cat zookeeper.log 
+bash-4.4# cat zookeeper.log
 java.io.IOException: Could not find my address: master in list of ZooKeeper quorum servers
 	at org.apache.hadoop.hbase.zookeeper.HQuorumPeer.writeMyID(HQuorumPeer.java:149)
 	at org.apache.hadoop.hbase.zookeeper.HQuorumPeer.main(HQuorumPeer.java:70)
@@ -233,4 +236,3 @@ iptables -t nat -A  DOCKER -p tcp --dport 2182 -j DNAT --to-destination 172.17.0
 
 
 [docker logs日志记录](https://www.ibm.com/developerworks/community/blogs/132cfa78-44b0-4376-85d0-d3096cd30d3f/entry/Docker_%E5%A6%82%E4%BD%95%E6%94%AF%E6%8C%81%E5%A4%9A%E7%A7%8D%E6%97%A5%E5%BF%97%E6%96%B9%E6%A1%88_%E6%AF%8F%E5%A4%A95%E5%88%86%E9%92%9F%E7%8E%A9%E8%BD%AC_Docker_%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF_88?lang=en)
-
