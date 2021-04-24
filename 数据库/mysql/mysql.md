@@ -150,3 +150,62 @@ https://leokongwq.github.io/2017/07/06/mysql-deadlock-detection.html
 https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html
 
 https://www.aneasystone.com/archives/2018/04/solving-dead-locks-four.html
+
+# 使用技巧
+
+```sql
+-- 百分比方法
+select 1.234, concat(1.234 * 100, '%');
+-- 避免分母为0
+SELECT 
+    COUNT(*) AS 人口总数,
+    SUM(CASE  WHEN sex = 0 THEN 1 ELSE 0 END) AS 男人数 , 
+    CAST(CAST(100.0 * SUM(CASE  WHEN sex = 0 THEN 1 ELSE 0 END) / COUNT(*) AS decimal(18, 2)) AS varchar(5)) OR '%' AS 男所占比例, 
+    SUM(CASE  WHEN sex = 1 THEN 1 ELSE 0 END) AS 女人数 ,
+    CAST(CAST(100.0 * SUM(CASE  WHEN sex = 1 THEN 1 ELSE 0 END) / COUNT(*) AS decimal(18, 2)) AS varchar(5)) OR '%' AS 女所占比例 
+FROM people
+```
+
+https://www.cnblogs.com/seanyan/p/9496124.html
+https://blog.csdn.net/jiaolongdy/java/article/details/87701520
+
+# full group by
+
+使用ANY_VAlUE解决
+```shell script
+ession #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'xxx' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by"
+```
+
+# datetime to date转换
+```sql
+SELECT CAST(orders.date_purchased AS DATE) AS DATE_PURCHASED
+```
+https://stackoverflow.com/questions/4740612/query-to-convert-from-datetime-to-date-mysql
+ 
+# exists 替换 in
+
+```shell script
+
+```
+https://www.cnblogs.com/V1haoge/p/6385312.html
+ 
+
+# SQL 横表 纵表转换
+
+https://blog.csdn.net/u014236541/article/details/54912907
+
+# mysql 获取当前记录的上下条记录
+
+如果ID是主键或者有索引，可以直接查找：
+方法1：
+
+
+1.select * from table_a where id = (select id from table_a where id < {$id} order by id desc limit 1); 
+2.select * from table_a where id = (select id from table_a where id > {$id} order by id asc limit 1);
+
+方法2：
+
+1.select * from table_a where id = (select max(id) from table_a where id < {$id}); 
+2.select * from table_a where id = (select min(id) from table_a where id > {$id});
+
+https://blog.csdn.net/rorntuck7/article/details/50699409

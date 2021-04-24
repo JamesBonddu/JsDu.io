@@ -61,3 +61,44 @@ http://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html
 https://juejin.im/entry/5993a030f265da24941202c2
 
 http://blog.didispace.com/learn-how-to-use-jwt-xjf/
+
+
+https://jwt.io/
+
+https://tools.ietf.org/html/rfc7519
+
+# JWT refresh token flow
+
+- 登录后，发送2个令牌（访问令牌，刷新令牌）以响应客户端。
+- 访问令牌的有效期将更少，而刷新将具有较长的到期时间。
+- 客户端（前端）将在其本地存储中存储刷新令牌，并在cookie中访问令牌。
+- 客户端将使用访问令牌来调用API。但是，当它过期时，请从本地存储中选择刷新令牌，然后调用身份验证服务器API以获取新令牌。
+- 您的身份验证服务器将公开一个API，该API将接受刷新令牌并检查其有效性并返回新的访问令牌。
+- 刷新令牌过期后，将注销用户
+
+https://auth0.com/blog/refresh-tokens-what-are-they-and-when-to-use-them/
+
+https://zhuanlan.zhihu.com/p/52300092
+
+https://stackoverflow.com/questions/27726066/jwt-refresh-token-flow
+
+
+https://juejin.cn/post/6844903833273892871
+
+# django simple jwt
+
+```python
+from rest_framework_simplejwt.tokens import RefreshToken
+
+def get_tokens_for_user(user):
+    refresh = RefreshToken.for_user(user)
+
+    return {
+        'refresh': str(refresh),
+        'access': str(refresh.access_token),
+    }
+```
+
+https://github.com/SimpleJWT/django-rest-framework-simplejwt/blob/f511e0aeabc24ec792c66f720f4a059ab1c4180c/docs/customizing_token_claims.rst
+
+https://github.com/SimpleJWT/django-rest-framework-simplejwt/blob/master/docs/creating_tokens_manually.rst

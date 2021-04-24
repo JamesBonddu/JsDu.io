@@ -129,3 +129,285 @@ flushall
 主从复制
 
 简单事务控制
+
+
+
+# python 操作redis
+
+
+redis.setex('jsdu', 10000,'are you ok')
+redis.get('jsdu')
+
+https://realpython.com/python-redis/
+
+https://redis-py.readthedocs.io/en/stable/
+
+# 命名规范
+
+https://developer.aliyun.com/article/531067
+https://club.perfma.com/article/210671
+
+# redis key 多长
+
+embstr
+
+https://mp.weixin.qq.com/s?spm=a2c6h.12873639.0.0.753b1feeSHhrXx&__biz=Mzg2NTEyNzE0OA==&mid=2247483663&idx=1&sn=7c4ad441eaec6f0ff38d1c6a097b1fa4&chksm=ce5f9e8cf928179a2c74227da95bec575bdebc682e8630b5b1bb2071c0a1b4be6f98d67c37ca&scene=21#wechat_redirect
+
+https://blog.csdn.net/XiyouLinux_Kangyijie/article/details/78045385
+
+http://redisbook.com/preview/object/string.html
+
+转化cache key
+
+```python
+def make_cache_key(*args, **kwargs):
+    path = request.path
+    args = str(hash(frozenset(request.args.items())))
+    lang = get_locale()
+    return (path + args + lang).encode('utf-8')
+```
+
+https://stackoverflow.com/questions/9413566/flask-cache-memoize-url-query-string-parameters-as-well
+
+# redis cache
+
+https://rednafi.github.io/digressions/python/database/2020/05/25/python-redis-cache.html
+
+https://flask-caching.readthedocs.io/en/latest/ 
+
+https://wizardforcel.gitbooks.io/flask-extension-docs/content/flask-cache.html
+
+https://stackoverflow.com/questions/14228985/what-does-key-prefix-do-for-flask-cache
+
+使用自己的cache_key
+https://stackoverflow.com/questions/9413566/flask-cache-memoize-url-query-string-parameters-as-well/14264116#14264116
+
+flask_cache 的key
+https://github.com/sh4nks/flask-caching/blob/5eef6738430a6887fce03552cb2438501e3dc741/flask_caching/__init__.py
+
+
+# 制作一个 redis
+
+https://redis.io/topics/protocol
+
+http://charlesleifer.com/blog/building-a-simple-redis-server-with-python/
+
+If you use CLOCK-Pro algorithm with (or instead) dictionary. Then you'll get cache functionality, which will evict least needed data on overflow. 
+https://bitbucket.org/SamiLehtinen/pyclockpro
+
+LIRS 缓存算法
+https://en.wikipedia.org/wiki/LIRS_caching_algorithm
+
+
+# redis GEO
+
+GEOADD Sicily 13.36666 38.116666 2
+ZREM restaurants Falafel
+
+https://luoming1224.github.io/2019/04/08/[redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0]redis%E4%B8%ADGeo%E5%91%BD%E4%BB%A4%E4%BB%8B%E7%BB%8D/
+
+
+https://stackoverflow.com/questions/39253946/how-to-remove-an-item-from-a-redis-geohash
+
+
+# redis 的key设计
+
+https://blog.csdn.net/babykakaluo/article/details/9822381
+
+https://blog.codingnow.com/2011/11/dev_note_2.html
+
+https://cloud.tencent.com/developer/article/1551803
+
+https://my.oschina.net/u/3266761/blog/4559530
+
+## redis 分页排序查询
+
+https://www.cnblogs.com/michaeldonghan/p/12184975.html
+
+https://liu-xin.me/2015/11/17/%E5%9C%A8Redis%E4%B8%AD%E8%BF%9B%E8%A1%8C%E5%88%86%E9%A1%B5%E6%8E%92%E5%BA%8F%E6%9F%A5%E8%AF%A2/
+
+
+redis 分页查询
+
+https://github.com/zatosource/zato-redis-paginator
+
+
+http://xiaorui.cc/archives/6192
+
+redis更新分数
+```python
+from flask import current_app
+from sqlalchemy import func
+
+from cache.statistic import UserArticleCountStorage, UserFollowingsCountStorage, UserFansCountStorage
+from models import db
+from models.news import Article
+
+
+def __fix_statistic(cls):
+    try:
+        # 先到mysql中查询数据
+        ret = cls.db_query()
+        # 校正redis数据
+        cls.reset(ret)
+    except BaseException as e:
+        current_app.logger.error(e)
+        raise e
+
+
+def fix_statistic(app):
+    """修正统计数据"""
+
+    with app.app_context():
+
+        # 校正所有用户的作品数量
+        __fix_statistic(UserArticleCountStorage)
+
+        # 校正所有用户的关注数量
+        __fix_statistic(UserFollowingsCountStorage)
+
+        # 校正所有用户的分析数量
+        __fix_statistic(UserFansCountStorage)
+
+from flask import current_app
+from redis import StrictRedis, RedisError
+from sqlalchemy import func
+
+from models import db
+from models.news import Article
+
+
+class BaseCountStorage:
+    """统计基类"""
+    key = ''
+
+    @classmethod
+    def get(cls, user_id):
+        """
+        获取指定用户的统计数
+
+        :param user_id: 指定的用户
+        :return: 统计数量
+        """
+        redis = current_app.redis_slave  # type: StrictRedis
+        try:
+            # 取指定用户的分值
+            count = redis.zscore(cls.key, user_id)
+        except RedisError as e:
+            current_app.logger.error(e)
+            raise e
+
+        if count:
+            return int(count) if int(count) > 0 else 0
+        else:
+            return 0
+
+    @classmethod
+    def incr(cls, user_id):
+        """给指定的用户的统计数量+1"""
+        redis = current_app.redis_master  # type: StrictRedis
+        try:
+            redis.zincrby(cls.key, user_id)
+        except RedisError as e:
+            current_app.logger.error(e)
+            raise e
+#   核心逻辑封装到这里(提示1)
+    @classmethod
+    def reset(cls, db_query_ret):
+        """重置数据"""
+
+        # 删除redis中的数据
+        pipe = current_app.redis_master.pipeline(transaction=False)
+        pipe.delete(cls.key)
+
+        # 将mysql中的数据写入redis
+        for user_id, count in db_query_ret:
+            pipe.zadd(cls.key, count, user_id)
+
+        pipe.execute()  # 批量发送给redis
+
+
+class UserArticleCountStorage(BaseCountStorage):
+    """用户作品数量统计类
+
+    count:user:arts  zset  [{value: 用户id, score: 作品数}, {}]
+    """
+    key = 'count:user:arts'  # 设置键
+    
+# mysql的查询封装到这里(提示2)
+    @classmethod
+    def db_query(cls):
+        return db.session.query(Article.user_id, func.count(Article.id)).filter(
+            Article.status == Article.STATUS.APPROVED).group_by(Article.user_id).all()
+
+
+class UserFollowingsCountStorage(BaseCountStorage):
+    """用户关注数量统计类
+
+    count:user:followings  zset  [{value: 用户id, score: 关注数}, {}]
+    """
+    key = 'count:user:followings'  # 设置键
+# mysql的查询封装到这里(提示3)
+    @classmethod
+    def db_query(cls):
+        return db.session.query(Article.user_id, func.count(Article.id)).filter(
+            Article.status == Article.STATUS.APPROVED).group_by(Article.user_id).all()
+
+
+class UserFansCountStorage(BaseCountStorage):
+    """用户粉丝数量统计类
+    count:user:fans  zset  [{value: 用户id, score: 粉丝数}, {}]
+    """
+    key = 'count:user:fans'  # 设置键
+# mysql的查询封装到这里(提示4)
+    @classmethod
+    def db_query(cls):
+        return db.session.query(Article.user_id, func.count(Article.id)).filter(
+            Article.status == Article.STATUS.APPROVED).group_by(Article.user_id).all()
+```
+https://blog.csdn.net/Jack_yun_feng/article/details/96205519
+
+
+## redis 书籍核心概念
+
+https://redislabs.com/ebook/part-2-core-concepts/chapter-3-commands-in-redis/3-5-sorted-sets/
+
+## 标签设计
+
+https://gakkil.gitee.io/2019/01/02/redis-zhong-key-de-she-ji-ji-qiao/
+
+## 点赞排行榜
+
+https://www.mdeditor.tw/pl/gfCP
+
+
+Redis 基础、高级特性与性能调优
+
+
+https://learnku.com/articles/25070
+
+## django redis 存储
+
+https://realpython.com/caching-in-django-with-redis/
+
+## redis 删除zset中的item
+
+相关SSDB-API
+zrange：zrange name offset limit，根据下标索引区间 [offset, offset + limit) 获取 key-score 对, 下标从 0 开始. zrrange 是反向顺序获取.（注意! 本方法在 offset 越来越大时, 会越慢!）
+
+zkeys：zkeys name key_start score_start score_end limit，列出 zset 中的 key 列表
+
+zscan：zscan name key_start score_start score_end limit，列出 zset 中处于区间 (key_start+score_start, score_end] 的 key-score 列表. 如果 key_start 为空, 那么对应权重值大于或者等于 score_start 的 key 将被返回. 如果 key_start 不为空, 那么对应权重值大于 score_start 的 key, 或者大于 key_start 且对应权重值等于 score_start 的 key 将被返回.也就是说, 返回的 key 在 (key.score == score_start && key > key_start || key.score > score_start), 并且key.score <= score_end 区间. 先判断 score_start, score_end, 然后判断 key_start._，("", “”] 表示整个区间.
+
+zclear：zclear name，删除 zset 中的所有 key.
+
+zremrangebyscore：zremrangebyscore name start end，删除权重处于区间 [start,end] 的元素.
+
+zremrangebyrank：zremrangebyrank name start end，删除位置处于区间 [start,end] 的元素.
+
+zdel：zdel name key，获取 zset 中的指定 key.
+
+multi_zdel ：multi_zdel name key1 key2 …，批量删除 zset 中的 key.
+
+https://blog.csdn.net/u014654002/article/details/105289288
+

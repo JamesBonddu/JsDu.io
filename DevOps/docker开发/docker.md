@@ -234,3 +234,9 @@ iptables -t nat -A  DOCKER -p tcp --dport 2182 -j DNAT --to-destination 172.17.0
 
 [docker logs日志记录](https://www.ibm.com/developerworks/community/blogs/132cfa78-44b0-4376-85d0-d3096cd30d3f/entry/Docker_%E5%A6%82%E4%BD%95%E6%94%AF%E6%8C%81%E5%A4%9A%E7%A7%8D%E6%97%A5%E5%BF%97%E6%96%B9%E6%A1%88_%E6%AF%8F%E5%A4%A95%E5%88%86%E9%92%9F%E7%8E%A9%E8%BD%AC_Docker_%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF_88?lang=en)
 
+
+# python docker
+
+https://docs.google.com/presentation/d/10vFQfEUvpf7qYyksNqiy-bAxcy-bvF0OnUElCOtTTRc/edit#slide=id.p
+
+https://github.com/Fewbytes/rubber-docker

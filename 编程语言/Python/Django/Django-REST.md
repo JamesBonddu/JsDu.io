@@ -19,3 +19,8 @@ https://blog.auberginesolutions.com/blog/decide-serializer-class-dynamically-bas
 https://www.thebookofjoel.com/django-rest-framework-dynamic-fields
 
 https://juejin.im/post/5a68934551882573443cddf8
+
+
+# Serializer relations
+
+https://www.django-rest-framework.org/api-guide/relations/

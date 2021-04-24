@@ -107,7 +107,11 @@ socat -d -d TCP-LISTEN:8080,fork UNIX /
 ```sh
 # curl发送json
 curl -H "Content-Type: application/json" --data @body.json http://localhost:8080/ui/webapp/conf
+
+# 通过预检测请求, options 了解可用的请求头
+curl -X OPTIONS https://github.com/ -i
 ```
+https://developer.mozilla.org/zh-TW/docs/Web/HTTP/Methods/OPTIONS
 
 
 ## nc传文件
@@ -308,3 +312,422 @@ mysql -umysqlusername -pmysqlpass databasename -B -e "select * from \`tablename\
 ```
 
 https://stackoverflow.com/questions/16834880/mysql-export-resultset-as-csv-from-remote-server
+
+
+## 在目录下替换N/A为""
+
+```sh
+ls *.csv|xargs  sed -i  's~N/A~""~g' ${1}
+ls *.csv|xargs  sed -i  's~""""~""~g' ${1}
+
+ls csv | xargs -i wc -l csv/{$1}/江苏.csv | xargs -i ${1} | sum 
+计算csv的总行数
+
+# 将不同目录的git migration文件挪动到同一个下面注意会有同名文件删除
+git status|grep migrations |xargs -I file mv file old_migrations/
+```
+
+# 查看mysql死锁进程并杀掉
+
+```sh
+SELECT * FROM INFORMATION_SCHEMA.INNODB_TRX;
+```
+# 查看顯卡使用情況
+
+```sh
+fang@ub ~/jsdu> nvidia-smi                                                                            (torch) 
+Wed Mar 10 19:50:20 2021       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 450.102.04   Driver Version: 450.102.04   CUDA Version: 11.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                               |                      |               MIG M. |
+|===============================+======================+======================|
+|   0  GeForce RTX 2070    Off  | 00000000:01:00.0 Off |                  N/A |
+|  0%   46C    P8     4W / 175W |   7977MiB /  7979MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+|   1  GeForce RTX 2070    Off  | 00000000:05:00.0 Off |                  N/A |
+| 27%   25C    P8    11W / 175W |      3MiB /  7982MiB |      0%      Default |
+|                               |                      |                  N/A |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                                  |
+|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+|        ID   ID                                                   Usage      |
+|=============================================================================|
+|    0   N/A  N/A     12769      C   ...da3/envs/torch/bin/python     6757MiB |
+|    0   N/A  N/A     12810      C   ...da3/envs/torch/bin/python     1217MiB |
++-----------------------------------------------------------------------------+
+
+Fan：显示风扇转速，数值在0到100%之间，是计算机的期望转速，如果计算机不是通过风扇冷却或者风扇坏了，显示出来就是N/A； 
+Temp：显卡内部的温度，单位是摄氏度；
+Perf：表征性能状态，从P0到P12，P0表示最大性能，P12表示状态最小性能；
+Pwr：能耗表示； 
+Bus-Id：涉及GPU总线的相关信息； 
+Disp.A：是Display Active的意思，表示GPU的显示是否初始化； 
+Memory Usage：显存的使用率； 
+Volatile GPU-Util：浮动的GPU利用率；
+Compute M：计算模式； 
+
+原文链接：https://blog.csdn.net/dcrmg/article/details/78146797
+
+
+fang@ub ~/jsdu> nvidia-smi -q                                                                         (torch) 
+
+==============NVSMI LOG==============
+
+Timestamp                                 : Wed Mar 10 19:55:06 2021
+Driver Version                            : 450.102.04
+CUDA Version                              : 11.0
+
+Attached GPUs                             : 2
+GPU 00000000:01:00.0
+    Product Name                          : GeForce RTX 2070
+    Product Brand                         : GeForce
+    Display Mode                          : Enabled
+    Display Active                        : Disabled
+    Persistence Mode                      : Disabled
+    MIG Mode
+        Current                           : N/A
+        Pending                           : N/A
+    Accounting Mode                       : Disabled
+    Accounting Mode Buffer Size           : 4000
+    Driver Model
+        Current                           : N/A
+        Pending                           : N/A
+    Serial Number                         : N/A
+    GPU UUID                              : GPU-b13cc585-b683-a9a8-ac8d-7541ac69a33c
+    Minor Number                          : 0
+    VBIOS Version                         : 90.06.18.00.9E
+    MultiGPU Board                        : No
+    Board ID                              : 0x100
+    GPU Part Number                       : N/A
+    Inforom Version
+        Image Version                     : G001.0000.02.04
+        OEM Object                        : 1.1
+        ECC Object                        : N/A
+        Power Management Object           : N/A
+    GPU Operation Mode
+        Current                           : N/A
+        Pending                           : N/A
+    GPU Virtualization Mode
+        Virtualization Mode               : None
+        Host VGPU Mode                    : N/A
+    IBMNPU
+        Relaxed Ordering Mode             : N/A
+    PCI
+        Bus                               : 0x01
+        Device                            : 0x00
+        Domain                            : 0x0000
+        Device Id                         : 0x1F0210DE
+        Bus Id                            : 00000000:01:00.0
+        Sub System Id                     : 0x37C21458
+        GPU Link Info
+            PCIe Generation
+                Max                       : 3
+                Current                   : 1
+            Link Width
+                Max                       : 16x
+                Current                   : 16x
+        Bridge Chip
+            Type                          : N/A
+            Firmware                      : N/A
+        Replays Since Reset               : 0
+        Replay Number Rollovers           : 0
+        Tx Throughput                     : 0 KB/s
+        Rx Throughput                     : 0 KB/s
+    Fan Speed                             : 0 %
+    Performance State                     : P8
+    Clocks Throttle Reasons
+        Idle                              : Active
+        Applications Clocks Setting       : Not Active
+        SW Power Cap                      : Not Active
+        HW Slowdown                       : Not Active
+            HW Thermal Slowdown           : Not Active
+            HW Power Brake Slowdown       : Not Active
+        Sync Boost                        : Not Active
+        SW Thermal Slowdown               : Not Active
+        Display Clock Setting             : Not Active
+    FB Memory Usage
+        Total                             : 7979 MiB
+        Used                              : 7977 MiB
+        Free                              : 2 MiB
+    BAR1 Memory Usage
+        Total                             : 256 MiB
+        Used                              : 11 MiB
+        Free                              : 245 MiB
+    Compute Mode                          : Default
+    Utilization
+        Gpu                               : 0 %
+        Memory                            : 1 %
+        Encoder                           : 0 %
+        Decoder                           : 0 %
+    Encoder Stats
+        Active Sessions                   : 0
+        Average FPS                       : 0
+        Average Latency                   : 0
+    FBC Stats
+        Active Sessions                   : 0
+        Average FPS                       : 0
+        Average Latency                   : 0
+    Ecc Mode
+        Current                           : N/A
+        Pending                           : N/A
+    ECC Errors
+        Volatile
+            SRAM Correctable              : N/A
+            SRAM Uncorrectable            : N/A
+            DRAM Correctable              : N/A
+            DRAM Uncorrectable            : N/A
+        Aggregate
+            SRAM Correctable              : N/A
+            SRAM Uncorrectable            : N/A
+            DRAM Correctable              : N/A
+            DRAM Uncorrectable            : N/A
+    Retired Pages
+        Single Bit ECC                    : N/A
+        Double Bit ECC                    : N/A
+        Pending Page Blacklist            : N/A
+    Remapped Rows                         : N/A
+    Temperature
+        GPU Current Temp                  : 45 C
+        GPU Shutdown Temp                 : 94 C
+        GPU Slowdown Temp                 : 91 C
+        GPU Max Operating Temp            : 89 C
+        Memory Current Temp               : N/A
+        Memory Max Operating Temp         : N/A
+    Power Readings
+        Power Management                  : Supported
+        Power Draw                        : 4.93 W
+        Power Limit                       : 175.00 W
+        Default Power Limit               : 175.00 W
+        Enforced Power Limit              : 175.00 W
+        Min Power Limit                   : 125.00 W
+        Max Power Limit                   : 200.00 W
+    Clocks
+        Graphics                          : 300 MHz
+        SM                                : 300 MHz
+        Memory                            : 405 MHz
+        Video                             : 540 MHz
+    Applications Clocks
+        Graphics                          : N/A
+        Memory                            : N/A
+    Default Applications Clocks
+        Graphics                          : N/A
+        Memory                            : N/A
+    Max Clocks
+        Graphics                          : 2100 MHz
+        SM                                : 2100 MHz
+        Memory                            : 7001 MHz
+        Video                             : 1950 MHz
+    Max Customer Boost Clocks
+        Graphics                          : N/A
+    Clock Policy
+        Auto Boost                        : N/A
+        Auto Boost Default                : N/A
+    Processes
+        GPU instance ID                   : N/A
+        Compute instance ID               : N/A
+        Process ID                        : 12769
+            Type                          : C
+            Name                          : /home/fang/.miniconda3/envs/torch/bin/python
+            Used GPU Memory               : 6757 MiB
+        GPU instance ID                   : N/A
+        Compute instance ID               : N/A
+        Process ID                        : 12810
+            Type                          : C
+            Name                          : /home/fang/.miniconda3/envs/torch/bin/python
+            Used GPU Memory               : 1217 MiB
+
+GPU 00000000:05:00.0
+    Product Name                          : GeForce RTX 2070
+    Product Brand                         : GeForce
+    Display Mode                          : Disabled
+    Display Active                        : Disabled
+    Persistence Mode                      : Disabled
+    MIG Mode
+        Current                           : N/A
+        Pending                           : N/A
+    Accounting Mode                       : Disabled
+    Accounting Mode Buffer Size           : 4000
+    Driver Model
+        Current                           : N/A
+        Pending                           : N/A
+    Serial Number                         : N/A
+    GPU UUID                              : GPU-5feaad6f-89e7-0a87-176f-6d96ce187460
+    Minor Number                          : 1
+    VBIOS Version                         : 90.06.2E.40.DC
+    MultiGPU Board                        : No
+    Board ID                              : 0x500
+    GPU Part Number                       : N/A
+    Inforom Version
+        Image Version                     : G001.0000.02.04
+        OEM Object                        : 1.1
+        ECC Object                        : N/A
+        Power Management Object           : N/A
+    GPU Operation Mode
+        Current                           : N/A
+        Pending                           : N/A
+    GPU Virtualization Mode
+        Virtualization Mode               : None
+        Host VGPU Mode                    : N/A
+    IBMNPU
+        Relaxed Ordering Mode             : N/A
+    PCI
+        Bus                               : 0x05
+        Device                            : 0x00
+        Domain                            : 0x0000
+        Device Id                         : 0x1F0210DE
+        Bus Id                            : 00000000:05:00.0
+        Sub System Id                     : 0x12FE10DE
+        GPU Link Info
+            PCIe Generation
+                Max                       : 3
+                Current                   : 1
+            Link Width
+                Max                       : 16x
+                Current                   : 4x
+        Bridge Chip
+            Type                          : N/A
+            Firmware                      : N/A
+        Replays Since Reset               : 0
+        Replay Number Rollovers           : 0
+        Tx Throughput                     : 0 KB/s
+        Rx Throughput                     : 0 KB/s
+    Fan Speed                             : 27 %
+    Performance State                     : P8
+    Clocks Throttle Reasons
+        Idle                              : Not Active
+        Applications Clocks Setting       : Not Active
+        SW Power Cap                      : Active
+        HW Slowdown                       : Not Active
+            HW Thermal Slowdown           : Not Active
+            HW Power Brake Slowdown       : Not Active
+        Sync Boost                        : Not Active
+        SW Thermal Slowdown               : Not Active
+        Display Clock Setting             : Not Active
+    FB Memory Usage
+        Total                             : 7982 MiB
+        Used                              : 3 MiB
+        Free                              : 7979 MiB
+    BAR1 Memory Usage
+        Total                             : 256 MiB
+        Used                              : 3 MiB
+        Free                              : 253 MiB
+    Compute Mode                          : Default
+    Utilization
+        Gpu                               : 0 %
+        Memory                            : 0 %
+        Encoder                           : 0 %
+        Decoder                           : 0 %
+    Encoder Stats
+        Active Sessions                   : 0
+        Average FPS                       : 0
+        Average Latency                   : 0
+    FBC Stats
+        Active Sessions                   : 0
+        Average FPS                       : 0
+        Average Latency                   : 0
+    Ecc Mode
+        Current                           : N/A
+        Pending                           : N/A
+    ECC Errors
+        Volatile
+            SRAM Correctable              : N/A
+            SRAM Uncorrectable            : N/A
+            DRAM Correctable              : N/A
+            DRAM Uncorrectable            : N/A
+        Aggregate
+            SRAM Correctable              : N/A
+            SRAM Uncorrectable            : N/A
+            DRAM Correctable              : N/A
+            DRAM Uncorrectable            : N/A
+    Retired Pages
+        Single Bit ECC                    : N/A
+        Double Bit ECC                    : N/A
+        Pending Page Blacklist            : N/A
+    Remapped Rows                         : N/A
+    Temperature
+        GPU Current Temp                  : 25 C
+        GPU Shutdown Temp                 : 94 C
+        GPU Slowdown Temp                 : 91 C
+        GPU Max Operating Temp            : 89 C
+        Memory Current Temp               : N/A
+        Memory Max Operating Temp         : N/A
+    Power Readings
+        Power Management                  : Supported
+        Power Draw                        : 11.93 W
+        Power Limit                       : 175.00 W
+        Default Power Limit               : 175.00 W
+        Enforced Power Limit              : 175.00 W
+        Min Power Limit                   : 125.00 W
+        Max Power Limit                   : 200.00 W
+    Clocks
+        Graphics                          : 300 MHz
+        SM                                : 300 MHz
+        Memory                            : 405 MHz
+        Video                             : 540 MHz
+    Applications Clocks
+        Graphics                          : N/A
+        Memory                            : N/A
+    Default Applications Clocks
+        Graphics                          : N/A
+        Memory                            : N/A
+    Max Clocks
+        Graphics                          : 2100 MHz
+        SM                                : 2100 MHz
+        Memory                            : 7001 MHz
+        Video                             : 1950 MHz
+    Max Customer Boost Clocks
+        Graphics                          : N/A
+    Clock Policy
+        Auto Boost                        : N/A
+        Auto Boost Default                : N/A
+    Processes                             : None
+
+
+```
+
+
+# 查看GPU信息
+
+sudo apt install screenfetch -y
+
+https://askubuntu.com/questions/5417/how-to-get-the-gpu-info
+
+
+# dns_probe_finished_nxdomain
+
+https://kinsta.com/knowledgebase/dns_probe_finished_nxdomain/
+
+
+# OSError: [Errno 28] No space left on device
+
+```sh
+df -h
+cd /
+du -m --max-depth=1
+
+du -h --max-depth=1du
+
+sudo du -hsx /home/* | sort -rh | head -10
+```
+
+https://stackoverflow.com/questions/6998083/python-causing-ioerror-errno-28-no-space-left-on-device-results-32766-h
+
+https://blog.csdn.net/A_L_A_N/article/details/97102988
+
+https://www.cnblogs.com/yingsong/p/9468260.html
+
+# NVME盘挂载
+
+https://blog.csdn.net/weiweiliulu/article/details/103990458
+
+# docker
+
+docker rm -f $(docker ps -a |  grep "dockercompose*"  | awk '{print $1}')
+
+docker network rm  $(docker network ls |  grep "docker-compose*"  | awk '{print $1}')

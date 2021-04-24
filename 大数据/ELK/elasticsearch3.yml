@@ -1,0 +1,8 @@
+node.name: elasticsearch3
+cluster.name: docker-cluster
+cluster.initial_master_nodes: elasticsearch1
+bootstrap.memory_lock: true
+ES_JAVA_OPTS: -Xms1g -Xmx1g
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+network.host: _eth0_

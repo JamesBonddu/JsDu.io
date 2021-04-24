@@ -1,0 +1,5 @@
+server.name: localhost
+server.host: "0"
+elasticsearch.hosts: [ "http://elasticsearch1:9200" ]
+# SERVER_NAME: localhost
+# ELASTICSEARCH_URL: http://elasticsearch1:9200/

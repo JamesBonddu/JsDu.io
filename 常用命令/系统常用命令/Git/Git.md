@@ -193,3 +193,25 @@ https://stackoverflow.com/questions/13509293/git-fatal-could-not-read-from-remot
 ## git pull
 
 https://www.question-defense.com/2010/04/20/git-error-some-local-refs-could-not-be-updated-try-running-git-remote-prune-origin-to-remove-any-old-conflicting-branches
+
+
+## 多个git切换
+```shell script
+ssh-keygen -t rsa -C "xxx"
+# 在对应目录 ~/.ssh/ 下写git config 的文件
+# your config
+Host personal
+HostName github.com
+User git
+IdentityFile ~/.ssh/id_rsa_personal
+# yuanzhen-kooboo
+Host company
+HostName github.com
+User git
+IdentityFile ~/.ssh/id_rsa_work
+
+
+git remote add origin git@personal:huangyuanzhen/test.git
+git push -u origin master
+```
+https://codertw.com/%e7%a8%8b%e5%bc%8f%e8%aa%9e%e8%a8%80/692054/

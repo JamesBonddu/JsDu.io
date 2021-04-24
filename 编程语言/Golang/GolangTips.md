@@ -31,3 +31,28 @@
 [golang new 函数](http://www.cnblogs.com/hustcat/p/4004889.html)
 
 [new 和make的区别](https://stackoverflow.com/questions/9320862/why-would-i-make-or-new)
+
+# golang 读取文件
+
+https://kgrz.io/reading-files-in-go-an-overview.html
+
+https://hisk.io/read-files-concurrently-in-go/
+
+
+# 保存图片
+
+https://stackoverflow.com/questions/39927182/looking-for-better-way-to-save-an-in-memory-image-to-file
+
+https://www.philo.top/2015/03/05/golangImageLibrary/
+
+# golang 添加数组
+
+https://yourbasic.org/golang/append-explained/
+
+合并bytes
+
+https://golangnote.com/topic/188.html
+
+# golang debug
+
+https://www.zhihu.com/question/40980436

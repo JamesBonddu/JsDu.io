@@ -171,3 +171,139 @@ https://docs.djangoproject.com/en/3.0/topics/logging/
 
 
 https://pycoders-weekly-chinese.readthedocs.io/en/latest/issue8/Notes-on-tracing-code-execution-in-Django-and-Python.html
+
+# Django 信号 singal
+
+https://www.cnblogs.com/Neeo/articles/11601851.html
+
+# Django 开发环境, 生产环境配置
+
+https://stackoverflow.com/questions/10664244/django-how-to-manage-development-and-production-settings
+
+# Django 项目布局参考
+
+https://dev.to/wemake-services/managing-djangos-settings-37ao
+
+https://www.codingforentrepreneurs.com/blog/staging-django-production-development
+
+https://simpleisbetterthancomplex.com/tips/2017/07/03/django-tip-20-working-with-multiple-settings-modules.html
+
+https://realpython.com/python-application-layouts/
+
+# Django 添加自定义testRunner
+
+```python
+# Credit:
+# http://birdhouse.org/blog/2015/03/25/django-unit-tests-against-unmanaged-databases/
+# https://www.caktusgroup.com/blog/2010/09/24/simplifying-the-testing-of-unmanaged-database-models-in-django/
+
+from django.test.runner import DiscoverRunner
+
+
+class ManagedModelTestRunner(DiscoverRunner):
+    """
+    Test runner that automatically makes all unmanaged models in your Django
+    project managed for the duration of the test run, so that one doesn't need
+    to execute the SQL manually to create them.
+    """
+
+    def __init__(self, **kwargs):
+        from django.apps import apps
+
+        super(ManagedModelTestRunner, self).__init__(**kwargs)
+
+        # for a in apps.get_apps():
+        #     print("Found app %s" % (a))
+
+        # NOTE: apps must be registered in INSTALLED_APPS in settings.py before their models appear here
+        all_models = apps.get_models()
+        # for m in all_models:
+        #     print("Found model %s - Managed:%s" % (m, m._meta.managed))
+
+        self.unmanaged_models = [m for m in all_models if not m._meta.managed]
+
+    def setup_test_environment(self, *args, **kwargs):
+        for m in self.unmanaged_models:
+            m._meta.managed = True
+            # print("Modifying model %s to be managed for testing - Managed:%s" % (m, m._meta.managed))
+        super(ManagedModelTestRunner, self).setup_test_environment(*args, **kwargs)
+
+    def teardown_test_environment(self, *args, **kwargs):
+        super(ManagedModelTestRunner, self).teardown_test_environment(*args, **kwargs)
+        # reset unmanaged models
+        for m in self.unmanaged_models:
+            m._meta.managed = False
+            # print("Resetting model %s to be unmanaged - Managed:%s" % (m, m._meta.managed))
+
+
+self.settings.TEST_RUNNER = "xman.runners.ManagedModelTestRunner"
+```
+
+django 小技巧
+https://simpleisbetterthancomplex.com/tips/2016/08/19/django-tip-12-disabling-migrations-to-speed-up-unit-tests.html
+
+https://simpleisbetterthancomplex.com/tips/
+
+# django + scrapy
+
+https://www.dinofizzotti.com/blog/2018-10-14-carbalert-part-2-django-and-scrapy/
+
+# 泛型外键
+
+https://stackoverflow.com/questions/40148630/understanding-django-genericforeignkey-and-genericrelation
+
+https://stackoverflow.com/questions/20895429/how-exactly-do-django-content-types-work
+
+https://docs.djangoproject.com/en/3.1/ref/contrib/contenttypes/
+
+https://www.liujiangblog.com/blog/44/
+
+# django 默認的密碼加密
+
+pbkdf2_sha256
+
+bcrypt
+
+https://cryptobook.nakov.com/mac-and-key-derivation/pbkdf2
+
+
+```md
+SECRET_KEY¶
+默认值：（''空字符串）
+
+特定Django安装的密钥。这用于提供 加密签名，并且应设置为唯一的，不可预测的值。
+
+django-admin startproject自动将随机生成的内容添加SECRET_KEY到每个新项目。
+
+键的使用不应假定它是文本或字节。每次使用都应经历force_str()或 force_bytes()将其转换为所需的类型。
+
+如果SECRET_KEY未设置，Django将拒绝启动。
+
+警告
+
+将此价值保密。
+
+以已知的方式运行Django会SECRET_KEY破坏Django的许多安全保护措施，并可能导致特权提升和远程代码执行漏洞。
+
+密钥用于：
+
+如果您使用的会话后端不是或使用默认 会话，则所有会话。django.contrib.sessions.backends.cacheget_session_auth_hash()
+如果使用或， 则显示 所有消息。CookieStorageFallbackStorage
+所有PasswordResetView令牌。
+密码签名的任何用法，除非提供了不同的密钥。
+如果旋转密钥，则以上所有内容都会失效。秘密密钥不用于用户密码，密钥旋转不会影响它们。
+
+注意
+
+为方便起见settings.py，创建的默认文件会创建一个唯一的文件。django-admin startprojectSECRET_KEY
+```
+
+https://docs.djangoproject.com/en/3.1/topics/signing/
+
+# SECRECT_KEY的作用
+
+https://stackoverflow.com/questions/15170637/effects-of-changing-djangos-secret-key
+
+# JSON Field 和ARRAY Field
+
+https://gist.github.com/laymonage/b53a1acbbab36b77776cd526b48fd2a5
