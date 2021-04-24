@@ -151,6 +151,7 @@ https://dev.mysql.com/doc/refman/8.0/en/innodb-parameters.html
 
 https://www.aneasystone.com/archives/2018/04/solving-dead-locks-four.html
 
+<<<<<<< HEAD
 # 使用技巧
 
 ```sql
@@ -209,3 +210,13 @@ https://blog.csdn.net/u014236541/article/details/54912907
 2.select * from table_a where id = (select min(id) from table_a where id > {$id});
 
 https://blog.csdn.net/rorntuck7/article/details/50699409
+=======
+
+## 放置数据重复读写
+
+参考:
+
+https://cloud.tencent.com/developer/news/458227
+
+https://juejin.im/post/5d7108abe51d453b753a1b37
+>>>>>>> c2a1203da667ebeb9f0cd68b9a536f88b9e69f7c

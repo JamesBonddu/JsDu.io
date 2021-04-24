@@ -54,5 +54,12 @@ https://stackoverflow.com/questions/48201944/how-to-use-browsermob-with-python-s
 https://softwaretester.info/har-with-python-webdriver-and-browsermob-proxy/
 https://stackoverflow.com/questions/50550496/browsermob-proxy-python-how-to-get-response-body
 
+<<<<<<< HEAD
 # 爬虫项目
 http://app.xiaomaidong.com/
+=======
+
+# PageObject
+
+https://martinfowler.com/bliki/PageObject.html
+>>>>>>> c2a1203da667ebeb9f0cd68b9a536f88b9e69f7c
