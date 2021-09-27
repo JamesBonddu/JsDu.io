@@ -28,10 +28,10 @@ services:
       - ${DOCKER_DB_PORT:-3307}:3306
     environment:
       - TZ=Asia/Shanghai
-      - MYSQL_ROOT_PASSWORD=turing_root
-      - MYSQL_DATABASE=hospital
-      - MYSQL_USER=hospital
-      - MYSQL_PASSWORD=turing_hospital
+      - MYSQL_ROOT_PASSWORD=xxx
+      - MYSQL_DATABASE=xxx
+      - MYSQL_USER=xxx
+      - MYSQL_PASSWORD=xxxx
     volumes:
       - .:/opt
       - ./confs/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
