@@ -131,8 +131,6 @@ flushall
 简单事务控制
 
 
-<<<<<<< HEAD:数据库/Redis/redis.md
-
 # python 操作redis
 
 
@@ -209,6 +207,13 @@ https://luoming1224.github.io/2019/04/08/[redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE
 
 
 https://stackoverflow.com/questions/39253946/how-to-remove-an-item-from-a-redis-geohash
+
+## 经纬度计算
+
+Calculate Distance Between GPS Points in Python
+
+https://janakiev.com/blog/gps-points-distance-python/
+
 
 
 # redis 的key设计
@@ -454,4 +459,54 @@ https://www.jianshu.com/p/54cc04190252
 # 布隆过滤器
 
 https://perphet.com/2019/03/%E5%88%9D%E8%AF%86%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8-Bloom-Filiter/
->>>>>>> c2a1203da667ebeb9f0cd68b9a536f88b9e69f7c:缓存/Redis/redis.md
+
+
+# 持久化的方式
+
+https://www.huaweicloud.com/articles/db567ece5f84733d85f3158219233aab.html
+
+
+Redis 提供了两种不同的持久化方法来将数据存储到硬盘里面。
+一种方法叫快照（snapshotting，RDB），它可以将存在于某一时刻的所有数据都写入硬盘里面。
+另一种方法叫只追加文件（append-only file，AOF），它会在执行写命令时，将被执行的写命令复制到硬盘里面。
+
+作者：liumapp
+链接：https://juejin.cn/post/6844903940245422094
+
+
+# redis获取附件的人
+
+https://mp.weixin.qq.com/s/A3oGKDDZLeKNuFb50RxMxg
+
+# redis 排行榜
+
+https://www.cnblogs.com/zzliu/p/11787830.html
+
+https://github.com/mlomb/redis-rank
+
+https://github.com/zqhong/redis-ranking
+
+滚动榜
+
+https://cloud.tencent.com/developer/article/1370111
+
+
+多维度排行榜
+
+https://www.gushiciku.cn/pl/gfCP%E5%A4%9A%E7%BB%B4%E5%BA%A6%E6%8E%92%E8%A1%8C%E6%A6%9C%E6%8E%A8%E8%8D%90
+
+
+## Redis 排行榜 相同分数根据时间优先排行
+
+https://www.cnblogs.com/cci8go/p/5964485.html
+
+https://segmentfault.com/a/1190000018636887
+
+https://my.oschina.net/u/4217373/blog/4544661
+
+
+# 缓存信息更新
+
+https://stackoverflow.com/questions/36000981/storing-keys-with-prefix-that-expire-in-redis
+
+

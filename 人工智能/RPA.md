@@ -13,3 +13,70 @@
 https://forum.uibot.com.cn/
 
 https://forum.uibot.com.cn/thread-4.htm
+
+
+# UiPATH
+
+https://docs.uipath.com/studio/docs/tutorials
+
+打开浏览器
+
+https://docs.uipath.com/activities/docs/open-browser
+
+
+# 机器人自动化测试框架
+
+https://robotframework.org/
+
+https://github.com/robotframework/robotframework
+
+https://juejin.cn/post/6844904173599735821#heading-7
+
+
+# 小程序自动化测试
+
+Appnium自动化测试
+
+https://github.com/richshaw2015/wxapp-appium
+
+https://developers.weixin.qq.com/miniprogram/dev/devtools/auto/
+
+https://minitest.weixin.qq.com/#/minium/Python/readme
+
+微信小程序自动化测试框架
+
+https://cloud.tencent.com/developer/article/1578759
+
+https://insights.thoughtworks.cn/bdd-gauge-taiko/
+
+https://www.jianshu.com/p/c6e3dee19547
+
+https://www.yuque.com/ziranxing/blog/us7f5v
+
+# 游戏测试
+
+http://airtest.netease.com/
+
+https://github.com/AirtestProject/Airtest
+
+https://www.zhihu.com/question/269270386
+
+https://testerhome.com/topics/3309/show_wechat
+
+https://rainzhaojy.github.io/2014/howto_ta.html
+
+
+## appium进行小程序测试
+
+https://www.bstester.com/2020/04/shi-yong-appium-jin-xing-wei-xin-xiao-cheng-xu-di-zi-dong-hua-ce-shi
+
+# 社区uipath的包
+
+https://marketplace.uipath.com/
+
+
+# google test
+
+https://www.cnblogs.com/coderzh/archive/2009/04/06/1426755.html
+
+https://testerhome.com/topics/15368

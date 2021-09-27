@@ -166,3 +166,196 @@ https://blog.csdn.net/wuxintdrh/article/details/114528105
 
 https://help.aliyun.com/document_detail/114631.html?spm=a2c4g.11186623.6.612.6cc0745dYv5ShX
 
+# 数据仓库实践
+
+## 元数据管理
+
+https://blog.csdn.net/cfy_fantasyxx/article/details/103004560
+
+https://tech.youzan.com/youzan-metadata/
+
+https://zhuanlan.zhihu.com/p/36136675
+
+https://cxliang.gitbooks.io/datapm/content/di-2-zhang-shu-ju-cai-96c6-qing-xi/yuan-shu-ju-guan-li.html
+
+http://www.woshipm.com/pd/4075615.html
+
+
+### 书籍
+
+https://www.zhihu.com/question/52365580
+
+### 竞品
+
+https://manual.sensorsdata.cn/sa/latest/guide_metadata-22252521.html
+
+## 维度建模
+
+https://jiamaoxiang.top/2020/07/11/%E6%95%B0%E4%BB%93-%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%97%B6%E4%BB%A3-%E7%BB%B4%E5%BA%A6%E5%BB%BA%E6%A8%A1%E8%BF%87%E6%97%B6%E4%BA%86%E5%90%97/
+
+# 推荐系统
+
+1、基于内容的推荐 Python的话，推荐考察一下gensim：gensim: Topic modelling for humans。 Java的话，可以考虑easyrec：easyrec :: open source recommendation engine另外可以考虑类似solr或Elasticsearch的MoreLikeThis或直接基于lucene  term vector方案（例如semanticvectors  https://github.com/semanticvectors/semanticvectors）。
+2、协同过滤除了采用mahout外，目前我知道很多公司推荐引擎都转向spark MLLib（底层算法可以采用mahout）或GraphLab。有几个完整解决方案的项目推荐考察一下（prediction、seldon都是基于spark的）：prediction: PredictionIO Open Source Machine Learning Serverseldon: Seldon - Open Source Machine Learning for Enterpriseoryx(以前叫Myrrix)：cloudera/oryx: Simple real-time large-scale machine learning infrastructure.编辑于 2016-01-28
+
+https://www.bilibili.com/read/cv5726013/
+
+https://www.jianshu.com/p/981e4f065544
+
+https://www.zhihu.com/question/39121455
+
+
+基于内容推荐
+gensim
+
+基于标签推荐
+Simple Tag-based、Normal Tag-based、Tag-based-Tfidf 
+
+https://www.cnblogs.com/laiyaling/p/14040569.html
+
+https://www.6aiq.com/article/1600384604366
+
+UCG推荐
+bitmap
+
+https://leriou.github.io/2017-12-29-user-tag-sys-on-bitmap/
+
+https://www.6aiq.com/article/1600384604366
+
+
+
+
+# 召回系统
+
+排序阶段使用FM模型、GBDT+LR模型、DNN模型
+
+https://zhuanlan.zhihu.com/p/58160982
+
+https://segmentfault.com/a/1190000038334828
+
+https://www.6aiq.com/article/1609351219514
+
+https://www.infoq.cn/article/qfl1nxcxhuxv723imb7v
+
+http://www.csuldw.com/2019/02/06/2019-02-06-recommendation-with-neural-network-embeddings/
+
+
+https://www.jiqizhixin.com/articles/2020-07-21-16
+
+https://tech.youzan.com/you-zan-tui-jian-xi-tong-guan-jian-ji-zhu/
+
+FM召回
+
+https://help.aliyun.com/document_detail/150032.html
+
+https://yonigottesman.github.io/recsys/pytorch/elasticsearch/2020/02/18/fm-torch-to-recsys.html
+
+# es作为召回组件
+
+https://zhuanlan.zhihu.com/p/53349817
+
+https://juejin.cn/post/6885249555898728455
+
+https://cloud.tencent.com/developer/article/1526302
+
+https://segmentfault.com/a/1190000037527653
+
+https://juejin.cn/post/6844903988643495943
+
+# 召回 !!
+
+https://juejin.cn/post/6885249555898728455#heading-14
+
+https://www.cnblogs.com/gczr/p/12564617.html
+
+语义召回
+https://blog.csdn.net/qq_16949707/article/details/114672466
+
+https://yuerblog.cc/2018/01/09/elasticsearch-custom/
+
+ES召回基于BM25召回
+除了基本的文本匹配召回，还需要通过构建 query 意图 tag 召回或进行语义匹配召回等多路召回来提升搜索语义相关性以及保证召回的多样性。
+
+https://zhuanlan.zhihu.com/p/349993294
+
+https://www.6aiq.com/article/1588904027930
+
+https://www.infoq.cn/article/oei9cvwfaeflcsopedqa
+
+## 推荐系统环节
+
+四个环节分别是：召回、粗排、精排和重排。召回目的如上所述；有时候因为每个用户召回环节返回的物品数量还是太多，怕排序环节速度跟不上，所以可以在召回和精排之间加入一个粗排环节，通过少量用户和物品特征，简单模型，来对召回的结果进行个粗略的排序，在保证一定精准的前提下，进一步减少往后传送的物品数量，粗排往往是可选的，可用可不同，跟场景有关。之后，是精排环节，使用你能想到的任何特征，可以上你能承受速度极限的复杂模型，尽量精准地对物品进行个性化排序。排序完成后，传给重排环节，传统地看，这里往往会上各种技术及业务策略，比如去已读、去重、打散、多样性保证、固定类型物品插入等等，主要是技术产品策略主导或者为了改进用户体验的。
+
+https://zhuanlan.zhihu.com/p/100019681
+
+### 召回
+
+http://www.woshipm.com/pd/2051274.html
+
+
+# 数据湖
+
+https://ranying666.github.io/2020/12/16/datalake/
+
+# ETL 
+
+https://missfoxw.github.io/pdi-kettle/#/README
+
+https://segmentfault.com/a/1190000015157700
+
+https://segmentfault.com/a/1190000038308664
+
+https://www.xplenty.com/blog/top-7-etl-tools/
+
+## talend
+
+https://www.talend.com/
+
+https://help.talend.com/r/dIDZNNMEsN71~UPJfVIEOQ/bNBoyM2pE4S~6K_QgSZJQA
+
+airflow + talend
+
+https://www.talend.com/blog/2019/01/04/an-introduction-to-apache-airflow-and-talend-orchestrate-your-containerized-data-integration-and-big-data-jobs/
+
+http://xuzhenxue.cn/2018/07/28/airflow-ETL/
+
+https://www.cnblogs.com/xiongnanbin/p/11978541.html
+
+## Kettle
+
+https://blog.csdn.net/zzq900503/article/details/78543778
+
+https://www.kettle.net.cn/
+
+https://developer.aliyun.com/article/69991
+
+# 元数据管理
+
+Marquez
+
+https://blog.csdn.net/LinkTime_Cloud/article/details/107165503
+
+datahub
+
+https://github.com/linkedin/datahub
+
+https://datahubproject.io/docs/quickstart/
+
+Amundsen
+
+https://github.com/amundsen-io/amundsen
+
+https://www.amundsen.io/amundsen/
+
+https://www.cnblogs.com/rongfengliang/p/10975833.html
+
+https://blog.csdn.net/zhouyan8603/article/details/107994102
+
+# 数据治理平台
+
+http://www.soolco.com/post/93469_1_1.html
+
+https://codingnote.cc/zh-hk/p/256938/
+
+
+https://juejin.cn/post/6888577283569745927

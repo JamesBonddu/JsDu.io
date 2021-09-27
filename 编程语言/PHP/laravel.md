@@ -496,3 +496,8 @@ https://www.cc430.cn/index.php/archives/695/
 Service Providers (服务提供者) 是 Laravel 「引导」过程的核心。这个「引导」过程可以理解成「电脑从按下开机按钮到完全进入桌面」这段时间系统干的事。
 
 https://learnku.com/articles/6189/laravel-service-provider-detailed-concept
+
+
+# laravel 常见扩展
+
+https://ibyond.com/posts/e55fe323/

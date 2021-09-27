@@ -1,0 +1,1559 @@
+curl 'http://localhost:9503/api/v1/datasource/connect/check/mysql' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryxIWS3lx1sxJB8YDN' \
+  -H 'Origin: http://localhost:9503' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMDA3MDUiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C7e60492723d6a27a90fc00d00b2abd7f' \
+  --data-raw $'------WebKitFormBoundaryxIWS3lx1sxJB8YDN\r\nContent-Disposition: form-data; name="sourceName"\r\n\r\nmysqltest\r\n------WebKitFormBoundaryxIWS3lx1sxJB8YDN\r\nContent-Disposition: form-data; name="sourceDesc"\r\n\r\ndss mysqltest\r\n------WebKitFormBoundaryxIWS3lx1sxJB8YDN\r\nContent-Disposition: form-data; name="sourceType"\r\n\r\nmysql\r\n------WebKitFormBoundaryxIWS3lx1sxJB8YDN\r\nContent-Disposition: form-data; name="owner"\r\n\r\nExchangis\r\n------WebKitFormBoundaryxIWS3lx1sxJB8YDN\r\nContent-Disposition: form-data; name="authScopes"\r\n\r\nREAD,EXECUTE\r\n------WebKitFormBoundaryxIWS3lx1sxJB8YDN\r\nContent-Disposition: form-data; name="modelId"\r\n\r\n1\r\n------WebKitFormBoundaryxIWS3lx1sxJB8YDN\r\nContent-Disposition: form-data; name="authCreden"\r\n\r\nqRrsJ8tQ\r\n------WebKitFormBoundaryxIWS3lx1sxJB8YDN\r\nContent-Disposition: form-data; name="authEntity"\r\n\r\ndss\r\n------WebKitFormBoundaryxIWS3lx1sxJB8YDN--\r\n' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/addAttach' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryIoZmJYSdizNOUlyB' \
+  -H 'Origin: http://localhost:9503' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMDA3MDUiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C7e60492723d6a27a90fc00d00b2abd7f' \
+  --data-raw $'------WebKitFormBoundaryIoZmJYSdizNOUlyB\r\nContent-Disposition: form-data; name="sourceName"\r\n\r\nmysqltest\r\n------WebKitFormBoundaryIoZmJYSdizNOUlyB\r\nContent-Disposition: form-data; name="sourceDesc"\r\n\r\ndss mysqltest\r\n------WebKitFormBoundaryIoZmJYSdizNOUlyB\r\nContent-Disposition: form-data; name="sourceType"\r\n\r\nmysql\r\n------WebKitFormBoundaryIoZmJYSdizNOUlyB\r\nContent-Disposition: form-data; name="owner"\r\n\r\nExchangis\r\n------WebKitFormBoundaryIoZmJYSdizNOUlyB\r\nContent-Disposition: form-data; name="authScopes"\r\n\r\nREAD,EXECUTE\r\n------WebKitFormBoundaryIoZmJYSdizNOUlyB\r\nContent-Disposition: form-data; name="modelId"\r\n\r\n1\r\n------WebKitFormBoundaryIoZmJYSdizNOUlyB\r\nContent-Disposition: form-data; name="authCreden"\r\n\r\nqRrsJ8tQ\r\n------WebKitFormBoundaryIoZmJYSdizNOUlyB\r\nContent-Disposition: form-data; name="authEntity"\r\n\r\ndss\r\n------WebKitFormBoundaryIoZmJYSdizNOUlyB--\r\n' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/pageList?sourceName=&sourceType=&owner=&page=1&pageSize=10' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMDA3MDUiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C7e60492723d6a27a90fc00d00b2abd7f' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/auth' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMDA3MDUiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C7e60492723d6a27a90fc00d00b2abd7f' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/model/pageList?modelName=&sourceType=&page=1&pageSize=11' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMDA3MDUiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C7e60492723d6a27a90fc00d00b2abd7f' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/auth' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMDA3MDUiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C7e60492723d6a27a90fc00d00b2abd7f' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/admin/dsOwner/selectAll' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMDA3MDUiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C7e60492723d6a27a90fc00d00b2abd7f' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/pageList?sourceName=&sourceType=&owner=&page=1&pageSize=10' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMDA3MDUiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C7e60492723d6a27a90fc00d00b2abd7f' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/project/selectAll' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMDA3MDUiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C7e60492723d6a27a90fc00d00b2abd7f' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/auth' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMDA3MDUiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C7e60492723d6a27a90fc00d00b2abd7f' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/model/pageList?modelName=&sourceType=&page=1&pageSize=11' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/auth' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/admin/dsOwner/selectAll' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/pageList?sourceName=&sourceType=&owner=&page=1&pageSize=10' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/project/selectAll' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/auth' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/model/pageList?modelName=&sourceType=&page=1&pageSize=11' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/auth' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/project/tree' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/auth' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/model/pageList?modelName=&sourceType=&page=1&pageSize=11' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/auth' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/admin/dsOwner/selectAll' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/pageList?sourceName=&sourceType=&owner=&page=1&pageSize=10' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/project/selectAll' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/auth' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/model/pageList?modelName=&sourceType=&page=1&pageSize=11' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/auth' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/project/tree' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/auth' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobtask/pageList?taskId=&fuzzyName=&status=&page=1&pageSize=10' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/auth' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/project/tree' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/auth' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/group/pageList?page=1&pageSize=10&id=&groupName=' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/auth' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobtask/pageList?taskId=&fuzzyName=&status=&page=1&pageSize=10' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABklJREFUeNqsmFtwE1UYx/97Tdqkbei91Gk6IFouYjqjBR3aQTstoM40DD4gOIO++sL4pr45+q7iu+OMyJMD1RcZAXGEBxiUm0JrKfQiDoVeSEmv2WSP3znJJpt0d1Mgpz3d3bPJnt/+v8v5TqX9X89HGMNZ6iGGdGOZP9a11Riz3bddm4n4tz991Pg+SthkDmVmoPhE2Q5bLxwruIakRVHiJnMo+9s/SZMULfTW56PRUiuWB8UKjmCrIqNfva+kYPb5vRiYi5/lnuQrsWIOkzyWWixnzjc/K505VUcgN9Ai5qwo1w7duHknFgzoUDU5Ky+z+YrbuW3sajgcjqmsCAnzSBeFLcn06NJSPBoI+CBJMmQZjw1mmmZsbGzsQ3kFUBEopxewbi3DhyujBhYXl8TnJUl67C7Lcoj6F6rb61vD5TrQ3mKiNsiy45fHZIxPSw7fUnBrphwvPJqDrikIBMposidIP5IUUr38qWdTCn2RlICztyiNDU7IOHJaxXwi/95wrBJJI454fB6qKsPv93marsC/LLBcVBZGJwd6pyMfamou9/ot1TkV7aZeZj4MTqpIJk3Mzy8gkUg8fVRaE7RUMwHG2wI999hFFeeH0+5YG2A4sC2F/isKxmYkx+gcmirDpsY5cmQm4AKBcmia5qiOK5jT/Z7Nqez5kTMamU3K2pmrduSM6hmttx5yc84imTIhKxIFw2J6MlV9CsWotzWmpxgnRQRUZsZoe8oxSE5cVvLGEmTOfyZ1RMpN4WcUE5iYmsbQv/ex7plGtDbVFwdzEtTyHRF5tg84gfE2cE+mnlNVmHO6DFuayZykGiO42bkF/HrpKt2MINxY5+r4ropZTs7hWmrYqrL/ZHzlGDfn8bNnoOkSqSYhkUwKk/9xcwij9x5AymRflin+GmpC2LO93QbmMOMgvf2ODUwEwfNNTFzzdugbPfuwT95Ioq3JFMGRjVabryUo2Y7MlMHP7tLyRMlTTn+GKzdLAaEopImUgRM/KK7YuWGFwExxfrjbwFc8AAiOA/H0cXB7Goq3P8dkx1WAm7NmbQTd69ZSVOoUlTIID8i8w/lrg7g7+RDtbesR2RCGX9eL+xiH+OWGgt7N6Tz28R5DqDIVl7JAVio5ekF1tDP3mYlEPRRpGinys+a6NfD7NJE8lxMGxiemBGTHxnVYW1dTPCqtdvSCIrL63ozDc5+zJ1QO+uUpFQvLTusqy0SnHz9cuAfVGEVrcx0O7u5MW+TaQDpJN9SiuiJA4CkyrZL3fdUrz/E0cG5IRudzZjaFTM2lo5CPOy/2toDhpVDtFhgP/hMK/XV7HKFgAJcGbguLdkY2is8ZhpFeaW1warGKdZKUOW7PU8x9bc2Dyhy5ObtaW3B95A5OX7puuRhe2vRsXtpIUtRaFQZ/zoq10rXEdiiJikFZ5gxUt6GpphpLSwaWyL/qq6vQ+WLbynqO4Kgey6/54QXDvCtaNygr2f49oWFx2cg+anZuXqQNp4Dh/iYUg5tkrDgjf4AnlK0UejDzCDqtlfVrKoVq3588h/szMceX43DyEwjmCMS8qmAtCPjD2LdzO/Z370DDmioBd/Tk75gguMLlyNPHmEsht+IhHnuF3B5VQVO4gyIyKCqMA71daCA/W6Ra7buff3NUTmZm0rOitHfXWFjFXkGUQklGizqDT1NxcFdnVrlTF6877CtTy7FCACcQV9N6po/cOa9sByZUGFTZ8mfrVDi+u7sLW9eH8Xb3K3lq8aOyvuuD+7Rp2kkLqh+MQrVIZ/xoOo8z69q0nVudkFVa2jc2GNCoDFKogNTIrG3hZqiZxCrZdi7ibNenIyFRKK1iZ+vse5S9R4YPI4Wom015mb23pwqvbinLLuq0TcsmVAsqeyzVln5n37GorAZPiFKm0LykYF9vFba1V9GuSYVPV0kxWWzt8lTKZP6SgvH2+r7+h5Ksh/KVMhHtrSSoSrHX1AmKl9tuUNaYXNL/trFUP6+5cmteGqojUkmmU0TnvrWanVJJwZhp/JgOBEoLJm2WeyoIqoKUkkXnUGlBmCcUrzZKCna2f3+/aRoxrlRfTxAvbw0Ks/EuZ0prt1RkV5E2yTEVJW6pVKK/r7fivfbNZeQ4JhnWFFGbTKbyo67Ap6zo5FDUX/tfgAEAQ3WUFGFdgUwAAAAASUVORK5CYII=' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/auth' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/group/pageList?page=1&pageSize=10&id=&groupName=' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/auth' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobtask/pageList?taskId=&fuzzyName=&status=&page=1&pageSize=10' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/auth' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/project/tree' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/project/add' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Content-Type: application/json;charset=UTF-8' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Origin: http://localhost:9503' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --data-raw '{"projectName":"jsdu-exchangeis","parentId":"","projectDesc":"jsdu-exchangeis"}' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/project/tree' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobinfo/pageList?projectId=2&page=1&pageSize=10&fuzzyName=&jobId=' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/js/chunk-2d0a43df.a972dbd2.js' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Accept: */*' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: no-cors' \
+  -H 'Sec-Fetch-Dest: script' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobinfo/func/verify' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobinfo/func/transform' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/selectAll?sourceType=hive&projectIds=2' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/selectAll?sourceType=hive&projectIds=2' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/selectAll?sourceType=mysql&projectIds=2' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/meta/mysql/2/dbs' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/meta/mysql/2/dss/tables' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/auth' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxMzUxMTAiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2C6b2b919205dd737b505711ce4ff85335' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/admin/dsOwner/selectAll' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/pageList?sourceName=&sourceType=&owner=&page=1&pageSize=10' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/project/selectAll' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/auth' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/project/tree' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobinfo/pageList?projectId=2&page=1&pageSize=10&fuzzyName=&jobId=' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobinfo/func/verify' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobinfo/func/transform' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/selectAll?sourceType=hive&projectIds=2' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/selectAll?sourceType=hive&projectIds=2' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/selectAll?sourceType=mysql&projectIds=2' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/meta/mysql/2/dbs' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/meta/mysql/2/mysql/tables' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/meta/mysql/2/learn/tables' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/meta/mysql/2/learn/students/fields' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/selectAll?sourceType=mysql&projectIds=2' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/meta/mysql/2/dbs' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/meta/mysql/2/learn/tables' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobinfo/func/verify' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobinfo/func/transform' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/selectAll?sourceType=hive&projectIds=2' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/selectAll?sourceType=hive&projectIds=2' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/selectAll?sourceType=mysql&projectIds=2' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/meta/mysql/2/dbs' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/meta/mysql/2/learn/tables' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/meta/mysql/2/learn/students/fields' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/selectAll?sourceType=mysql&projectIds=2' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/meta/mysql/2/dbs' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/meta/mysql/2/learn/tables' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/datasource/meta/mysql/2/learn/etl_student/fields' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/exec/user/list' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/exec/node/list/DATAX' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobinfo/add' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'Content-Type: application/json;charset=UTF-8' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Origin: http://localhost:9503' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --data-raw '{"dataDestId":2,"dataSrcId":2,"dataSrcType":"mysql","dataDestType":"mysql","config":{"columnMaps":[{"dstName":"id","dstType":"INT","srcIndex":1,"srcName":"A.id","srcType":"INT","transforFunc":"","verifyFunc":""},{"dstName":"age","dstType":"INT","srcIndex":2,"srcName":"A.age","srcType":"INT","transforFunc":"","verifyFunc":""},{"dstName":"name","dstType":"VARCHAR","srcIndex":3,"srcName":"A.name","srcType":"VARCHAR","transforFunc":"","verifyFunc":""},{"dstName":"sex","dstType":"TINYINT","srcIndex":4,"srcName":"A.sex","srcType":"TINYINT","transforFunc":"","verifyFunc":""},{"dstName":"address","dstType":"VARCHAR","srcIndex":5,"srcName":"A.address","srcType":"VARCHAR","transforFunc":"","verifyFunc":""},{"dstName":"classes_id","dstType":"INT","srcIndex":6,"srcName":"A.classes_id","srcType":"INT","transforFunc":"","verifyFunc":""}],"dataDstParams":{"database":"learn","table":"etl_student","batchSize":"2","writeMode":"replace"},"dataSrcParams":{"database":"learn","table":["students"],"join":[],"alias":["A"],"where":"age>5"},"speed":{"mBytes":"10","record":"10000"},"errorLimit":{"record":"1"},"advance":{"advanceOption":false,"mParallel":null,"mMemory":null}},"jobCorn":"","jobDesc":"","sync":"FULL","alarmUser":"","execUser":"dss","execNodes":[1],"timeout":"43200","engineType":"DATAX","jobParams":{},"projectId":2,"jobName":"etl_student"}' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobinfo/pageList?projectId=2&page=1&pageSize=10&fuzzyName=&jobId=' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobinfo/run/2?userName=dss' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/auth' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobtask/pageList?taskId=&fuzzyName=&status=&page=1&pageSize=10' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobtask/log?taskId=1626961978767577088&startLine=-1&windSize=-50' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobtask/pageList?taskId=&fuzzyName=&status=&page=1&pageSize=10' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobtask/pageList?taskId=&fuzzyName=&status=&page=1&pageSize=10' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobtask/pageList?taskId=&fuzzyName=&status=&page=1&pageSize=10' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobtask/pageList?taskId=&fuzzyName=&status=&page=1&pageSize=10' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobtask/pageList?taskId=&fuzzyName=&status=&page=1&pageSize=10' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobtask/pageList?taskId=&fuzzyName=&status=&page=1&pageSize=10' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobtask/pageList?taskId=&fuzzyName=&status=&page=1&pageSize=10' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobtask/pageList?taskId=&fuzzyName=&status=&page=1&pageSize=10' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobtask/pageList?taskId=&fuzzyName=&status=&page=1&pageSize=10' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed ;
+curl 'http://localhost:9503/api/v1/jobtask/pageList?taskId=&fuzzyName=&status=&page=1&pageSize=10' \
+  -H 'Connection: keep-alive' \
+  -H 'sec-ch-ua: " Not;A Brand";v="99", "Google Chrome";v="91", "Chromium";v="91"' \
+  -H 'Accept: application/json, text/plain, */*' \
+  -H 'X-Requested-With: XMLHttpRequest' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36' \
+  -H 'Content-language: zh-cn' \
+  -H 'Sec-Fetch-Site: same-origin' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Referer: http://localhost:9503/' \
+  -H 'Accept-Language: zh-CN,zh;q=0.9,en;q=0.8,zh-TW;q=0.7' \
+  -H 'Cookie: UM-SSO-BDP=eyJob3N0X3BvcnQiOiIxNzIuMTkuMTk2LjY2Ojk1MDMiLCJYLUFVVEgtSUQiOiJkc3MiLCJ0ay10aW1lIjoiMjAyMTA3MTUxNTAzMjQiLCJhbGciOiJNRDUifQ%3D%3D%2CeyJ1cGRhdGVUaW1lIjoiMjAyMS0wNy0xMiAwODo1Nzo1MSIsInVzZXJUeXBlIjowLCJyb2xlIjoidXNlciIsImNyZWF0ZVRpbWUiOiIyMDIxLTA3LTEyIDA4OjU3OjUxIiwiWC1BVVRILUlEIjoiZHNzIn0%3D%2Cc4df7086392c67ad7da856d9d95f0a31' \
+  --compressed

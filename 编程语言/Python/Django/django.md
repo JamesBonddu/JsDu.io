@@ -338,4 +338,88 @@ https://stackoverflow.com/questions/1355150/when-saving-how-can-you-check-if-a-f
 ## django queryset manager
 
 https://simpleisbetterthancomplex.com/tips/2016/08/16/django-tip-11-custom-manager-with-chainable-querysets.html
->>>>>>> c2a1203da667ebeb9f0cd68b9a536f88b9e69f7c
+
+
+## django 事务
+
+https://stackoverflow.com/questions/27163351/django-transaction-atomic-guarantees-atomic-read-write
+
+
+https://realpython.com/transaction-management-with-django-1-6/
+
+# post-save信号
+
+https://stackoverflow.com/questions/13014411/django-post-save-signal-implementation
+
+https://docs.djangoproject.com/en/3.2/ref/signals/
+
+https://www.programmersought.com/article/23601752690/
+
+# 安装微软字体
+
+```sh
+apt install fontconfig -y
+
+fc-cache -f -v
+
+https://www.unixtutorial.org/how-to-install-ttf-fonts-in-linux/
+
+root@xxxx:/opt/webapp/xman# fc-list
+/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf: DejaVu Serif:style=Bold
+/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf: DejaVu Sans Mono:style=Book
+/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf: DejaVu Sans:style=Book
+/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf: DejaVu Sans:style=Bold
+/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf: DejaVu Sans Mono:style=Bold
+/usr/share/fonts/custom/msyh.ttf: Microsoft YaHei,微软雅黑:style=Regular,Normal,obyčejné,Standard,Κανονικά,Normaali,Normál,Normale,Standaard,Normalny,Обычный,Normálne,Navadno,Arrunta
+/usr/share/fonts/truetype/dejavu/DejaVuSerif.ttf: DejaVu Serif:style=Book
+```
+
+# django 商品死锁
+
+`select_for_update`
+
+https://stackoverflow.com/questions/10935850/when-to-use-select-for-update
+
+https://stackoverflow.com/questions/28191146/avoiding-mysql-deadlock-in-django-orm
+
+
+mysql死锁
+
+https://segmentfault.com/a/1190000020111518
+
+
+死锁检测
+```mysql
+mysql> select @@innodb_deadlock_detect;
++--------------------------+
+| @@innodb_deadlock_detect |
++--------------------------+
+|                        1 |
++--------------------------+
+1 row in set (0.00 sec)
+
+mysql> select @@transaction_isolation;
++-------------------------+
+| @@transaction_isolation |
++-------------------------+
+| REPEATABLE-READ         |
++-------------------------+
+1 row in set (0.00 sec)
+
+
+```
+https://www.cnblogs.com/wy123/p/12724252.html
+
+pt-deadlock-logger 死锁监控
+
+https://www.percona.com/doc/percona-toolkit/LATEST/pt-deadlock-logger.html
+
+
+## 可重复读隔离级别
+
+https://sqlperformance.com/2014/04/t-sql-queries/the-repeatable-read-isolation-level
+
+https://blog.csdn.net/zzze0101/article/details/91345033
+
+
+

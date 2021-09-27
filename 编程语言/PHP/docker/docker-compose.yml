@@ -1,0 +1,74 @@
+version: '3.6'
+
+services:
+  app:
+    container_name: hospital-app
+    build: .
+    image: hospital:0.0.1
+    restart: always
+    environment:
+      - LANG=C.UTF-8
+    ports:
+      - ${DOCKER_PORT:-8000}:8000
+    volumes:
+      - .:/opt/server
+    networks:
+      - web_nw
+      - db_nw
+    depends_on:
+      - db
+    command:
+        php artisan serve --host 0.0.0.0 --port 8000
+
+  db:
+    container_name: hospital-db
+    image: mysql:5.7.30
+    restart: always
+    ports:
+      - ${DOCKER_DB_PORT:-3307}:3306
+    environment:
+      - TZ=Asia/Shanghai
+      - MYSQL_ROOT_PASSWORD=turing_root
+      - MYSQL_DATABASE=hospital
+      - MYSQL_USER=hospital
+      - MYSQL_PASSWORD=turing_hospital
+    volumes:
+      - .:/opt
+      - ./confs/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
+      - ./db/mysql/data:/var/lib/mysql
+    networks:
+      - db_nw
+
+  redis:
+    container_name: hospital-redis
+    image: redis:6.0.5-alpine
+    restart: always
+    volumes:
+      - ./db/redis:/data
+      - ./confs/redis.conf:/etc/redis.conf
+    command: /usr/local/bin/redis-server /etc/redis.conf
+    networks:
+      - db_nw
+
+  adminer:
+    container_name: hospital-adminer
+    image: adminer
+    restart: always
+    ports:
+        - 8888:8080
+    environment:
+        - ADMINER_DEFAULT_SERVER=db
+    depends_on:
+        - db
+    networks:
+        - db_nw
+
+volumes:
+  data:
+    driver: local
+
+networks:
+  db_nw:
+    driver: bridge
+  web_nw:
+    driver: bridge

@@ -389,3 +389,289 @@ https://blog.csdn.net/weixin_44318830/article/details/114006105
 
 https://zhuanlan.zhihu.com/p/341371753
 
+https://www.dongwm.com/post/elasticsearch-performance-tuning-practice-at-douban/
+
+
+# Solr和ES的区别
+
+http://jiagoushi.pro/solr-vs-elasticsearch-performance-differences-more-how-decide-which-one-best-you-0
+
+# mysql 和ES的数据同步
+
+https://learnku.com/elasticsearch/t/45942
+
+# ES 分词器
+
+https://www.bwangel.me/2020/05/10/es-7-6-note/
+
+https://learnku.com/articles/35136
+
+https://heyan.site:8001/BigData/ELK/ESConcepts-AnalysisAndRelated.html
+
+https://xinlichao.cn/back-end/big-data/es-03/
+
+https://blog.csdn.net/qq_40592041/article/details/107856588
+
+
+https://blog.kingofzihua.top/post/elasticsearch-analyzer-fen-ci-qi/#analysis-ik-%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D%E6%8F%92%E4%BB%B6
+
+IK分词器详解
+
+https://blog.luojilab.com/2019/08/11/big-data/elasticsearch/
+
+# ES 插件
+
+https://www.elastic.co/guide/en/elasticsearch/plugins/current/index.html
+# ES修改相关度的分数
+
+function_score 计算ES的_score
+
+https://www.elastic.co/guide/en/elasticsearch/reference/5.6/query-dsl-function-score-query.html
+
+https://www.elastic.co/guide/cn/elasticsearch/guide/current/function-score-filters.html
+
+https://kucw.github.io/blog/2018/7/elasticsearch-function_score/
+
+https://kucw.github.io/blog/2018/7/elasticsearch-function_score-weight/
+
+脚本评分
+
+https://www.elastic.co/guide/cn/elasticsearch/guide/current/script-score.html
+
+https://blog.csdn.net/puhaiyang/article/details/98886075
+
+https://blog.csdn.net/weixin_40341116/article/details/80913045
+
+https://zq99299.github.io/note-book/elasticsearch-senior/ik/31-config.html
+
+
+https://www.scienjus.com/elasticsearch-function-score-query/
+
+
+https://github.com/shenzhanwang/Spring-elastic_search
+
+
+不过 ES 提供了 function_score 来让我们自定义评分计算公式，也提供了多种类型方便我们快速应用。function_score 提供了五种类型
+
+script_score，这是最灵活的方式，可以自定义算法；
+weight，乘以一个权重数值；
+random_score，随机分数；
+field_value_factor，使用某个字段来影响总分数；
+decay fucntion，包括gauss、exp、linear三种衰减函数。
+因为类型比较多，下面只介绍使用较多的 filed_value_factor 与 decay function 的实际案例。
+
+我们可以通过增加更多的影响报告评分的因素来实现以上场景，这些因素包括：时间、热度、质量评分、运营权重等。
+
+
+https://www.elastic.co/guide/cn/elasticsearch/guide/current/function-score-query.html
+
+
+https://czj.so/226/elasticsearch%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%84%E5%88%86%E4%B8%8E%E6%8E%92%E5%BA%8F.html
+
+https://jenkinwang.github.io/2020/08/16/Elasticsearch%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E6%A1%A3%E5%BE%97%E5%88%86%E5%B9%B6%E6%8E%92%E5%BA%8F/
+
+自定义分数报错
+
+https://stackoverflow.com/questions/52039140/elasticsearch-gives-function-score-malformed-query-expected-end-object-but
+
+## es 打分机制原理
+
+https://www.elastic.co/guide/cn/elasticsearch/guide/current/scoring-theory.html
+
+https://zhuanlan.zhihu.com/p/27951938
+
+## App Search
+
+https://linyencheng.github.io/2020/09/06/elastic-app-search-quick-start/
+
+https://medium.com/kkstream/%E5%96%AC%E5%8F%94%E6%95%99-elastic-25-%E5%90%91-app-search-%E5%AD%B8%E7%BF%92%E6%80%8E%E9%BA%BC%E7%94%A8-elasticsearch-4-5-engine-%E7%9A%84-search-%E5%9F%BA%E7%A4%8E%E5%89%96%E6%9E%90%E7%AF%87-f100207b6eab
+
+https://time.geekbang.org/course/detail/197-120989
+
+https://www.elastic.co/guide/en/app-search/current/index.html
+# ES模板
+
+Search template API
+
+https://www.elastic.co/guide/en/elasticsearch/reference/current/search-template.html
+
+## 排分评价指标
+
+CG、DCG、NDCG
+
+https://zhuanlan.zhihu.com/p/136199536
+
+
+https://zhuanlan.zhihu.com/p/38875570
+
+
+https://github.com/princewen/tensorflow_practice/tree/master/recommendation/Basic-Evaluation-metrics
+
+
+https://elasticsearch.cn/article/6216
+
+### es 删除
+
+```sh
+# 批量删除
+POST /type/_update_by_query
+{
+  "script" : "ctx._source.remove(\"name\")",
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "exists": {
+            "field": "name"
+          }
+        }
+      ]
+    }
+  }
+}
+
+# 删除单条
+POST /type/1/_update
+{
+    "script" : "ctx._source.remove(\"name\")"
+}
+```
+
+## 写入速度极限优化
+
+https://www.easyice.cn/archives/207
+
+## es 相似向量搜索
+
+https://blog.accubits.com/vector-similarity-search-using-elasticsearch/
+
+https://stackoverflow.com/questions/30226824/is-it-possible-to-query-elastic-search-with-a-feature-vector
+
+https://stackoverflow.com/questions/61376317/dense-vector-array-and-cosine-similarity
+
+```sh
+# 余弦距离
+script_query = {
+    "script_score": {
+        "query": {"match_all": {}},
+        "script": {
+            "source": "cosineSimilarity(params.query_vector, doc['image_vector']) + 1.0",
+            "params": {"query_vector": query_vector}
+        }
+    }
+}
+# 曼哈顿距离
+script_query = {
+    "script_score": {
+        "query": {"match_all": {}},
+        "script": {
+            "source": "1 / (1 + l1norm(params.queryVector, doc['image_vector']))", 
+            "params": {
+            "queryVector": query_vector
+            }
+        }
+    }
+}
+# 欧几里德距离
+script_query = {
+    "script_score": {
+        "query": {"match_all": {}},
+        "script": {
+            "source": "1 / (1 + l2norm(params.queryVector, doc['image_vector']))",
+            "params": {
+            "queryVector": query_vector
+            }
+        }
+    }
+}
+
+# DotProduct实现
+script_query = {
+    "script_score": {
+        "query": {"match_all": {}},
+        "script": {
+            "source": """
+                double value = doc['image_vector'].size() == 0 ? 0 : dotProduct(params.query_vector, doc['image_vector']);
+                return value;
+                """,
+            "params": {"query_vector": query_vector}
+        }
+    }
+}
+response = self.client.search(
+    index=self.index_name,
+    body={
+        "size": search_size,
+        "query": script_query,
+        "_source": {"includes": ["id", "name", "face_vector"]}
+    }
+)
+
+作者：李三十一
+链接：https://juejin.cn/post/6933972344553603086
+来源：掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+```
+
+
+各种相似度向量查询
+
+https://juejin.cn/post/6933972344553603086
+
+https://github.com/thirtyonelee/image-retrieval
+
+
+https://github.com/thirtyonelee/image-retrieval/blob/main/retrieval.py
+
+
+## es查询字符长度
+
+```qsl
+GET /recall_title_vec/_search?pretty=true
+{
+  "query": {
+    "script": {
+      "script": {
+        "source": "doc['tags'].getValue().length() > 1",
+        "lang": "painless"
+      }
+    }
+  }
+}
+```
+
+
+https://stackoverflow.com/questions/36187269/kibana-querying-for-string-length
+
+https://cloud.tencent.com/developer/article/1747083
+
+
+# word2vec做文章正文的词向量
+
+http://xiehongfeng100.github.io/2018/08/11/yelper-las-vegas-review-text-keyword-search/
+
+
+https://www.cnblogs.com/hapjin/archive/2019/08/23/11389328.html
+
+
+simhash做长文本的去重
+
+https://yuerblog.cc/2018/05/30/simhash-text-unique-arch/
+
+Minhash做文档的相似性
+https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-minhash-tokenfilter.html
+
+https://octopuscoder.github.io/2019/05/15/%E6%96%87%E6%9C%AC%E6%9F%A5%E9%87%8D-SimHash%E5%92%8CMinHash%E7%AE%97%E6%B3%95/
+
+## 以图搜图
+
+https://elasticsearch.cn/question/9128
+
+## 快速搜索性能问题调研
+
+
+https://www.daimajiaoliu.com/daima/47621e018100402
+
+# 工具
+## CSV到ES的脚本
+https://github.com/aarreedd/CSV-to-ElasticSearch

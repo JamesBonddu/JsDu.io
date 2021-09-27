@@ -1,0 +1,308 @@
+
+# linkis 执行
+
+```sh
+hadoop    605294  0.2  1.9 4139680 633368 ?      Sl   Jul26   2:51 java -DserviceName=linkis-mg-eureka -Xmx512M -XX:+UseG1GC -Xloggc:/data/apps/dss-stack/linkis/logs/linkis-mg-eureka-gc.log -cp /data/apps/dss-stack/linkis/conf:/data/apps/dss-stack/linkis/lib/linkis-spring-cloud-services/linkis-mg-eureka/* com.webank.wedatasphere.linkis.eureka.SpringCloudEurekaApplication --eureka.instance.preferIpAddress=true --spring.profiles.active=eureka
+hadoop    605396  0.1  2.2 4228880 726012 ?      Sl   Jul26   1:25 java -DserviceName=linkis-mg-gateway -Xmx512M -XX:+UseG1GC -Xloggc:/data/apps/dss-stack/linkis/logs/linkis-mg-gateway-gc.log -cp /data/apps/dss-stack/linkis/conf:/data/apps/dss-stack/linkis/lib/linkis-spring-cloud-services/linkis-mg-gateway/* com.webank.wedatasphere.linkis.gateway.springcloud.LinkisGatewayApplication
+hadoop    605451  0.1  2.2 4190348 733768 ?      Sl   Jul26   1:30 java -DserviceName=linkis-ps-publicservice -Xmx512M -XX:+UseG1GC -Xloggc:/data/apps/dss-stack/linkis/logs/linkis-ps-publicservice-gc.log -cp /data/apps/dss-stack/linkis/conf:/data/apps/dss-stack/linkis/lib/linkis-commons/public-module/*:/data/apps/dss-stack/linkis/lib/linkis-public-enhancements/linkis-ps-publicservice/* com.webank.wedatasphere.linkis.jobhistory.LinkisPublicServiceApp
+hadoop    605515  0.1  2.3 4182536 742012 ?      Sl   Jul26   1:36 java -DserviceName=linkis-cg-linkismanager -Xmx512M -XX:+UseG1GC -Xloggc:/data/apps/dss-stack/linkis/logs/linkis-cg-linkismanager-gc.log -cp /data/apps/dss-stack/linkis/conf:/data/apps/dss-stack/linkis/lib/linkis-commons/public-module/*:/data/apps/dss-stack/linkis/lib/linkis-computation-governance/linkis-cg-linkismanager/* com.webank.wedatasphere.linkis.manager.am.LinkisManagerApplication
+hadoop    605642  0.0  2.0 4152788 659744 ?      Sl   Jul26   1:03 java -DserviceName=linkis-ps-cs -Xmx512M -XX:+UseG1GC -Xloggc:/data/apps/dss-stack/linkis/logs/linkis-ps-cs-gc.log -cp /data/apps/dss-stack/linkis/conf:/data/apps/dss-stack/linkis/lib/linkis-commons/public-module/*:/data/apps/dss-stack/linkis/lib/linkis-public-enhancements/linkis-ps-cs/* com.webank.wedatasphere.linkis.cs.server.LinkisCSApplication
+hadoop    605711  0.0  2.0 4149732 657108 ?      Sl   Jul26   1:00 java -DserviceName=linkis-cg-entrance -Xmx512M -XX:+UseG1GC -Xloggc:/data/apps/dss-stack/linkis/logs/linkis-cg-entrance-gc.log -cp /data/apps/dss-stack/linkis/conf:/data/apps/dss-stack/linkis/lib/linkis-commons/public-module/*:/data/apps/dss-stack/linkis/lib/linkis-computation-governance/linkis-cg-entrance/* com.webank.wedatasphere.linkis.entrance.LinkisEntranceApplication
+hadoop    605792  0.1  2.0 4148640 657976 ?      Sl   Jul26   1:12 java -DserviceName=linkis-cg-engineconnmanager -Xmx512M -XX:+UseG1GC -Xloggc:/data/apps/dss-stack/linkis/logs/linkis-cg-engineconnmanager-gc.log -cp /data/apps/dss-stack/linkis/conf:/data/apps/dss-stack/linkis/lib/linkis-commons/public-module/*:/data/apps/dss-stack/linkis/lib/linkis-computation-governance/linkis-cg-engineconnmanager/* com.webank.wedatasphere.linkis.ecm.server.LinkisECMApplication
+hadoop    605889  0.0  2.0 4124308 644352 ?      Sl   Jul26   0:52 java -DserviceName=linkis-cg-engineplugin -Xmx512M -XX:+UseG1GC -Xloggc:/data/apps/dss-stack/linkis/logs/linkis-cg-engineplugin-gc.log -cp /data/apps/dss-stack/linkis/conf:/data/apps/dss-stack/linkis/lib/linkis-commons/public-module/*:/data/apps/dss-stack/linkis/lib/linkis-computation-governance/linkis-cg-engineplugin/* com.webank.wedatasphere.linkis.engineplugin.server.LinkisEngineConnPluginServer
+```
+
+# linkis error
+
+
+```
+2021-07-26 10:56:52.855 [INFO ] [main                                    ] o.s.c.n.e.InstanceInfoFactory (72) [create] - Setting initial instance status as: STARTING
+2021-07-26 10:56:52.890 [INFO ] [main                                    ] c.n.d.DiscoveryClient (365) [<init>] - Initializing Eureka in region us-east-1
+2021-07-26 10:56:53.129 [INFO ] [main                                    ] c.n.d.p.DiscoveryJerseyProvider (70) [<init>] - Using JSON encoding codec LegacyJacksonJson
+2021-07-26 10:56:53.129 [INFO ] [main                                    ] c.n.d.p.DiscoveryJerseyProvider (71) [<init>] - Using JSON decoding codec LegacyJacksonJson
+2021-07-26 10:56:53.129 [INFO ] [main                                    ] c.n.d.p.DiscoveryJerseyProvider (80) [<init>] - Using XML encoding codec XStreamXml
+2021-07-26 10:56:53.130 [INFO ] [main                                    ] c.n.d.p.DiscoveryJerseyProvider (81) [<init>] - Using XML decoding codec XStreamXml
+2021-07-26 10:56:53.232 [INFO ] [main                                    ] c.n.d.s.r.a.ConfigClusterResolver (43) [getClusterEndpoints] - Resolving eureka endpoints via configuration
+2021-07-26 10:56:53.252 [INFO ] [main                                    ] c.n.d.DiscoveryClient (976) [fetchRegistry] - Disable delta property : false
+2021-07-26 10:56:53.252 [INFO ] [main                                    ] c.n.d.DiscoveryClient (977) [fetchRegistry] - Single vip registry refresh property : null
+2021-07-26 10:56:53.253 [INFO ] [main                                    ] c.n.d.DiscoveryClient (978) [fetchRegistry] - Force full registry fetch : false
+2021-07-26 10:56:53.253 [INFO ] [main                                    ] c.n.d.DiscoveryClient (979) [fetchRegistry] - Application is null : false
+2021-07-26 10:56:53.253 [INFO ] [main                                    ] c.n.d.DiscoveryClient (980) [fetchRegistry] - Registered Applications size is zero : true
+2021-07-26 10:56:53.253 [INFO ] [main                                    ] c.n.d.DiscoveryClient (982) [fetchRegistry] - Application version is -1: true
+2021-07-26 10:56:53.254 [INFO ] [main                                    ] c.n.d.DiscoveryClient (1065) [getAndStoreFullRegistry] - Getting all instance registry info from the eureka server
+2021-07-26 10:56:53.318 [ERROR] [main                                    ] c.n.d.s.t.d.RedirectingEurekaHttpClient (83) [execute] - Request execution error. endpoint=DefaultEndpoint{ serviceUrl='http://iZuf62jr8hyu2q5ak8cnlqZ:20303/eureka/} com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.sun.jersey.api.client.Client.handle(Client.java:652) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.sun.jersey.api.client.WebResource$Builder.get(WebResource.java:509) ~[jersey-client-1.19.1.jar:1.19.1]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:194) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplications(AbstractJerseyEurekaHttpClient.java:165) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1069) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:983) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:430) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:276) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:272) ~[eureka-client-1.9.13.jar:1.9.13]
+	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:67) ~[spring-cloud-netflix-eureka-client-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:324) ~[spring-cloud-netflix-eureka-client-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_292]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_292]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_292]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_292]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:359) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:389) ~[spring-cloud-context-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:186) ~[spring-cloud-context-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:356) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35) ~[spring-aop-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:192) ~[spring-aop-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.sun.proxy.$Proxy111.getApplications(Unknown Source) ~[?:?]
+	at org.springframework.cloud.netflix.eureka.server.EurekaServerAutoConfiguration.peerAwareInstanceRegistry(EurekaServerAutoConfiguration.java:154) ~[spring-cloud-netflix-eureka-server-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_292]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_292]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_292]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_292]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:885) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:539) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) [spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) [spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) [spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879) [spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878) [spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) [spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at com.webank.wedatasphere.linkis.eureka.SpringCloudEurekaApplication.main(SpringCloudEurekaApplication.java:31) [linkis-eureka-1.0.1.jar:?]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:1.8.0_292]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_292]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_292]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_292]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_292]
+	at java.net.Socket.connect(Socket.java:607) ~[?:1.8.0_292]
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118) ~[httpclient-4.5.3.jar:4.5.3]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56) ~[httpclient-4.5.3.jar:4.5.3]
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173) ~[jersey-apache-client4-1.19.1.jar:1.19.1]
+	... 100 more
+
+2021-07-26 10:56:53.325 [WARN ] [main                                    ] c.n.d.s.t.d.RetryableEurekaHttpClient (130) [execute] - Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
+2021-07-26 10:56:53.326 [ERROR] [main                                    ] c.n.d.DiscoveryClient (990) [fetchRegistry] - DiscoveryClient_LINKIS-MG-EUREKA/iZuf62jr8hyu2q5ak8cnlqZ:linkis-mg-eureka:20303 - was unable to refresh its cache! status = Cannot execute request on any known server com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1069) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:983) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:430) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:276) ~[eureka-client-1.9.13.jar:1.9.13]
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:272) ~[eureka-client-1.9.13.jar:1.9.13]
+	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:67) ~[spring-cloud-netflix-eureka-client-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:324) ~[spring-cloud-netflix-eureka-client-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_292]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_292]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_292]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_292]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:359) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:389) ~[spring-cloud-context-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:186) ~[spring-cloud-context-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:356) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35) ~[spring-aop-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:192) ~[spring-aop-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at com.sun.proxy.$Proxy111.getApplications(Unknown Source) ~[?:?]
+	at org.springframework.cloud.netflix.eureka.server.EurekaServerAutoConfiguration.peerAwareInstanceRegistry(EurekaServerAutoConfiguration.java:154) ~[spring-cloud-netflix-eureka-server-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_292]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_292]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_292]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_292]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:885) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:539) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) [spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) [spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) [spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879) [spring-beans-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878) [spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) [spring-context-5.2.2.RELEASE.jar:5.2.2.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.2.2.RELEASE.jar:2.2.2.RELEASE]
+	at com.webank.wedatasphere.linkis.eureka.SpringCloudEurekaApplication.main(SpringCloudEurekaApplication.java:31) [linkis-eureka-1.0.1.jar:?]
+
+```
+
+
+```
+2021-07-26 10:58:04.071 [INFO ] [main                                    ] c.n.d.DiscoveryClient (1065) [getAndStoreFullRegistry] - Getting all instance registry info from the eureka server
+2021-07-26 10:58:04.184 [INFO ] [main                                    ] c.n.d.DiscoveryClient (1074) [getAndStoreFullRegistry] - The response status is 200
+2021-07-26 10:58:04.186 [INFO ] [main                                    ] c.n.d.DiscoveryClient (1288) [initScheduledTasks] - Starting heartbeat executor: renew interval is: 30
+2021-07-26 10:58:04.189 [INFO ] [main                                    ] c.n.d.InstanceInfoReplicator (60) [<init>] - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2021-07-26 10:58:04.191 [INFO ] [main                                    ] c.n.d.DiscoveryClient (465) [<init>] - Discovery Client initialized at timestamp 1627268284191 with initial instances count: 7
+2021-07-26 10:58:04.276 [INFO ] [main                                    ] c.w.w.l.c.c.Configuration$ (40) [info] - gatewayUrl is http://iZuf62jr8hyu2q5ak8cnlqZ:9001
+2021-07-26 10:58:04.302 [INFO ] [main                                    ] c.w.w.l.c.c.Configuration$ (40) [info] - linkisHome is /data/apps/dss-stack/linkis
+2021-07-26 10:58:04.363 [INFO ] [main                                    ] c.w.w.l.m.DataSourceConfig$$EnhancerBySpringCGLIB$$a087d288 (35) [info] - Database connection address information(数据库连接地址信息)=jdbc:mysql://127.0.0.1:3306/dss?characterEncoding=UTF-8
+2021-07-26 10:58:04.388 [INFO ] [main                                    ] c.w.w.l.m.MybatisConfigurationFactory$$EnhancerBySpringCGLIB$$1102022 (35) [info] - Mybatis typeAliasesPackage=
+2021-07-26 10:58:04.388 [INFO ] [main                                    ] c.w.w.l.m.MybatisConfigurationFactory$$EnhancerBySpringCGLIB$$1102022 (35) [info] - Mybatis mapperLocations=classpath:com/webank/wedatasphere/linkis/engineplugin/server/dao/impl/*.xml
+2021-07-26 10:58:04.389 [INFO ] [main                                    ] c.w.w.l.m.MybatisConfigurationFactory$$EnhancerBySpringCGLIB$$1102022 (35) [info] - Mybatis configLocation=classpath:/mybatis-config.xml
+2021-07-26 10:58:04.606 [INFO ] [main                                    ] c.w.w.l.e.s.s.DefaultEngineConnResourceService (40) [info] - Start to refresh all engineconn plugins when inited.
+2021-07-26 10:58:04.610 [INFO ] [Linkis-Default-Scheduler-Thread-1       ] c.w.w.l.e.s.s.DefaultEngineConnResourceService (40) [info] - Try to initialize the dist resources of all EngineConns.
+2021-07-26 10:58:04.613 [INFO ] [Linkis-Default-Scheduler-Thread-1       ] c.w.w.l.e.s.s.DefaultEngineConnResourceService (40) [info] - Try to initialize all versions of sparkEngineConn.
+2021-07-26 10:58:04.622 [ERROR] [Linkis-Default-Scheduler-Thread-1       ] c.w.w.l.e.s.l.DefaultEngineConnBmlResourceGenerator (57) [error] - Generate dir : /data/apps/dss-stack/linkis/lib/linkis-engineconn-plugins/spark/dist/v2.4.3 error, msg : /data/apps/dss-stack/linkis/lib/linkis-engineconn-plugins/spark/dist/v2.4.3/conf.zip (Permission denied) java.io.FileNotFoundException: /data/apps/dss-stack/linkis/lib/linkis-engineconn-plugins/spark/dist/v2.4.3/conf.zip (Permission denied)
+	at java.io.FileOutputStream.open0(Native Method) ~[?:1.8.0_292]
+	at java.io.FileOutputStream.open(FileOutputStream.java:270) ~[?:1.8.0_292]
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:213) ~[?:1.8.0_292]
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:162) ~[?:1.8.0_292]
+	at com.webank.wedatasphere.linkis.common.utils.ZipUtils$$anonfun$fileToZip$1.apply$mcV$sp(ZipUtils.scala:132) ~[linkis-common-1.0.1.jar:?]
+	at com.webank.wedatasphere.linkis.common.utils.ZipUtils$$anonfun$fileToZip$1.apply(ZipUtils.scala:131) ~[linkis-common-1.0.1.jar:?]
+	at com.webank.wedatasphere.linkis.common.utils.ZipUtils$$anonfun$fileToZip$1.apply(ZipUtils.scala:131) ~[linkis-common-1.0.1.jar:?]
+	at com.webank.wedatasphere.linkis.common.utils.Utils$.tryFinally(Utils.scala:60) ~[linkis-common-1.0.1.jar:?]
+	at com.webank.wedatasphere.linkis.common.utils.ZipUtils$.fileToZip(ZipUtils.scala:150) ~[linkis-common-1.0.1.jar:?]
+	at com.webank.wedatasphere.linkis.engineplugin.server.localize.DefaultEngineConnBmlResourceGenerator$$anonfun$com$webank$wedatasphere$linkis$engineplugin$server$localize$DefaultEngineConnBmlResourceGenerator$$generateDir$1.apply(DefaultEngineConnBmlResourceGenerator.scala:60) ~[linkis-engineconn-plugin-server-1.0.1.jar:?]
+	at com.webank.wedatasphere.linkis.engineplugin.server.localize.DefaultEngineConnBmlResourceGenerator$$anonfun$com$webank$wedatasphere$linkis$engineplugin$server$localize$DefaultEngineConnBmlResourceGenerator$$generateDir$1.apply(DefaultEngineConnBmlResourceGenerator.scala:51) ~[linkis-engineconn-plugin-server-1.0.1.jar:?]
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234) ~[scala-library-2.11.12.jar:?]
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234) ~[scala-library-2.11.12.jar:?]
+	at scala.collection.IndexedSeqOptimized$class.foreach(IndexedSeqOptimized.scala:33) ~[scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:186) ~[scala-library-2.11.12.jar:?]
+	at scala.collection.TraversableLike$class.map(TraversableLike.scala:234) ~[scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.ArrayOps$ofRef.map(ArrayOps.scala:186) ~[scala-library-2.11.12.jar:?]
+	at com.webank.wedatasphere.linkis.engineplugin.server.localize.DefaultEngineConnBmlResourceGenerator.com$webank$wedatasphere$linkis$engineplugin$server$localize$DefaultEngineConnBmlResourceGenerator$$generateDir(DefaultEngineConnBmlResourceGenerator.scala:51) ~[linkis-engineconn-plugin-server-1.0.1.jar:?]
+	at com.webank.wedatasphere.linkis.engineplugin.server.localize.DefaultEngineConnBmlResourceGenerator$$anonfun$generate$1$$anonfun$apply$1.apply(DefaultEngineConnBmlResourceGenerator.scala:34) ~[linkis-engineconn-plugin-server-1.0.1.jar:?]
+	at com.webank.wedatasphere.linkis.engineplugin.server.localize.DefaultEngineConnBmlResourceGenerator$$anonfun$generate$1$$anonfun$apply$1.apply(DefaultEngineConnBmlResourceGenerator.scala:34) ~[linkis-engineconn-plugin-server-1.0.1.jar:?]
+	at com.webank.wedatasphere.linkis.common.utils.Utils$.tryCatch(Utils.scala:39) [linkis-common-1.0.1.jar:?]
+	at com.webank.wedatasphere.linkis.engineplugin.server.localize.DefaultEngineConnBmlResourceGenerator$$anonfun$generate$1.apply(DefaultEngineConnBmlResourceGenerator.scala:35) [linkis-engineconn-plugin-server-1.0.1.jar:?]
+	at com.webank.wedatasphere.linkis.engineplugin.server.localize.DefaultEngineConnBmlResourceGenerator$$anonfun$generate$1.apply(DefaultEngineConnBmlResourceGenerator.scala:30) [linkis-engineconn-plugin-server-1.0.1.jar:?]
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234) [scala-library-2.11.12.jar:?]
+	at scala.collection.TraversableLike$$anonfun$map$1.apply(TraversableLike.scala:234) [scala-library-2.11.12.jar:?]
+	at scala.collection.IndexedSeqOptimized$class.foreach(IndexedSeqOptimized.scala:33) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:186) [scala-library-2.11.12.jar:?]
+	at scala.collection.TraversableLike$class.map(TraversableLike.scala:234) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.ArrayOps$ofRef.map(ArrayOps.scala:186) [scala-library-2.11.12.jar:?]
+	at com.webank.wedatasphere.linkis.engineplugin.server.localize.DefaultEngineConnBmlResourceGenerator.generate(DefaultEngineConnBmlResourceGenerator.scala:30) [linkis-engineconn-plugin-server-1.0.1.jar:?]
+	at com.webank.wedatasphere.linkis.engineplugin.server.service.DefaultEngineConnResourceService$$anon$1$$anonfun$run$2$$anonfun$apply$1.apply$mcV$sp(DefaultEngineConnResourceService.scala:84) [linkis-engineconn-plugin-server-1.0.1.jar:?]
+	at com.webank.wedatasphere.linkis.engineplugin.server.service.DefaultEngineConnResourceService$$anon$1$$anonfun$run$2$$anonfun$apply$1.apply(DefaultEngineConnResourceService.scala:82) [linkis-engineconn-plugin-server-1.0.1.jar:?]
+	at com.webank.wedatasphere.linkis.engineplugin.server.service.DefaultEngineConnResourceService$$anon$1$$anonfun$run$2$$anonfun$apply$1.apply(DefaultEngineConnResourceService.scala:82) [linkis-engineconn-plugin-server-1.0.1.jar:?]
+	at com.webank.wedatasphere.linkis.common.utils.Utils$.tryCatch(Utils.scala:39) [linkis-common-1.0.1.jar:?]
+	at com.webank.wedatasphere.linkis.common.utils.Utils$.tryAndError(Utils.scala:96) [linkis-common-1.0.1.jar:?]
+	at com.webank.wedatasphere.linkis.engineplugin.server.service.DefaultEngineConnResourceService$$anon$1$$anonfun$run$2.apply(DefaultEngineConnResourceService.scala:82) [linkis-engineconn-plugin-server-1.0.1.jar:?]
+	at com.webank.wedatasphere.linkis.engineplugin.server.service.DefaultEngineConnResourceService$$anon$1$$anonfun$run$2.apply(DefaultEngineConnResourceService.scala:81) [linkis-engineconn-plugin-server-1.0.1.jar:?]
+	at scala.collection.IndexedSeqOptimized$class.foreach(IndexedSeqOptimized.scala:33) [scala-library-2.11.12.jar:?]
+	at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:186) [scala-library-2.11.12.jar:?]
+	at com.webank.wedatasphere.linkis.engineplugin.server.service.DefaultEngineConnResourceService$$anon$1.run(DefaultEngineConnResourceService.scala:81) [linkis-engineconn-plugin-server-1.0.1.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) [?:1.8.0_292]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) [?:1.8.0_292]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) [?:1.8.0_292]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) [?:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [?:1.8.0_292]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [?:1.8.0_292]
+	at java.lang.Thread.run(Thread.java:748) [?:1.8.0_292]
+
+```

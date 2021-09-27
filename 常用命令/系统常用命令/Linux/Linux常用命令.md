@@ -135,6 +135,9 @@ netstat -ntulp
 [17:18:40][root@pta-23b7fdb2a2b2407f:~]# netstat -ntulp|grep 127.0.0.*|grep python
 [17:19:10][root@pta-23b7fdb2a2b2407f:~]# ps aux|grep 13386
 [17:19:18][root@pta-23b7fdb2a2b2407f:~]# kill -9 13386
+
+# 根据进程名称杀进程
+ps auxf|grep Exchangis|awk '{print $2}'|xargs kill -term
 ```
 
 # 文件
@@ -310,6 +313,11 @@ https://blog.basilediougoant.com/2016/02/06/how-to-pass-an-array-to-mysql-stored
 ```sql
 mysql -umysqlusername -pmysqlpass databasename -B -e "select * from \`tablename\`;" | sed 's/\t/","/g;s/^/"/;s/$/"/;s/\n//g' > mysql_exported_table.csv
 ```
+## mysql 导出指定表的数据
+
+```sql
+ mysqldump -hhost  -P3306 -uuser -ppwd database `cat table.txt` > table.sql
+```
 
 https://stackoverflow.com/questions/16834880/mysql-export-resultset-as-csv-from-remote-server
 
@@ -325,7 +333,15 @@ ls csv | xargs -i wc -l csv/{$1}/江苏.csv | xargs -i ${1} | sum
 
 # 将不同目录的git migration文件挪动到同一个下面注意会有同名文件删除
 git status|grep migrations |xargs -I file mv file old_migrations/
+
+# 创建附注Tag
+git tag -a v0.1.2 -m "0.1.2版本"
+
+# 指定ssh key 进行拉取
+GIT_SSH_COMMAND='ssh -i ~/.ssh/id_rsa -o IdentitiesOnly=yes' git push origin master
 ```
+
+
 
 # 查看mysql死锁进程并杀掉
 
@@ -728,6 +744,28 @@ https://blog.csdn.net/weiweiliulu/article/details/103990458
 
 # docker
 
+docker stop $(docker ps|awk '{print $1}')
+
 docker rm -f $(docker ps -a |  grep "dockercompose*"  | awk '{print $1}')
 
 docker network rm  $(docker network ls |  grep "docker-compose*"  | awk '{print $1}')
+
+# 查看正在运行的进程的输出
+
+```sh
+# 您可以通过proc文件系统访问输出。
+
+tail -f /proc/<pid>/fd/1
+# 1= stdout，2= stderr
+```
+
+https://unix.stackexchange.com/questions/58550/how-to-view-the-output-of-a-running-process-in-another-bash-session
+
+
+# 拷贝一个文件中相关行到另外一个
+
+```sh
+sed -n '10,15p' file1.txt > file2.txt
+```
+
+https://stackoverflow.com/questions/47298469/how-to-copy-lines-10-to-15-of-a-file-into-another-file-in-unix

@@ -39,6 +39,20 @@ https://segmentfault.com/a/1190000014714360
 
 # 反向生成模型
 
+Warning, you may end up overwriting your JetStream or any other scaffolding models. take backup of them before overwriting them.
+
+If you are using MySQL and Laravel 5.1 or above you can use php artisan code:models from this package: reliese/laravel. All you need to do is:
+
+> composer require reliese/laravel
+Add the service provider to your config/app.php file Reliese\Coders\CodersServiceProvider::class
+Publish the config file with
+> php artisan vendor:publish --tag=reliese-models
+Make sure your database is correctly configured in config/database.php and .env files.
+And finally issue the command:
+> php artisan code:models
+
+
+
 https://stackoverflow.com/questions/30560485/create-models-from-database-in-laravel-5
 
 https://www.wj0511.com/site/detail.html?id=203

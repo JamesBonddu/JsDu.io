@@ -1,0 +1,5 @@
+# 构建php7.4-composer镜像
+docker build -t hospital:0.0.1 .
+
+dc exec app php artisan admin:install
+dc exec app php artisan admin:publish

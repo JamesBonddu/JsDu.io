@@ -1,0 +1,40 @@
+version: '3.6'
+services:
+
+mysqldbserver:
+  container_name: kafka-manager-web-mysql
+  image: kafka-manager-web-mysql:5.7.32
+  build:
+    context: .
+    dockerfile: docker/mysql/Dockerfile
+  volumes:
+    - ~/mysql/master/my.cnf:/etc/my.cnf
+    - ~/mysql/master/data:/var/lib/mysql
+  ports:
+    - 3306:3306
+  environment:
+    MYSQL_ROOT_PASSWORD: 123456
+    MYSQL_DATABASE: logi_kafka_manager
+    MYSQL_USER: admin
+    MYSQL_PASSWORD: 123456
+  restart: always
+  networks: 
+    - net
+
+
+  kafka-manager-web:
+   container_name: kafka-manager-web
+   image: kafka-manager-web:2.2.0
+  build:
+    context: .
+    dockerfile: Dockerfile
+  ports:
+    - 8080:8080
+  restart: always
+  networks: 
+    - net
+
+ networks:
+   net:
+     external:
+       name: kafka

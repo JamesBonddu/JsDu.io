@@ -207,4 +207,10 @@ https://github.com/lihaoyi/macropy
 https://python3-cookbook.readthedocs.io/zh_CN/latest/c10/p11_load_modules_from_remote_machine_by_hooks.html
 
 https://python3-cookbook.readthedocs.io/zh_CN/latest/c10/p12_patching_modules_on_import.html
->>>>>>> c2a1203da667ebeb9f0cd68b9a536f88b9e69f7c
+
+
+
+# wtf python
+
+窥孔优化(peephole optimization)
+https://en.wikipedia.org/wiki/Peephole_optimization

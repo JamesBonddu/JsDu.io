@@ -1,0 +1,71 @@
+[0m2021.07.12 20:04:33 INFO  Started: Metals version 0.10.4 in workspace 'D:\projects\funny\JsDu.io' for client Visual Studio Code 1.58.0.[0m
+[0m2021.07.12 20:04:35 INFO  time: initialize in 1.49s[0m
+[0m2021.07.12 20:04:35 WARN  Build server is not auto-connectable.[0m
+[0m2021.07.12 20:04:35 WARN  no build tool detected in workspace 'D:\projects\funny\JsDu.io'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+ÆßÔÂ 13, 2021 11:01:10 ÉÏÎç org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+ÐÅÏ¢: Unsupported notification method: $/setTrace
+ÆßÔÂ 13, 2021 11:12:05 ÉÏÎç org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+ÐÅÏ¢: Unsupported notification method: $/setTrace
+ÆßÔÂ 13, 2021 11:16:20 ÉÏÎç org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+ÐÅÏ¢: Unsupported notification method: $/setTrace
+ÆßÔÂ 13, 2021 2:41:54 ÏÂÎç org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+ÐÅÏ¢: Unsupported notification method: $/setTrace
+ÆßÔÂ 13, 2021 7:40:12 ÏÂÎç org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+ÐÅÏ¢: Unsupported notification method: $/setTrace
+[0m2021.07.19 16:51:57 INFO  Started: Metals version 0.10.4 in workspace 'D:\projects\funny\JsDu.io' for client Visual Studio Code 1.58.2.[0m
+[0m2021.07.19 16:52:03 INFO  time: initialize in 6.07s[0m
+[0m2021.07.19 16:52:04 WARN  Build server is not auto-connectable.[0m
+[0m2021.07.19 16:52:04 WARN  no build tool detected in workspace 'D:\projects\funny\JsDu.io'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+ÆßÔÂ 19, 2021 4:52:39 ÏÂÎç org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+ÐÅÏ¢: Unsupported notification method: $/setTrace
+[0m2021.07.20 21:20:12 INFO  shutting down Metals[0m
+[0m2021.07.21 09:49:45 INFO  Started: Metals version 0.10.4 in workspace 'D:\projects\funny\JsDu.io' for client Visual Studio Code 1.58.2.[0m
+[0m2021.07.21 09:49:51 INFO  time: initialize in 5.6s[0m
+[0m2021.07.21 09:49:51 WARN  Build server is not auto-connectable.[0m
+[0m2021.07.21 09:49:51 WARN  no build tool detected in workspace 'D:\projects\funny\JsDu.io'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+ÆßÔÂ 21, 2021 10:20:47 ÉÏÎç org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+ÐÅÏ¢: Unsupported notification method: $/setTrace
+ÆßÔÂ 21, 2021 10:20:57 ÉÏÎç org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+ÐÅÏ¢: Unsupported notification method: $/setTrace
+ÆßÔÂ 22, 2021 1:28:27 ÏÂÎç org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+ÐÅÏ¢: Unsupported notification method: $/setTrace
+ÆßÔÂ 22, 2021 2:58:09 ÏÂÎç org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+ÐÅÏ¢: Unsupported notification method: $/setTrace
+ÆßÔÂ 22, 2021 2:58:52 ÏÂÎç org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+ÐÅÏ¢: Unsupported notification method: $/setTrace
+[0m2021.07.22 17:45:44 INFO  shutting down Metals[0m
+[0m2021.08.02 11:38:35 INFO  Started: Metals version 0.10.4 in workspace 'D:\projects\funny\JsDu.io' for client Visual Studio Code 1.58.2.[0m
+[0m2021.08.02 11:38:43 INFO  time: initialize in 8.22s[0m
+[0m2021.08.02 11:38:44 WARN  Build server is not auto-connectable.[0m
+[0m2021.08.02 11:38:44 WARN  no build tool detected in workspace 'D:\projects\funny\JsDu.io'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+°ËÔÂ 02, 2021 2:10:29 ÏÂÎç org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+ÐÅÏ¢: Unsupported notification method: $/setTrace
+[0m2021.08.27 16:06:00 INFO  Started: Metals version 0.10.4 in workspace 'D:\projects\funny\JsDu.io' for client Visual Studio Code 1.59.0.[0m
+[0m2021.08.27 16:06:05 INFO  time: initialize in 5.6s[0m
+[0m2021.08.27 16:06:05 WARN  Build server is not auto-connectable.[0m
+[0m2021.08.27 16:06:05 WARN  no build tool detected in workspace 'D:\projects\funny\JsDu.io'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.08.27 17:14:35 INFO  shutting down Metals[0m
+[0m2021.08.30 18:37:46 INFO  Started: Metals version 0.10.4 in workspace 'D:\projects\funny\JsDu.io' for client Visual Studio Code 1.59.1.[0m
+[0m2021.08.30 18:37:49 INFO  time: initialize in 3.08s[0m
+[0m2021.08.30 18:37:50 WARN  Build server is not auto-connectable.[0m
+[0m2021.08.30 18:37:50 WARN  no build tool detected in workspace 'D:\projects\funny\JsDu.io'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+°ËÔÂ 31, 2021 9:16:00 ÉÏÎç org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+ÐÅÏ¢: Unsupported notification method: $/setTrace
+[0m2021.08.31 09:47:21 INFO  Started: Metals version 0.10.4 in workspace 'D:\projects\funny\JsDu.io' for client Visual Studio Code 1.59.1.[0m
+[0m2021.08.31 09:47:26 INFO  Started: Metals version 0.10.4 in workspace 'D:\projects\funny\JsDu.io' for client Visual Studio Code 1.59.1.[0m
+[0m2021.08.31 09:47:32 INFO  time: initialize in 5.49s[0m
+[0m2021.08.31 09:47:32 WARN  Build server is not auto-connectable.[0m
+[0m2021.08.31 09:47:32 WARN  no build tool detected in workspace 'D:\projects\funny\JsDu.io'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.08.31 09:47:39 INFO  Started: Metals version 0.10.4 in workspace 'D:\projects\funny\JsDu.io' for client Visual Studio Code 1.59.1.[0m
+[0m2021.08.31 09:47:44 INFO  time: initialize in 5.38s[0m
+[0m2021.08.31 09:47:44 WARN  Build server is not auto-connectable.[0m
+[0m2021.08.31 09:47:44 WARN  no build tool detected in workspace 'D:\projects\funny\JsDu.io'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.08.31 11:06:21 INFO  Started: Metals version 0.10.4 in workspace 'D:\projects\funny\JsDu.io' for client Visual Studio Code 1.59.1.[0m
+[0m2021.08.31 11:06:29 INFO  time: initialize in 7.76s[0m
+[0m2021.08.31 11:06:29 WARN  Build server is not auto-connectable.[0m
+[0m2021.08.31 11:06:29 WARN  no build tool detected in workspace 'D:\projects\funny\JsDu.io'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.08.31 11:08:50 INFO  shutting down Metals[0m
+[0m2021.09.22 17:29:46 INFO  Started: Metals version 0.10.4 in workspace 'D:\projects\funny\JsDu.io' for client Visual Studio Code 1.60.1.[0m
+[0m2021.09.22 17:29:51 INFO  time: initialize in 4.58s[0m
+[0m2021.09.22 17:29:51 WARN  Build server is not auto-connectable.[0m
+[0m2021.09.22 17:29:51 WARN  no build tool detected in workspace 'D:\projects\funny\JsDu.io'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
