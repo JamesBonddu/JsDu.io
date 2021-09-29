@@ -230,15 +230,5 @@ mvn clean install
 [INFO] Installing /data/code/DataSphereStudio/dss-appjoint-auth/target/dss-appjoint-auth-0.9.1-javadoc.jar to /root/.m2/repository/com/webank/wedatasphere/dss/dss-appjoint-auth/0.9.1/dss-appjoint-auth-0.9.1-javadoc.jar
 ```
 
-## 安装hadoop
-
-https://linuxconfig.org/how-to-install-hadoop-on-redhat-8-linux
 
 
-https://hadoop.apache.org/
-
-https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html
-
-## k8s install hadoop
-
-https://github.com/xingtanzjr/hadoop-on-kubernetes

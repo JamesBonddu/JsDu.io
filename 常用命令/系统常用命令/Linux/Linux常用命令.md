@@ -742,9 +742,28 @@ https://www.cnblogs.com/yingsong/p/9468260.html
 
 https://blog.csdn.net/weiweiliulu/article/details/103990458
 
+# k8s
+
+```sh
+# 删除k8s
+
+kubeadm reset -f
+rm -rf /etc/cni /etc/kubernetes /var/lib/dockershim /var/lib/etcd /var/lib/kubelet /var/run/kubernetes ~/.kube/*
+iptables -F && iptables -X
+iptables -t nat -F && iptables -t nat -X
+iptables -t raw -F && iptables -t raw -X
+iptables -t mangle -F && iptables -t mangle -X
+systemctl restart docker
+```
+
+https://stackoverflow.com/questions/44698283/how-to-completely-uninstall-kubernetes
+
 # docker
 
 docker stop $(docker ps|awk '{print $1}')
+
+docker rm -f $(docker ps -a | awk '{print $1}')
+docker network rm  $(docker network ls | awk '{print $1}')
 
 docker rm -f $(docker ps -a |  grep "dockercompose*"  | awk '{print $1}')
 
