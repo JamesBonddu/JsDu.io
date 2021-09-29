@@ -73,3 +73,16 @@ functuion installKubctl() {
 [尝试搭建一个k8s集群体验环境](https://labs.play-with-k8s.com/)
 
 [kubernetes 阿里云镜像](http://ljchen.net/2018/10/23/%E5%9F%BA%E4%BA%8E%E9%98%BF%E9%87%8C%E4%BA%91%E9%95%9C%E5%83%8F%E7%AB%99%E5%AE%89%E8%A3%85kubernetes/)
+
+
+# K8s 安装
+
+https://www.kuboard.cn/install/install-k8s.html#%E7%A7%BB%E9%99%A4worker%E8%8A%82%E7%82%B9%E5%B9%B6%E9%87%8D%E8%AF%95
+
+## k8s 搭建hadoop集群
+
+https://bbs.huaweicloud.com/blogs/127507
+
+# YuniKorn Cloudera调度
+
+https://www.iteblog.com/archives/2582.html

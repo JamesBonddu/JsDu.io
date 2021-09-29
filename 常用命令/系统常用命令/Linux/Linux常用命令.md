@@ -758,6 +758,8 @@ systemctl restart docker
 
 https://stackoverflow.com/questions/44698283/how-to-completely-uninstall-kubernetes
 
+https://www.kuboard.cn/install/install-k8s.html#%E7%A7%BB%E9%99%A4worker%E8%8A%82%E7%82%B9%E5%B9%B6%E9%87%8D%E8%AF%95
+
 # docker
 
 docker stop $(docker ps|awk '{print $1}')

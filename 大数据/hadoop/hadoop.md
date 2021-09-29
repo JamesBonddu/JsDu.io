@@ -127,6 +127,17 @@ https://www.cnblogs.com/cainiao-chuanqi/p/11420490.html
 
 # hadoop集群搭建
 
+## k8s 搭建hadoop集群
+
+https://bbs.huaweicloud.com/blogs/127507
+
+https://github.com/Alanthur/hadoop-kubernetes
+
+https://github.com/ifilonenko/hadoop-kerberos-helm
+
+https://github.com/cclient/kubernetes-hadoop
+
+https://github.com/keremceliker/Deploy-a-Hadoop-Big-Data-Cluster-using-Cloudera-CDH-6.x-on-Docker-Container
 
 配置文件修改
 
