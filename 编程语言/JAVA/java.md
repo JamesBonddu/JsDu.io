@@ -534,6 +534,20 @@ https://blog.csdn.net/qq_44871442/article/details/102590978
 
 https://blog.csdn.net/sun_shine56/article/details/86621481
 
+
+# Synchronized的使用
+
+在编程中，经常需要用到同步，这里讲一下synchronized关键字的相关知识
+
+1.使用方式
+修饰一个代码块，被修饰的代码块称为同步代码块，作用范围是大括号{}括起来的代码；
+修饰一个方法，被修饰的方法称为同步方法，其作用范围是整个方法；
+修改一个静态方法，作用范围是整个静态方法；
+修改一个类，作用范围是synchronized后面括号括起来的部分。
+
+
+https://blog.csdn.net/qq_38011415/article/details/89047812
+
 # Collection<? extends T> 和Collection<T>的区别
 
 ```java

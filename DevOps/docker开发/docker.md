@@ -257,3 +257,22 @@ https://docs.docker.com/compose/compose-file/compose-file-v3/#driver-1
 https://stackoverflow.com/questions/61949319/docker-compose-giving-static-ip-in-network-mode-bridge
 
 https://blog.csdn.net/weixin_43931625/article/details/108059916
+
+
+# dokcer namespace
+
+- UTS namespace
+UTS(UNIX Time-sharing System)namespace提供了主机名与域名的隔离，这样每个docke容器就可以拥有独立的主机名和域名了，在网络上可以被视为一个独立的节点，而非宿主机上的一个进程。docker中，每个镜像基本都以自身所提供的服务名称来命名镜像的hostname，且不会对宿主机产生任何影响，其原理就是使用了UTS namespace.
+
+
+- 进程间通信(Inter-Process Communication，IPC)涉及的IPC资源包括常见的信号量、消息队列和共享内存。申请IPC资源就申请了一个全局唯一的32位ID，所以IPC namespace中实际上包含了系统IPC标识符以及实现POSIX消息队列的文件系统。在同一个IPC namespace下的进程彼此可见，不同IPC namespace下的进程则互相不可见。
+目前使用IPC namespace机制的系统不多，其中比较有名的有PostgreSQL。Docker当前也使用IPC namespace实现了容器与宿主机、容器与容器之间的IPC隔离。
+
+- PID namespace
+PID namespace隔离非常实用，它对进程PID重新标号，即两个不同namespace下的进程可以有相同的PID。每个PID namespace都有自己的计数程序。内核为所有的PID namespace维护了一个树状结构，最顶层的是系统初始时创建的，被称为root namespace，它创建的心PID namespace被称为child namespace(树的子节点)，洱源县的PID namespace就是新创建的PID namespace的parent namespace(树的父节点)。通过这种方式，不同的PID namespace会形成一个层级体系。所属的父节点可以看到子节点中的进程，并可以通过信号等方式对子节点中的进程产生影响。
+
+
+
+http://www.yunweipai.com/34731.html
+
+https://www.cnblogs.com/sammyliu/p/5878973.html

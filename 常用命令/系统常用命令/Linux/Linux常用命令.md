@@ -790,3 +790,8 @@ sed -n '10,15p' file1.txt > file2.txt
 ```
 
 https://stackoverflow.com/questions/47298469/how-to-copy-lines-10-to-15-of-a-file-into-another-file-in-unix
+
+
+# yarn install
+
+https://linuxize.com/post/how-to-install-yarn-on-ubuntu-20-04/

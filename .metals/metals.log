@@ -69,3 +69,13 @@
 [0m2021.09.22 17:29:51 INFO  time: initialize in 4.58s[0m
 [0m2021.09.22 17:29:51 WARN  Build server is not auto-connectable.[0m
 [0m2021.09.22 17:29:51 WARN  no build tool detected in workspace 'D:\projects\funny\JsDu.io'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.10.13 09:07:35 INFO  Started: Metals version 0.10.4 in workspace 'D:\projects\funny\JsDu.io' for client Visual Studio Code 1.61.0.[0m
+[0m2021.10.13 09:07:42 INFO  time: initialize in 7.39s[0m
+[0m2021.10.13 09:07:42 WARN  Build server is not auto-connectable.[0m
+[0m2021.10.13 09:07:42 WARN  no build tool detected in workspace 'D:\projects\funny\JsDu.io'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.10.15 09:41:21 INFO  Started: Metals version 0.10.4 in workspace 'D:\projects\funny\JsDu.io' for client Visual Studio Code 1.61.0.[0m
+[0m2021.10.15 09:41:28 INFO  time: initialize in 6.54s[0m
+[0m2021.10.15 09:41:28 WARN  Build server is not auto-connectable.[0m
+[0m2021.10.15 09:41:28 WARN  no build tool detected in workspace 'D:\projects\funny\JsDu.io'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+Ê®ÔÂ 18, 2021 3:52:39 ÏÂÎç org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+ÐÅÏ¢: Unsupported notification method: $/setTrace

@@ -10,6 +10,10 @@ https://github.com/lauris/awesome-scala
 
 https://docs.scala-lang.org/tour/tour-of-scala.html
 
+# scala 练习网站
+
+https://www.scala-exercises.org/
+
 # 安装
 除了管理 JVM，它还安装了有用的命令行工具： Ammonite、 coursier、scala（Scala REPL 和脚本运行程序）、scalac（Scala 编译器）、 sbt和 scalafmt。
 
@@ -134,3 +138,91 @@ https://stackoverflow.com/questions/25635803/difference-between-mapvalues-and-tr
 # scala map和mapValues
 
 https://blog.bruchez.name/posts/mapmap-vs-mapmapvalues/
+
+
+# Scala 的 groupBy 身份如何工作？
+
+"aaabbbccccdd"
+
+val list = str.groupBy(identity).toList.sortBy(_._1).map(_._2)
+让我们逐项逐项进行。第一个是 groupBy，它将使用鉴别器函数传递的键列表对您的字符串进行分区，在您的情况下是身份。鉴别器函数将应用于屏幕中的每个字符，所有返回相同结果的字符将被组合在一起。如果我们想将字母 a 与其他字母分开，我们可以将其x => x == 'a'用作我们的鉴别器函数。这会将您的字符串字符分组到映射中此函数的返回值（真或假）中：
+
+ Map(false -> bbbccccdd, true -> aaa)
+通过使用identity，这是一种“不错”的说法x => x，我们得到了一个地图，其中每个字符在地图中被分开，在您的情况下：
+
+Map(c -> cccc, a -> aaa, d -> dd, b -> bbb)
+然后，我们在地图转换成一个元组列表(char,String) 与toList。
+
+按字符排序，sortBy并保留字符串以map获得最终结果。
+
+https://stackoverflow.com/questions/19165977/how-does-scalas-groupby-identity-work
+
+# scala 数据类型
+
+数据类型|	描述
+-|-
+Byte	8位有符号补码整数。|数值区间为 -128 到 127
+Short	16位有符号补码整数。|数值区间为 -32768 到 32767
+Int	32位有符号补码整数。|数值区间为 -2147483648 到 2147483647
+Long	64位有符号补码整数。|数值区间为 -9223372036854775808 到 9223372036854775807
+Float	32 位| IEEE 754 标准的单精度浮点数
+Double	64 位| IEEE 754 标准的双精度浮点数
+Char	16位无符号Unicode字符| 区间值为 U+0000 到 U+FFFF
+String	|字符序列
+Boolean	|true或false
+Unit	|表示无值，和其他语言中void等同。用作不返回任何结果的方法的结果类型。Unit只有一个实例值，写成()。
+Null	|null 或空引用
+Nothing	|Nothing类型在Scala的类层级的最底端；它是任何其他类型的子类型。
+Any	|Any是所有其他类的超类
+AnyRef	|AnyRef类是Scala里所有引用类(reference class)的基类
+
+# scala for 循环
+
+```scala
+// i to j 
+var a = 0;
+for( a <- 1 to 10){
+  println("Value of a: " + a);
+}
+
+// until 循环
+for( a <- 1 until 10){
+  println("Value of a: " + a);
+}
+
+// 循环集合
+val numList = List(1,2,3,4,5,6,7,8,9,10);
+for( a <- numList ){
+  println("Value of a: " + a);
+}
+
+// 在循环中进行过滤
+/*
+for( var x <- List
+      if condition1; if condition2...
+   ){
+   statement(s);
+}
+*/
+for( a <- umList if a != 3; if a < 4){
+  println("Value of a: " + a);
+}
+```
+
+# scala 方法与函数
+
+Scala 有方法与函数，二者在语义上的区别很小。Scala 方法是类的一部分，而函数是一个对象可以赋值给一个变量。换句话来说在类中定义的函数即是方法。
+
+Scala 中的方法跟 Java 的类似，方法是组成类的一部分。
+
+Scala 中的函数则是一个完整的对象，Scala 中的函数其实就是继承了 Trait 的类的对象。
+
+Scala 中使用 val 语句可以定义函数，def 语句定义方法。
+
+```scala
+def functionName ([参数列表]) : [return type] = {
+   function body
+   return [expr]
+}
+```
+
