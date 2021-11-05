@@ -326,3 +326,13 @@ http://cdh01/cm6.3.1
 
 
 https://www.blog.kamisamak.com/cloudera-cdh-6-3-2-centos7%e7%a6%bb%e7%ba%bf%e5%ae%89%e8%a3%85/
+
+# CDH 上再安装其它版本的spark
+
+https://blog.csdn.net/data2tech/article/details/117283334
+
+https://www.cndba.cn/dave/article/3392
+
+# Alluxio集群搭建并整合CDH
+
+https://www.cnblogs.com/daemonyue/p/12979054.html

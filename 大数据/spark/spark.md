@@ -10,6 +10,10 @@ https://repo1.maven.org/maven2/org/apache/hive/hive-jdbc/
 
 https://spark.apache.org/
 
+## spark download
+
+https://archive.apache.org/dist/spark/spark-2.4.0/
+
 ## spark源码解析
 
 https://www.cnblogs.com/qingyunzong/p/8945933.html
@@ -215,3 +219,124 @@ $ ./bin/spark-submit --class my.main.Class \
 ```
 
 https://spark.apache.org/docs/latest/running-on-yarn.html
+
+
+# spark on yarn
+
+
+按照Spark应用程序中的driver分布方式不同，Spark on YARN有两种模式： yarn-client模式、yarn-cluster模式。
+
+https://developer.aliyun.com/article/25468
+
+# spark的任务提交流程
+
+
+https://www.cnblogs.com/xing901022/p/9146767.html
+
+https://blog.csdn.net/NextAction/article/details/104219326
+
+https://juejin.cn/post/6998087803821096991
+
+# spark 集群模式
+
+
+以yarn调度和以k8s进行调度
+
+https://cloud.tencent.com/developer/article/1738761
+
+https://spark.apache.org/docs/latest/running-on-kubernetes.html
+
+https://jimmysong.io/kubernetes-handbook/usecases/running-spark-with-kubernetes-native-scheduler.html
+
+https://github.com/GoogleCloudPlatform/spark-on-k8s-operator
+
+https://developer.aliyun.com/article/697793
+
+https://www.shangmayuan.com/a/9ebf740a72184613a3c73018.html
+
+
+spark on k8s
+
+https://xiaoxubeii.github.io/articles/practice-of-spark-on-kubernetes/
+
+https://github.com/GoogleCloudPlatform/spark-on-k8s-operator/blob/master/docs/design.md
+
+https://developers.weixin.qq.com/community/develop/article/doc/0004486f288110a898cb012fa51c13
+
+https://ieevee.com/tech/2017/08/31/spark-on-k8s.html
+
+
+https://yunikorn.apache.org/docs/user_guide/workloads/run_spark/
+
+
+# spark-jar冲突解决; 三方包与spark集群jar包冲突问题
+
+出现该冲突的原因是JVM加载jar，如果有多个版本的jar，默认会先使用spark集群内部的，JVM一旦加载后，就不会进行第二次加载，如果运用了高版本的jar的一些特性，也就会无法运行程序。
+
+分析local模式能运行，yarn模式不能运行的原因是，用户提交的protobuf-java-3.0.0.jar与SPARK_HOME/lib下的protobuf-java-2.5.0.jar冲突了，默认会优先加载SPARK_HOME/lib下的jar，而不是你程序的jar，所以会发生“ NoSuchMethodError”。
+
+解决方法：提交参数添加 --conf spark.executor.extraClassPath=$user_jars
+
+
+在spark程序中，经常需要一些外部的依赖（比如Zookeper、libthrift等），这些依赖可能本身在spark或者Hadoop客户端的jar包中就已经存在。当用户程序依赖的jar包版本和集群上spark/hadoop客户端依赖的jar包版本不一致时，可能会出现编译失败，或者执行过程中加载类失败的问题。
+
+解决
+分两种情况：
+
+程序本身不依赖特定版本
+用集群中存在的jar包就可以：这种情况可以在编译时去掉程序本身对这个jar包的依赖。参考POM文件示例中的在依赖时加上：<scope>provided</scope>
+
+程序需要依赖特定版本
+一般是集群中的该jar包版本较低，无法满足需求。这种情况可以利用maven-shade-plugin插件将冲突Jar包中的类重命名，在程序中调用重命名后的类，避免和集群上低版本的jar包冲突。
+
+作者：西二旗老司机
+链接：https://www.jianshu.com/p/f26d4f35ecd7
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+
+https://whisperloli.github.io/2020/04/13/spark_hole_two.html
+
+
+https://blog.csdn.net/u013200380/article/details/108509716
+
+https://bbs.huaweicloud.com/blogs/detail/258449
+
+# spark 依赖包加载顺序和冲突解决
+
+我们知道Spark application运行加载依赖有三个地方：
+
+SystemClasspath 
+- -- Spark安装时候提供的依赖包 【SystemClassPath】
+- Spark-submit --jars 提交的依赖包                               【UserClassPath】
+- Spark-submit app.jar或者shadowJar打的jar               【UserClassPath】
+
+Spark 依赖包默认优先级
+通过测试发现class的默认加载顺序如下：
+
+1. SystemClasspath -- Spark安装时候提供的依赖包
+
+2. UserClassPath   -- Spark-submit --jars 提交的依赖包 或用户的app.jar
+
+ 
+
+SystemClasspath 系统安装的包，默认优先使用环境的包，这样更加稳定安全。
+
+spark-submit --jars 在默认spark环境里没有需要的包时，自己上传提供。
+
+
+观察方法： spark-submit 的时候添加参数
+
+--driver-java-options -verbose:class
+
+
+https://blog.csdn.net/adorechen/article/details/90722933
+
+
+# spark 源码
+
+spark.driver.userClassPathFirst
+
+实验性）在驱动程序中加载类时，是否让用户添加的 jar 优先于 Spark 自己的 jar。此功能可用于缓解 Spark 的依赖项和用户依赖项之间的冲突。它目前是一个实验性功能。这仅用于集群模式。
+
+https://spark.apache.org/docs/3.2.0/configuration.html#content

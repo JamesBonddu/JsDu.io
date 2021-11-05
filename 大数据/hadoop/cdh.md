@@ -371,3 +371,17 @@ https://docs.cloudera.com/documentation/enterprise/6/6.3/topics/cm_ig_host_alloc
 https://cloud.tencent.com/developer/news/672556
 
 https://segmentfault.com/a/1190000039279848
+
+
+# CDH 安装自定义的spark
+
+自定义安装CDS spark2.4.3
+
+https://docs.cloudera.com/documentation/spark2/latest/topics/spark2_packaging.html#versions
+
+https://docs.cloudera.com/documentation/spark2/latest/topics/spark2_requirements.html
+
+
+https://cloud.tencent.com/developer/article/1539360
+
+https://support.huaweicloud.com/prtg-cdh-kunpengbds/kunpengsparkcdh632_02_0009.html

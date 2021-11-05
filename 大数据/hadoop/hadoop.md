@@ -161,7 +161,9 @@ Ambari在线安装特别慢，所以使用离线安装，建议使用迅雷下�
 ambari	http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.7.4.0/ambari-2.7.4.0-centos7.tar.gz
 HDP	http://public-repo-1.hortonworks.com/HDP/centos7/3.x/updates/3.1.4.0/HDP-3.1.4.0-centos7-rpm.tar.gz
 HDP-UTILS	http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.22/repos/centos7/HDP-UTILS-1.1.0.22-centos7.tar.gz
-（2021.06.19更新）鉴于有很多用户反映离线包已收费，这里提供一下白度云地址：链接: https://pan.baidu.com/s/1obECabArXjHmZXVuxxpdYQ 提取码: ma4e
+（2021.06.19更新）鉴于有很多用户反映离线包已收费，这里提供一下白度云地址:
+链接: https://pan.baidu.com/s/1obECabArXjHmZXVuxxpdYQ 
+提取码: ma4e
 
 JDK8环境
 

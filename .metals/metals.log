@@ -79,3 +79,5 @@
 [0m2021.10.15 09:41:28 WARN  no build tool detected in workspace 'D:\projects\funny\JsDu.io'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
 й╝тб 18, 2021 3:52:39 обнГ org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 пео╒: Unsupported notification method: $/setTrace
+й╝тб 21, 2021 10:32:51 ионГ org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+пео╒: Unsupported notification method: $/setTrace

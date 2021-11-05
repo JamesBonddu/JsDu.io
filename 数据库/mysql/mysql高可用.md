@@ -32,6 +32,10 @@ https://github.com/sysown/proxysql
 
 https://mp.weixin.qq.com/s/Wxjlg3QNCo09hurS32bRtg
 
+# mysql 高可用docker-compose
+
+https://github.com/garutilorenzo/mysql-ha-docker
+
 ## mysql proxy代理
 
 https://cloud.tencent.com/developer/article/1696210
