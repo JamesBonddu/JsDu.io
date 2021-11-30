@@ -81,3 +81,44 @@
 ÐÅÏ¢: Unsupported notification method: $/setTrace
 Ê®ÔÂ 21, 2021 10:32:51 ÉÏÎç org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 ÐÅÏ¢: Unsupported notification method: $/setTrace
+[0m2021.11.17 20:00:56 INFO  Started: Metals version 0.10.4 in workspace 'D:\projects\funny\JsDu.io' for client Visual Studio Code 1.62.0.[0m
+[0m2021.11.17 20:01:03 INFO  time: initialize in 6.53s[0m
+[0m2021.11.17 20:01:03 WARN  Build server is not auto-connectable.[0m
+[0m2021.11.17 20:01:03 WARN  no build tool detected in workspace 'D:\projects\funny\JsDu.io'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+Ê®Ò»ÔÂ 18, 2021 11:03:14 ÉÏÎç org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+ÐÅÏ¢: Unsupported notification method: $/setTrace
+Ê®Ò»ÔÂ 18, 2021 4:25:49 ÏÂÎç org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleNotification
+¾¯¸æ: Notification threw an exception: {
+  "jsonrpc": "2.0",
+  "method": "metals/didFocusTextDocument",
+  "params": [
+    "untitled:Untitled-1"
+  ]
+}
+java.lang.RuntimeException: java.lang.reflect.InvocationTargetException
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:67)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.notify(GenericEndpoint.java:152)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.handleNotification(RemoteEndpoint.java:220)
+	at org.eclipse.lsp4j.jsonrpc.RemoteEndpoint.consume(RemoteEndpoint.java:187)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.handleMessage(StreamMessageProducer.java:194)
+	at org.eclipse.lsp4j.jsonrpc.json.StreamMessageProducer.listen(StreamMessageProducer.java:94)
+	at org.eclipse.lsp4j.jsonrpc.json.ConcurrentMessageProcessor.run(ConcurrentMessageProcessor.java:113)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint.lambda$null$0(GenericEndpoint.java:65)
+	... 11 more
+Caused by: java.nio.file.FileSystemNotFoundException: Provider "untitled" not installed
+	at java.nio.file.Paths.get(Paths.java:147)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:478)
+	at scala.meta.internal.metals.MetalsEnrichments$XtensionString.toAbsolutePath(MetalsEnrichments.scala:475)
+	at scala.meta.internal.metals.MetalsLanguageServer.didFocus(MetalsLanguageServer.scala:1010)
+	... 16 more
+

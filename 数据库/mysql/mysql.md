@@ -219,4 +219,129 @@ https://blog.csdn.net/rorntuck7/article/details/50699409
 https://cloud.tencent.com/developer/news/458227
 
 https://juejin.im/post/5d7108abe51d453b753a1b37
->>>>>>> c2a1203da667ebeb9f0cd68b9a536f88b9e69f7c
+
+
+
+# mysql 自定义函数
+
+https://blog.csdn.net/weixin_42724467/article/details/88795188
+
+# 调用mysql存储过程和函数
+
+http://c.biancheng.net/view/7996.html
+
+
+# 每行自定义编号
+
+```sql
+SELECT ROW_NUMBER() OVER (ORDER BY
+            FIELD(
+            area,
+            '玄武区',
+            '秦淮区',
+            '建邺区',
+            '鼓楼区',
+            '栖霞区',
+            '雨花台区',
+            '江宁区',
+            '浦口区',
+            '六合区',
+            '溧水区',
+            '高淳区',
+            '江北新区',
+						'合计'
+        )) AS row_cnt,
+        all_tb.area,
+        all_tb.site_cnt,
+        all_tb.total_rooms_all,
+        all_tb.used_rooms_gl,
+        all_tb.available_rooms,
+        all_tb.total_nurse_people,
+        all_tb.other_serve_people,
+        all_tb.total_work_people,
+        all_tb.administrator,
+        all_tb.administrator_phone
+	FROM 
+    (
+        (
+            SELECT
+                a.area,
+                count( a.name ) AS site_cnt,
+                CAST( sum( b.total_rooms_all ) AS SIGNED ) AS 'total_rooms_all',
+                CAST( sum( b.used_rooms_gl ) AS SIGNED ) AS 'used_rooms_gl',
+                CAST( sum( b.available_rooms ) AS SIGNED ) AS 'available_rooms',
+                CAST( sum( b.total_nurse_people ) AS SIGNED ) AS 'total_nurse_people',
+                CAST( sum( b.other_serve_people ) AS SIGNED ) AS 'other_serve_people',
+                CAST( sum( b.total_nurse_people + b.other_serve_people ) AS SIGNED ) AS 'total_work_people',
+                GROUP_CONCAT(COALESCE ( b.administrator, "" ), " " ) AS "administrator",
+                GROUP_CONCAT(COALESCE ( b.administrator_phone, "" ), " " ) AS "administrator_phone"
+            FROM
+                    dwd_isolation_point a
+                    LEFT JOIN dwd_isolation_site_record b ON ( a.area = b.area AND a.name = b.name )
+            WHERE
+                    1 = 1
+                    AND a.is_open = "备用"
+                    AND b.created_at = (
+                        SELECT MAX( t2.created_at )
+                        FROM dwd_isolation_site_record t2
+                        WHERE ( t2.area = a.area AND t2.name = a.name )
+                    )
+            group by a.area
+        ) 
+        UNION
+        (
+            SELECT
+                    "合计" as area,
+                    count( a.name ) AS site_cnt,
+                    CAST( sum( b.total_rooms_all ) AS SIGNED ) AS 'total_rooms_all',
+                    CAST( sum( b.used_rooms_gl ) AS SIGNED ) AS 'used_rooms_gl',
+                    CAST( sum( b.available_rooms ) AS SIGNED ) AS 'available_rooms',
+                    CAST( sum( b.total_nurse_people ) AS SIGNED ) AS 'total_nurse_people',
+                    CAST( sum( b.other_serve_people ) AS SIGNED ) AS 'other_serve_people',
+                    CAST( sum( b.total_nurse_people + b.other_serve_people ) AS SIGNED ) AS 'total_work_people',
+                    "" AS "administrator",
+                    "" AS "administrator_phone"
+            FROM
+                    dwd_isolation_point a
+                    LEFT JOIN dwd_isolation_site_record b ON ( a.area = b.area AND a.name = b.name )
+            WHERE
+                1 = 1
+                AND a.is_open = "备用"
+                AND b.created_at = (
+                    SELECT MAX( t2.created_at )
+                    FROM dwd_isolation_site_record t2
+                    WHERE ( t2.area = a.area AND t2.name = a.name )
+                )
+
+        )
+    ) AS all_tb
+```
+
+https://developer.aliyun.com/article/696685
+
+
+# mysql view视图算法与优化
+
+```sql
+CREATE 
+   [ALGORITHM = {MERGE  | TEMPTABLE | UNDEFINED}]
+VIEW [database_name].[view_name] 
+AS
+[SELECT  statement]
+```
+create view 可选项 ALGORITHM 子句表示视图处理算法
+共三个参数： MERGE | TEMPTABLE | UNDEFINED
+
+MERGE
+引用视图和视图定义的语句的文本被合并，使视图定义的部分取代语句的相应部分。
+
+TEMPTABLE
+视图中的结果被检索到一个临时表中，然后用来执行语句。
+
+UNDEFINED
+MySQL选择使用哪种算法。如果可能的话，它更倾向于MERGE而不是TEMPTABLE，因为MERGE通常更有效率，而且如果使用临时表，视图无法更新。
+
+
+https://blog.csdn.net/zhangyongze_z/article/details/108731087
+
+https://stackoverflow.com/questions/17600564/create-algorithm-undefined-definer

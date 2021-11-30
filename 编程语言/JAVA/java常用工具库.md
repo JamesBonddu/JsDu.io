@@ -372,3 +372,8 @@ https://arthas.aliyun.com/doc/
 https://arthas.aliyun.com/doc/arthas-tutorials.html?language=cn&id=arthas-basics
 
 http://www.macrozheng.com/#/reference/arthas_start
+
+
+# 钻石依赖问题
+
+https://blog.csdn.net/john1337/article/details/96825349

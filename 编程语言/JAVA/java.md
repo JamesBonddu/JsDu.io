@@ -733,3 +733,11 @@ https://github.com/sofastack/sofa-ark
 https://www.sofastack.tech/projects/sofa-boot/sofa-ark-readme/
 
 https://github.com/sofastack
+
+
+# AtomicReference
+
+AtomicReference类提供了一个可以原子读写的对象引用变量。 原子意味着尝试更改相同AtomicReference的多个线程（例如，使用比较和交换操作）不会使AtomicReference最终达到不一致的状态。 AtomicReference甚至有一个先进的compareAndSet（）方法，它可以将引用与预期值（引用）进行比较，如果它们相等，则在AtomicReference对象内设置一个新的引用。
+
+
+https://www.jianshu.com/p/5521ae322743

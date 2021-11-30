@@ -110,6 +110,12 @@ https://docs.scala-lang.org/zh-cn/overviews/collections/conversions-between-java
 
 https://blog.csdn.net/u013256816/article/details/80057661
 
+## var, val, def
+
+val 用于常量常用于读取配置等
+var 定义变量
+def 用于函数定义
+
 ## scala中下划线的用法 _
 
 https://www.baeldung.com/scala/underscore
@@ -226,3 +232,91 @@ def functionName ([参数列表]) : [return type] = {
 }
 ```
 
+## case class
+
+样例类一般被优化用于模式匹配
+
+https://blog.csdn.net/qq_36342616/article/details/98848873
+
+https://blog.csdn.net/lovehuangjiaju/article/details/47176829
+
+
+## with 关键字
+
+with means that the class is using a Trait via mixin.
+
+https://docs.scala-lang.org/tour/mixin-class-composition.html
+
+https://blog.csdn.net/beckham1984/article/details/43972605
+
+https://stackoverflow.com/questions/6761534/scala-with-keyword-usage
+
+## scala 反射
+
+反射(Reflection)是指程序在运行过程中可以解析并甚至修改自身的一种能力。 在横跨面向对象、函数式编程以及逻辑编程范式方面有着悠久的历史。 虽然一些编程语言在设计之初就引入了反射作为指导原则，但是也有一些编程语言是随着时间演化逐渐引入了反射这一能力。
+
+反射就是在程序运行中，将程序中隐式元素具体化(比如，使之显式化)的能力。 这些隐式元素可以是静态编程中的元素，比如类、方法、或表达式。 也可以是动态的元素，比如当前正在执行的计算续体或方法调用和访问字段这种正在执行的事件。 一般根据在编译阶段执行反射还是在运行阶段执行反射来区分反射的类型。 在程序编译期的反射是用于开发转换器和生成器时的好办法。 在程序运行器的反射常用于调整语言语义或用于支持软件组件之间的后期绑定。
+
+什么是运行时反射呢？就是指在程序运行时，给定某个类型或某些对象的实例，反射可以做到：
+
+- 解析包括泛型在内的各种对象的类型
+- 能去实例化一个对象
+- 能去访问或调用对象中的成员
+
+### 核心概念
+
+Universe是Scala反射的切入点。
+
+universe提供了使用反射所关联的很多核心概念，比如Types，Trees，以及Annotations。 更多细节请参阅指南中Universes部分，或者看scala.reflect.api包的Universes API文档。
+
+本指南中提供了大多数情况下Scala反射要用到的部分，一般在使用运行时反射的场景下，直接导入所有universe成员去用即可：
+
+```scala
+import scala.reflect.runtime.universe._
+```
+
+Mirrors(镜像) 是Scala反射中的核心概念。 反射所能提供的信息都是通过镜像去访问的。 根据不同的类型信息或不同的反射操作，必须要使用不同类型的镜像。
+
+
+
+
+```scala
+var classLoader = Thread.currentThread().getContextClassLoader
+if (classLoader == null) {
+  classLoader = scala.reflect.runtime.universe.getClass.getClassLoader
+}
+val tb = runtimeMirror(classLoader).mkToolBox()
+```
+https://segmentfault.com/a/1190000014772704
+
+https://docs.scala-lang.org/zh-cn/overviews/reflection/overview.html
+
+https://blog.csdn.net/dounine/article/details/87989967
+
+# scala 类型提供机制
+
+在Scala中，宏扩展可产生任何代码程序员喜欢，包括ClassDef，ModuleDef，DefDef，和其他定义的节点，所以类型提供者的代码生成部分被覆盖。
+
+Flags are used to provide modifiers for abstract syntax trees that represent definitions via the flags field of scala.reflect.api.Trees#Modifiers. Trees that accept modifiers are:
+
+- scala.reflect.api.Trees#ClassDef. Classes and traits.
+- scala.reflect.api.Trees#ModuleDef. Objects.
+- scala.reflect.api.Trees#ValDef. Vals, vars, parameters, and self type annotations.
+- scala.reflect.api.Trees#DefDef. Methods and constructors.
+- scala.reflect.api.Trees#TypeDef. Type aliases, abstract type members and type parameters.
+
+
+https://docs.scala-lang.org/overviews/macros/typeproviders.html
+
+
+https://docs.scala-lang.org/overviews/reflection/annotations-names-scopes.html#:~:text=ClassDef%20%28Modifiers%20%28PRIVATE%20%7C%20FINAL%29%2C%20TypeName%20%28%22C%22%29%2C%20Nil%2C...%29,a%20wildcard%20import%20for%20this%2C%20e.g.%2C%20import%20scala.reflect.runtime.universe.Flag._.%29
+
+
+# transient 实现序列化的关键字
+
+https://blog.csdn.net/sofeld/article/details/99347795
+
+
+# scala __getattr__  
+
+https://stackoverflow.com/questions/10658920/scala-equivalent-of-python-getattr-setattr
