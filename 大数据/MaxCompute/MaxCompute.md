@@ -1,0 +1,22 @@
+#  Hologres
+
+Hologres（中文名交互式分析）是阿里云自研的一站式实时数仓，这个云原生系统融合了实时服务和分析大数据的场景，全面兼容 PostgreSQL 协议并与大数据生态无缝打通，能用同一套数据架构同时支持实时写入实时查询以及实时离线联邦分析。
+
+https://xie.infoq.cn/article/b7b63d9ad46ed4794d512e172
+
+
+# 外部表
+
+MaxCompute SQL作为分布式数据处理的主要入口，可实现EB级别离线数据的快速处理和存储。随着大数据业务的不断扩展，新的数据使用场景在不断产生，MaxCompute计算框架也在不断的演化。MaxCompute原来主要面对内部特殊格式数据的强大计算能力，正一步步的开放给不同的外部数据。
+
+现阶段MaxCompute SQL处理的主要是以cfile列格式存储在内部MaxCompute表格中的结构化数据。对于MaxCompute表外的各种用户数据（包括文本以及各种非结构化的数据），您需要通过不同工具导入MaxCompute表再进行计算。以OSS为例，如果您需要在MaxCompute中处理OSS上的数据，通常有以下两种方式：
+通过OSS SDK或者其他工具从OSS下载数据，然后再通过MaxCompute Tunnel将数据导入表里。
+编写UDF，在UDF里直接调用OSS SDK访问OSS数据。
+但这两种方法都有不足之处：
+第一种方法需要在MaxCompute系统外部做一次中转，如果OSS数据量太大，还需要考虑如何并发来加速，无法充分利用MaxCompute大规模计算的能力。
+第二种方法通常需要申请UDF网络访问权限，还需要开发者自己控制作业并发数，解决数据如何分片的问题。
+因此，MaxCompute提供了外部表来解决上述问题。外部表的功能，旨在提供除MaxCompute内部表格以外的其他数据的处理能力。通过一条简单的DDL语句，即可在MaxCompute上创建一张外部表，建立MaxCompute表与外部数据源的关联，提供各种数据的接入和输出能力。创建好的外部表可以像普通的MaxCompute表一样使用（大部分场景），充分利用MaxCompute SQL的强大计算功能。
+
+https://help.aliyun.com/document_detail/150536.html
+
+https://help.aliyun.com/document_detail/54518.html

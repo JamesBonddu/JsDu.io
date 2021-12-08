@@ -122,3 +122,17 @@ Caused by: java.nio.file.FileSystemNotFoundException: Provider "untitled" not in
 	at scala.meta.internal.metals.MetalsLanguageServer.didFocus(MetalsLanguageServer.scala:1010)
 	... 16 more
 
+[0m2021.12.03 15:54:37 INFO  Started: Metals version 0.10.4 in workspace 'D:\projects\funny\JsDu.io' for client Visual Studio Code 1.62.0.[0m
+[0m2021.12.03 15:54:43 INFO  time: initialize in 6.44s[0m
+[0m2021.12.03 15:54:43 WARN  Build server is not auto-connectable.[0m
+[0m2021.12.03 15:54:43 WARN  no build tool detected in workspace 'D:\projects\funny\JsDu.io'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+й╝╤Чтб 07, 2021 7:16:13 обнГ org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+пео╒: Unsupported notification method: $/setTrace
+й╝╤Чтб 07, 2021 7:16:39 обнГ org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+пео╒: Unsupported notification method: $/setTrace
+й╝╤Чтб 07, 2021 7:17:30 обнГ org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+пео╒: Unsupported notification method: $/setTrace
+й╝╤Чтб 08, 2021 10:18:15 ионГ org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+пео╒: Unsupported notification method: $/setTrace
+й╝╤Чтб 08, 2021 10:54:44 ионГ org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+пео╒: Unsupported notification method: $/setTrace
