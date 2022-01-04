@@ -50,7 +50,7 @@ https://learnku.com/articles/32522
 # @Autowired, @Resource and @Inject
 
 
-## @Resource装配顺序 
+## @Resource装配顺序
 
 该@Resource注解是的一部分，JSR-250注解集，并打包在javaEE。此注解具有以下执行路径，按优先级列出：
 
@@ -230,12 +230,12 @@ public String save(@ModelAttribute("form") Bean form,RedirectAttributes attr)
 
     String code =  service.save(form);
     if(code.equals("000")){
-        attr.addFlashAttribute("name", form.getName()); 
+        attr.addFlashAttribute("name", form.getName());
         attr.addFlashAttribute("success", "添加成功!");
         return "redirect:/index";
     }else{
-        attr.addAttribute("projectName", form.getProjectName()); 
-        attr.addAttribute("enviroment", form.getEnviroment()); 
+        attr.addAttribute("projectName", form.getProjectName());
+        attr.addAttribute("enviroment", form.getEnviroment());
         attr.addFlashAttribute("msg", "添加出错!错误码为："+rsp.getCode().getCode()+",错误为："+rsp.getCode().getName());
         return "redirect:/maintenance/toAddConfigCenter";
     }
@@ -246,3 +246,8 @@ https://www.cnblogs.com/alsf/p/9134552.html
 https://www.cnblogs.com/tanzq/p/8687267.html
 
 https://blog.csdn.net/ITBigGod/article/details/79685610
+
+
+# @Validated/@Valid注解使用和BindingResult
+
+https://blog.csdn.net/qq_17589751/article/details/104769801

@@ -328,7 +328,7 @@ https://stackoverflow.com/questions/16834880/mysql-export-resultset-as-csv-from-
 ls *.csv|xargs  sed -i  's~N/A~""~g' ${1}
 ls *.csv|xargs  sed -i  's~""""~""~g' ${1}
 
-ls csv | xargs -i wc -l csv/{$1}/江苏.csv | xargs -i ${1} | sum 
+ls csv | xargs -i wc -l csv/{$1}/江苏.csv | xargs -i ${1} | sum
 计算csv的总行数
 
 # 将不同目录的git migration文件挪动到同一个下面注意会有同名文件删除
@@ -337,10 +337,16 @@ git status|grep migrations |xargs -I file mv file old_migrations/
 # 创建附注Tag
 git tag -a v0.1.2 -m "0.1.2版本"
 
+
+# 切换remote tag分支
+git checkout tags/v0.6.0-beta.20211224 -b v0.6.0
+
+
 # 指定ssh key 进行拉取
 GIT_SSH_COMMAND='ssh -i ~/.ssh/id_rsa -o IdentitiesOnly=yes' git push origin master
 ```
 
+https://stackoverflow.com/questions/35979642/what-is-git-tag-how-to-create-tags-how-to-checkout-git-remote-tags
 
 
 # 查看mysql死锁进程并杀掉
@@ -351,8 +357,8 @@ SELECT * FROM INFORMATION_SCHEMA.INNODB_TRX;
 # 查看顯卡使用情況
 
 ```sh
-fang@ub ~/jsdu> nvidia-smi                                                                            (torch) 
-Wed Mar 10 19:50:20 2021       
+fang@ub ~/jsdu> nvidia-smi                                                                            (torch)
+Wed Mar 10 19:50:20 2021
 +-----------------------------------------------------------------------------+
 | NVIDIA-SMI 450.102.04   Driver Version: 450.102.04   CUDA Version: 11.0     |
 |-------------------------------+----------------------+----------------------+
@@ -368,7 +374,7 @@ Wed Mar 10 19:50:20 2021
 | 27%   25C    P8    11W / 175W |      3MiB /  7982MiB |      0%      Default |
 |                               |                      |                  N/A |
 +-------------------------------+----------------------+----------------------+
-                                                                               
+
 +-----------------------------------------------------------------------------+
 | Processes:                                                                  |
 |  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
@@ -391,7 +397,7 @@ Compute M：计算模式； 
 原文链接：https://blog.csdn.net/dcrmg/article/details/78146797
 
 
-fang@ub ~/jsdu> nvidia-smi -q                                                                         (torch) 
+fang@ub ~/jsdu> nvidia-smi -q                                                                         (torch)
 
 ==============NVSMI LOG==============
 

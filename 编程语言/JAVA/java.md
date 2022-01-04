@@ -95,7 +95,7 @@ entrance是app接入的入口.
 Reflection 是Java被视为动态（或准动态）语言的一个关键性质。这个机制允许程序在运行时透过Reflection APIs取得任何一个已知名称的class的内部信息，包括其modifiers（诸如public, static 等等）、superclass（例如Object）、实现之interfaces（例如Serializable），也包括fields和methods的所有信息，并可于运行时改变fields内容或调用methods。
 
 一般而言，开发者社群说到动态语言，大致认同的一个定义是：“程序运行时，允许改变程序结构或变量类型，这种语言称为动态语言”。从这个观点看，Perl，Python，Ruby是动态语言，C++，Java，C#不是动态语言。
- 
+
 尽管在这样的定义与分类下Java不是动态语言，它却有着一个非常突出的动态相关机制：Reflection。这个字的意思是“反射、映象、倒影”，用在Java身上指的是我们可以于运行时加载、探知、使用编译期间完全未知的classes。换句话说，Java程序可以加载一个运行时才得知名称的class，获悉其完整构造（但不包括methods定义），并生成其对象实体、或对其fields设值、或唤起其methods。这种“看透class”的能力（the ability of the program to examine itself）被称为introspection（内省、内观、反省）。Reflection和introspection是常被并提的两个术语。
 
 https://www.likecs.com/show-134953.html
@@ -123,7 +123,7 @@ https://www.cnblogs.com/dolphin0520/p/3949310.html
 # 该脚本使用系统kill命令来强制终止指定的java程序进程。
 # 所以在杀死进程前，可能会造成数据丢失或数据不完整。如果必须要考虑到这类情况，则需要改写此脚本，
 #
-# 
+#
 # 根据实际情况来修改以下配置信息 ##################################
 
 # JAVA应用程序的名称
@@ -190,7 +190,7 @@ start() {
 stop() {
   # is_exist
   pidf=$(cat $JAR_PID)
-  # echo "$pidf" 
+  # echo "$pidf"
   echo "pid = $pidf begin kill $pidf"
   kill $pidf
   rm -rf $JAR_PID
@@ -201,10 +201,10 @@ stop() {
     echo "pid = $pid begin kill -9 $pid"
     kill -9  $pid
     sleep 2
-    echo "$APP_NAME process stopped！" 
+    echo "$APP_NAME process stopped！"
   else
     echo "$APP_NAME is not running！"
-  fi 
+  fi
 }
 
 # 服务运行状态查看方法
@@ -320,14 +320,14 @@ Then you can attach from vs code, a sample launch.json looks like:
       "hostName": "localhost",
       "port": 8000
     }
-  ] 
+  ]
 }
 ```
 
 ## 使用spring boot dashboard对应的命令是
 
 ```sh
- cd /data/code/Exchangis/modules/eureka ; /usr/bin/env /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el8_4.x86_64/bin/java -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=44307 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.jmx.enabled=true -Dfile.encoding=UTF-8 -cp /tmp/cp_3vcd3xoiqu1i6q8ip7odciu6h.jar com.webank.wedatasphere.exchangis.EurekaApplication 
+ cd /data/code/Exchangis/modules/eureka ; /usr/bin/env /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.292.b10-1.el8_4.x86_64/bin/java -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=44307 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.jmx.enabled=true -Dfile.encoding=UTF-8 -cp /tmp/cp_3vcd3xoiqu1i6q8ip7odciu6h.jar com.webank.wedatasphere.exchangis.EurekaApplication
 ```
 
 https://stackoverflow.com/questions/43322171/how-to-debug-a-java-maven-spring-boot-app-in-vs-code
@@ -421,7 +421,7 @@ https://blog.csdn.net/wxyFighting/article/details/9408153
 JDWP（Java Debug Wire Protocol）是一个为 Java 调试而设计的一个通讯交互协议，它定义了调试器和被调试程序之间传递的信息的格式。
 
 ```sh
-/usr/bin/env /usr/lib/jvm/java-11-openjdk/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:43913 -Dfile.encoding=UTF-8 @/tmp/cp_2ywdgo2zxu68j4x42k6y9gz6q.argfile com.webank.wedatasphere.exchangis.ServiceApplication 
+/usr/bin/env /usr/lib/jvm/java-11-openjdk/bin/java -agentlib:jdwp=transport=dt_socket,server=n,suspend=y,address=localhost:43913 -Dfile.encoding=UTF-8 @/tmp/cp_2ywdgo2zxu68j4x42k6y9gz6q.argfile com.webank.wedatasphere.exchangis.ServiceApplication
 ```
 
 通过远程调试端口对exchangis的serviceapp进行调试
@@ -741,3 +741,38 @@ AtomicReference类提供了一个可以原子读写的对象引用变量。 原�
 
 
 https://www.jianshu.com/p/5521ae322743
+
+
+# java 文件写入
+
+https://www.cnblogs.com/rinack/p/14173936.html
+
+
+# java 构造函数和字段初始化顺序
+
+https://blog.csdn.net/bboyfeiyu/article/details/21964645
+
+
+# mybatis
+
+## 时间格式处理 createtime
+
+https://blog.csdn.net/zwjyyy1203/article/details/104654424
+
+https://xie.infoq.cn/article/1a7cd6ab43ce4f3c7cc6d611a
+
+
+# 传入参数
+
+https://www.cnblogs.com/guanghe/p/9317476.html
+
+# mybatis类映射拦截器和分页拦截器
+
+https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/handler/MappedInterceptor.html
+
+
+# mybatis 升级mybatis-plus
+
+https://segmentfault.com/a/1190000024416279
+
+https://www.cnblogs.com/pigll/p/13646240.html

@@ -58,14 +58,14 @@ https://github.com/alibaba/DataX
 ```
 version: '3.3'
 services:
-  master: 
+  master:
     image: tikazyq/crawlab:latest
     container_name: master
     environment:
       CRAWLAB_SERVER_MASTER: "Y"
       CRAWLAB_MONGO_HOST: "mongo"
       CRAWLAB_REDIS_ADDRESS: "redis"
-    ports:    
+    ports:
       - "8080:8080"
     depends_on:
       - mongo
@@ -82,13 +82,20 @@ services:
       - "6379:6379"
 ```
 
+https://demo-pro.crawlab.cn/#/
+
+admin
+
+admin
+
+
 git clone https://github.com/crawlab-team/crawlab.git
 
 docker-compose -f docker-compose.local.yml up -d
 
 https://github.com/crawlab-team/crawlab/blob/master/README-zh.md
 
-# 布隆过滤器 
+# 布隆过滤器
 
 https://gaoconghui.github.io/2018/07/%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8%E6%89%A9%E5%AE%B9%E4%BB%A5%E5%8F%8A%E5%88%A0%E9%99%A4%E8%BF%87%E6%9C%9F%E6%95%B0%E6%8D%AE/
 
