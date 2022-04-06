@@ -225,41 +225,41 @@ https://blog.csdn.net/silentwolfyh/article/details/59489852
 hadoop组件启动的脚本文件：
 
  /etc/alternatives/
- 
+
 
 hadoop生态组件执行路径：
 
- /opt/cloudera/parcels/CDH/bin/ 
- 
+ /opt/cloudera/parcels/CDH/bin/
+
 
 hadoop生态组件依赖包路径：
 
  /opt/cloudera/parcels/CDH/lib/
- 
+
 
 1、hadoop
  配置文件：/etc/hadoop/conf
  执行文件：/opt/cloudera/parcels/CDH/bin/hadoop
- 
+
 
 2、hive
  配置文件：/etc/hive/conf
  执行文件：/opt/cloudera/parcels/CDH/bin/hive
- 
+
 
 3、hbase
  配置文件：/etc/hbase/conf
  执行文件：/opt/cloudera/parcels/CDH/bin/hbase
- 
+
 
 4、zookeeper
  配置文件：/etc/zookeeper/conf
  执行文件：/opt/cloudera/parcels/CDH/bin/zookeeper
- 
+
 
 5、spark
  配置文件：/etc/spark/conf
- 执行文件：/opt/cloudera/parcels/CDH/bin/spark 
+ 执行文件：/opt/cloudera/parcels/CDH/bin/spark
 
 https://cloud.tencent.com/developer/article/1818618
 
@@ -385,3 +385,40 @@ https://docs.cloudera.com/documentation/spark2/latest/topics/spark2_requirements
 https://cloud.tencent.com/developer/article/1539360
 
 https://support.huaweicloud.com/prtg-cdh-kunpengbds/kunpengsparkcdh632_02_0009.html
+
+
+# CDH 目录权限问题
+
+```sh
+通常会把 root 或者需要的用户添加到 supergroup组，但Linux下默认是没有supergroup组。
+
+登录后复制
+# Linux下默认是没有supergroup组的
+# hadoop:x:994:hdfs,mapred,yarn
+cat /etc/group
+
+# 查看hdfs用户的组是hadoop
+# hdfs:x:995:992:Hadoop HDFS:/var/lib/hadoop-hdfs:/sbin/nologin
+cat /etc/passwd
+
+所以，先在Linux添加supergroup组，把root用户添加到supergroup里，再同步权限到HDFS。
+
+# Linux添加supergroup组
+# supergroup:x:1003:
+groupadd supergroup
+
+# 将root添加到supergroup
+# supergroup:x:1003:root
+usermod -a -G supergroup root
+
+# 同步系统权限信息到HDFS,会自动同步其他节点权限
+# Refresh user to groups mapping successful for cdh-master/192.168.100.45:8020
+# Refresh user to groups mapping successful for cdh-slave01/192.168.100.46:8020
+su - hdfs -s /bin/bash -c "hdfs dfsadmin -refreshUserToGroupsMappings"
+-----------------------------------
+©著作权归作者所有：来自51CTO博客作者訾零LL的原创作品，请联系作者获取转载授权，否则将追究法律责任
+CDH环境HDFS权限问题
+https://blog.51cto.com/u_15349750/3709002
+```
+
+https://blog.51cto.com/u_15349750/3709002

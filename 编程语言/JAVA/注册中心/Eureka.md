@@ -66,3 +66,36 @@ https://xie.infoq.cn/article/c6139a5776e139d1b76b2e856
 https://blog.csdn.net/u012817635/article/details/80189579
 
 https://lw900925.github.io/spring-cloud/spring-cloud-eureka.html
+
+
+# 单独的服务注册到eureka
+
+CAP理论是分布式架构中重要理论
+
+
+一致性(Consistency) (所有节点在同一时间具有相同的数据)
+
+
+可用性(Availability) (保证每个请求不管成功或者失败都有响应)
+
+
+分隔容忍(Partition tolerance) (系统中任意信息的丢失或失败不会影响系统的继续运作)
+
+作者：程序开发者社区
+链接：https://juejin.cn/post/6858052002094514189
+来源：稀土掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+https://juejin.cn/post/6858052002094514189
+
+
+https://blog.csdn.net/u014320421/article/details/78272678/
+
+https://blog.csdn.net/liuying1802028915/article/details/105031626
+
+
+单独服务注册到多个eureka中心
+
+https://blog.csdn.net/kingwinstar/article/details/119348444
+
+https://spring-cloud-alibaba-group.github.io/github-pages/hoxton/zh-cn/index.html

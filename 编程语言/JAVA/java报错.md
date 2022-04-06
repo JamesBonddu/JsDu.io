@@ -44,3 +44,10 @@ Exception in thread "main" java.lang.LinkageError: loader constraint violation i
 
 
 https://stackoverflow.com/questions/36341756/spark-driver-extraclasspath-multiple-jars
+
+
+
+# Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception 已解决
+
+
+https://blog.csdn.net/weixin_44259720/article/details/103185972

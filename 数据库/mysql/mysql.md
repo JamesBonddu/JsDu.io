@@ -158,12 +158,12 @@ https://www.aneasystone.com/archives/2018/04/solving-dead-locks-four.html
 -- 百分比方法
 select 1.234, concat(1.234 * 100, '%');
 -- 避免分母为0
-SELECT 
+SELECT
     COUNT(*) AS 人口总数,
-    SUM(CASE  WHEN sex = 0 THEN 1 ELSE 0 END) AS 男人数 , 
-    CAST(CAST(100.0 * SUM(CASE  WHEN sex = 0 THEN 1 ELSE 0 END) / COUNT(*) AS decimal(18, 2)) AS varchar(5)) OR '%' AS 男所占比例, 
+    SUM(CASE  WHEN sex = 0 THEN 1 ELSE 0 END) AS 男人数 ,
+    CAST(CAST(100.0 * SUM(CASE  WHEN sex = 0 THEN 1 ELSE 0 END) / COUNT(*) AS decimal(18, 2)) AS varchar(5)) OR '%' AS 男所占比例,
     SUM(CASE  WHEN sex = 1 THEN 1 ELSE 0 END) AS 女人数 ,
-    CAST(CAST(100.0 * SUM(CASE  WHEN sex = 1 THEN 1 ELSE 0 END) / COUNT(*) AS decimal(18, 2)) AS varchar(5)) OR '%' AS 女所占比例 
+    CAST(CAST(100.0 * SUM(CASE  WHEN sex = 1 THEN 1 ELSE 0 END) / COUNT(*) AS decimal(18, 2)) AS varchar(5)) OR '%' AS 女所占比例
 FROM people
 ```
 
@@ -182,14 +182,14 @@ ession #2 of SELECT list is not in GROUP BY clause and contains nonaggregated co
 SELECT CAST(orders.date_purchased AS DATE) AS DATE_PURCHASED
 ```
 https://stackoverflow.com/questions/4740612/query-to-convert-from-datetime-to-date-mysql
- 
+
 # exists 替换 in
 
 ```shell script
 
 ```
 https://www.cnblogs.com/V1haoge/p/6385312.html
- 
+
 
 # SQL 横表 纵表转换
 
@@ -201,12 +201,12 @@ https://blog.csdn.net/u014236541/article/details/54912907
 方法1：
 
 
-1.select * from table_a where id = (select id from table_a where id < {$id} order by id desc limit 1); 
+1.select * from table_a where id = (select id from table_a where id < {$id} order by id desc limit 1);
 2.select * from table_a where id = (select id from table_a where id > {$id} order by id asc limit 1);
 
 方法2：
 
-1.select * from table_a where id = (select max(id) from table_a where id < {$id}); 
+1.select * from table_a where id = (select max(id) from table_a where id < {$id});
 2.select * from table_a where id = (select min(id) from table_a where id > {$id});
 
 https://blog.csdn.net/rorntuck7/article/details/50699409
@@ -261,7 +261,7 @@ SELECT ROW_NUMBER() OVER (ORDER BY
         all_tb.total_work_people,
         all_tb.administrator,
         all_tb.administrator_phone
-	FROM 
+	FROM
     (
         (
             SELECT
@@ -287,7 +287,7 @@ SELECT ROW_NUMBER() OVER (ORDER BY
                         WHERE ( t2.area = a.area AND t2.name = a.name )
                     )
             group by a.area
-        ) 
+        )
         UNION
         (
             SELECT
@@ -323,9 +323,9 @@ https://developer.aliyun.com/article/696685
 # mysql view视图算法与优化
 
 ```sql
-CREATE 
+CREATE
    [ALGORITHM = {MERGE  | TEMPTABLE | UNDEFINED}]
-VIEW [database_name].[view_name] 
+VIEW [database_name].[view_name]
 AS
 [SELECT  statement]
 ```
@@ -345,3 +345,38 @@ MySQL选择使用哪种算法。如果可能的话，它更倾向于MERGE而不�
 https://blog.csdn.net/zhangyongze_z/article/details/108731087
 
 https://stackoverflow.com/questions/17600564/create-algorithm-undefined-definer
+
+
+# sql 排除部分列
+
+至少有 3 种方法可以做到这一点：
+
+使用临时表
+使用视图
+使用information_schema.COLUMNS表格
+
+## 临时表
+
+```sql
+CREATE TEMPORARY TABLE TempStudents AS SELECT * FROM Students;
+
+ALTER TABLE TempStudents DROP COLUMN comment;
+SELECT * FROM TempStudents;
+
+ALTER TABLE TempStudents
+  DROP COLUMN phone,
+  DROP COLUMN email;
+```
+
+https://sebhastian.com/mysql-select-all-except/
+
+
+# mysql 单表多字段模糊搜索
+
+```sql
+SELECT *
+FROM pages
+WHERE CONCAT_WS('', column1, column2, column3) LIKE '%keyword%'
+```
+
+https://lxmuse.github.io/2018/05/07/%E8%AE%B0%E4%B8%80%E6%AC%A1%20MySQL%20%E5%85%B3%E9%94%AE%E5%AD%97%E5%A4%9A%E5%AD%97%E6%AE%B5%E6%A8%A1%E7%B3%8A%E6%9F%A5%E8%AF%A2%E4%BC%98%E5%8C%96/

@@ -776,3 +776,21 @@ https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframe
 https://segmentfault.com/a/1190000024416279
 
 https://www.cnblogs.com/pigll/p/13646240.html
+
+
+# springboot interceptor 拦截器
+
+拦截器(Interceptor)同 Filter 过滤器一样，它俩都是面向切面编程——AOP 的具体实现（AOP切面编程只是一种编程思想而已）。
+
+你可以使用 Interceptor 来执行某些任务，例如在 Controller 处理请求之前编写日志，添加或更新配置......
+
+在 Spring中，当请求发送到 Controller 时，在被Controller处理之前，它必须经过 Interceptors（0或更多）。
+
+Spring Interceptor是一个非常类似于Servlet Filter 的概念 。
+
+对于过滤器和拦截器的区别， 知乎@Kangol LI 的回答很不错。
+
+过滤器（Filter）：当你有一堆东西的时候，你只希望选择符合你要求的某一些东西。定义这些要求的工具，就是过滤器。
+拦截器（Interceptor）：在一个流程正在进行的时候，你希望干预它的进展，甚至终止它进行，这是拦截器做的事情。
+
+https://github.com/CodingDocs/springboot-guide/blob/master/docs/basis/springboot-interceptor.md

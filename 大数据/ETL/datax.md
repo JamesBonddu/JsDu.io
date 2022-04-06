@@ -1,7 +1,14 @@
 # datax ETL
 
+```java
+registedTransformer.put(transformer.getTransformerName(), buildTransformerInfo(new ComplexTransformerProxy(transformer), isNative, classLoader));
+```
+
 https://lzyz.fun/bloglist/datax/
 
+https://myblog.erdongchen.top/2020/04/28/DataX-%E9%80%9A%E8%BF%87debug%E5%AF%B9DataX%E6%BA%90%E7%A0%81%E8%BF%9B%E8%A1%8C%E8%A7%A3%E6%9E%90/
+
+https://myblog.erdongchen.top/2020/05/26/DataX-%E8%87%AA%E5%AE%9A%E4%B9%89Transformer%E7%9A%84%E4%BD%BF%E7%94%A8%E5%92%8C%E6%89%A9%E5%B1%95%E4%BB%A5%E5%8F%8A%E8%BF%90%E8%A1%8C%E5%8F%82%E6%95%B0%E8%B0%83%E4%BC%98/
 
 # datax
 

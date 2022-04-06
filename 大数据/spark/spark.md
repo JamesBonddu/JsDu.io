@@ -84,7 +84,7 @@ https://cloud.tencent.com/developer/article/1073016
 https://github.com/MicrosoftDocs/azure-docs.zh-cn/blob/master/articles/synapse-analytics/spark/apache-spark-version-support.md
 
 
-# spark RDD 
+# spark RDD
 
 RDD 支持两种类型的操作：transforms，它从现有的数据集创建一个新的数据集，以及actions，它在对数据集运行计算后返回一个值给驱动程序。例如，map是一个转换，它通过一个函数传递每个数据集元素并返回一个表示结果的新 RDD。另一方面，reduce是使用某个函数聚合RDD的所有元素并将最终结果返回给驱动程序的操作（尽管也有一个并行reduceByKey返回分布式数据集）。
 
@@ -306,7 +306,7 @@ https://bbs.huaweicloud.com/blogs/detail/258449
 
 我们知道Spark application运行加载依赖有三个地方：
 
-SystemClasspath 
+SystemClasspath
 - -- Spark安装时候提供的依赖包 【SystemClassPath】
 - Spark-submit --jars 提交的依赖包                               【UserClassPath】
 - Spark-submit app.jar或者shadowJar打的jar               【UserClassPath】
@@ -318,7 +318,7 @@ Spark 依赖包默认优先级
 
 2. UserClassPath   -- Spark-submit --jars 提交的依赖包 或用户的app.jar
 
- 
+
 
 SystemClasspath 系统安装的包，默认优先使用环境的包，这样更加稳定安全。
 
@@ -337,6 +337,67 @@ https://blog.csdn.net/adorechen/article/details/90722933
 
 spark.driver.userClassPathFirst
 
-实验性）在驱动程序中加载类时，是否让用户添加的 jar 优先于 Spark 自己的 jar。此功能可用于缓解 Spark 的依赖项和用户依赖项之间的冲突。它目前是一个实验性功能。这仅用于集群模式。
+实验性在驱动程序中加载类时，是否让用户添加的 jar 优先于 Spark 自己的 jar。此功能可用于缓解 Spark 的依赖项和用户依赖项之间的冲突。它目前是一个实验性功能。这仅用于集群模式。
 
 https://spark.apache.org/docs/3.2.0/configuration.html#content
+
+# spark启用spark thrift
+
+https://cloud.tencent.com/developer/article/1078226
+
+# Spark Lineage 血统
+
+```sh
+Caused by: java.lang.ClassNotFoundException: com.cloudera.spark.lineage.NavigatorAppListener
+        at java.net.URLClassLoader.findClass(URLClassLoader.java:381)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+        at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+        at java.lang.Class.forName0(Native Method)
+        at java.lang.Class.forName(Class.java:348)
+        at org.apache.spark.util.Utils$.classForName(Utils.scala:238)
+        at org.apache.spark.util.Utils$$anonfun$loadExtensions$1.apply(Utils.scala:2682)
+        at org.apache.spark.util.Utils$$anonfun$loadExtensions$1.apply(Utils.scala:2680)
+        at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+        at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+        at scala.collection.mutable.ResizableArray$class.foreach(ResizableArray.scala:59)
+        at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:48)
+        at scala.collection.TraversableLike$class.flatMap(TraversableLike.scala:241)
+        at scala.collection.AbstractTraversable.flatMap(Traversable.scala:104)
+        at org.apache.spark.util.Utils$.loadExtensions(Utils.scala:2680)
+        at org.apache.spark.SparkContext$$anonfun$setupAndStartListenerBus$1.apply(SparkContext.scala:2387)
+        at org.apache.spark.SparkContext$$anonfun$setupAndStartListenerBus$1.apply(SparkContext.scala:2386)
+        at scala.Option.foreach(Option.scala:257)
+        at org.apache.spark.SparkContext.setupAndStartListenerBus(SparkContext.scala:2386)
+        ... 31 more
+```
+
+
+```sh
+--conf "spark.executor.extraClassPath=/opt/cloudera/parcels/CDH/jars/spark-lineage_2.11-2.4.0-cdh6.3.2.jar" \
+--conf "spark.driver.extraClassPath=/opt/cloudera/parcels/CDH/jars/spark-lineage_2.11-2.4.0-cdh6.3.2.jar" \
+```
+
+修改/etc/spark/conf/classpath.txt文件在末尾增加如下内容
+
+```sh
+/opt/cloudera/parcels/CDH/jars/spark-lineage_2.11-2.4.0-cdh6.3.2.jar
+```
+
+
+https://www.i4k.xyz/article/qq_24365213/79257077
+
+https://blog.csdn.net/m0_37914799/article/details/85009466
+
+https://www.codetd.com/article/4923091
+
+https://blog.csdn.net/zax_java/article/details/96964520
+
+
+# spark 启动jar配置加载驱动包的方法
+
+```sh
+--conf "spark.executor.extraClassPath=/opt/cloudera/parcels/CDH/jars/spark*.jar" \
+--conf "spark.driver.extraClassPath=/opt/cloudera/parcels/CDH/jars/spark*.jar" \
+```
+
+https://www.cnblogs.com/chhyan-dream/p/13141097.html
