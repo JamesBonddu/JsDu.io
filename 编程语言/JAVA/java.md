@@ -9,6 +9,80 @@ https://www.zhihu.com/question/311758187
 
 # JAVA 基础语法
 
+
+## 多态
+Java中多态其实是一种运行期的状态。为了实现运行期的多态，或者说是动态绑定，需要满足三个条件：
+
+- 有类继承或者接口实现
+- 子类要重写父类的方法
+- 父类的引用指向子类的对象
+
+## 求值策略
+当进行方法调用的时候，需要把实际参数传递给形式参数，那么传递的过程中到底传递的是什么东西呢？
+求值策略定义何时和以何种顺序求值给函数的实际参数、什么时候把它们代换入函数、和代换以何种形式发生。
+
+求值策略分为两大基本类，基于如何处理给函数的实际参数，分位严格的和非严格的。
+在严格求值中有几个关键的求值策略是我们比较关心的，那就是传值调用（Call by value）、传引用调用（Call by reference）以及传共享对象调用（Call by sharing）。
+- 传值调用（值传递）
+在传值调用中，实际参数先被求值，然后其值通过复制，被传递给被调函数的形式参数。因为形式参数拿到的只是一个"局部拷贝"，所以如果在被调函数中改变了形式参数的值，并不会改变实际参数的值。
+- 传引用调用（引用传递）
+在传引用调用中，传递给函数的是它的实际参数的隐式引用而不是实参的拷贝。因为传递的是引用，所以，如果在被调函数中改变了形式参数的值，改变对于调用者来说是可见的。
+- 传共享对象调用（共享对象传递）
+传共享对象调用中，先获取到实际参数的地址，然后将其复制，并把该地址的拷贝传递给被调函数的形式参数。因为参数的地址都指向同一个对象，所以我们称也之为"传共享对象"，所以，如果在被调函数中改变了形式参数的值，调用者是可以看到这种变化的。
+
+引用数据类型参数(如对象)也按值传递给方法。这意味着，当方法返回时，传入的引用仍然引用与以前相同的对象。但是，如果对象字段具有适当的访问级别，则可以在方法中更改这些字段的值。其实Java中使用的求值策略就是传共享对象调用，也就是说，Java会将对象的地址的拷贝传递给被调函数的形式参数。
+
+https://hollischuang.github.io/toBeTopJavaer/#/basics/object-oriented/java-pass-by
+
+## 包装类
+既然 Java 中为了提高效率，提供了八种基本数据类型，为什么还要提供包装类呢？
+
+这个问题，其实前面已经有了答案，因为 Java 是一种面向对象语言，很多地方都需要使用对象而不是基本数据类型。比如，在集合类中，我们是无法将 int 、double 等类型放进去的。因为集合的容器要求元素是 Object 类型。
+
+为了让基本类型也具有对象的特征，就出现了包装类型，它相当于将基本类型“包装起来”，使得它具有了对象的性质，并且为其添加了属性和方法，丰富了基本类型的操作。
+
+### 拆箱与装箱
+那么，有了基本数据类型和包装类，肯定有些时候要在他们之间进行转换。比如把一个基本数据类型的 int 转换成一个包装类型的 Integer 对象。
+
+我们认为包装类是对基本类型的包装，所以，把基本数据类型转换成包装类的过程就是打包装，英文对应于 boxing，中文翻译为装箱。
+
+既然 Java 提供了自动拆装箱的能力，那么，我们就来看一下，到底是什么原理，Java 是如何实现的自动拆装箱功能。
+自动拆箱
+```java
+public static void main(String[] args) {
+  Integer integer = 1; //装箱
+  int i = integer; //拆箱
+}
+```
+反编译后
+```java
+public static void main(String[] args) {
+  Interger integer = Integer.valueOf(1);
+  int i = integer.intValue();
+}
+```
+int 的自动装箱都是通过 Integer.valueOf() 方法来实现的，Integer 的自动拆箱都是通过 integer.intValue 来实现的.
+自动装箱都是通过包装类的 valueOf() 方法来实现的.自动拆箱都是通过包装类对象的 xxxValue() 来实现的。
+自动拆装箱的原理
+- 将基本数据类型放入集合内
+- 包装类型和基本类型的大小比较
+- 包装类型的运算
+- 三目运算符的使用
+- 函数参数与返回值
+
+## 如何正确定义接口的返回值
+
+我们可以发现，虽然Model3和Model4中的成员变量的名称不同，一个是success，另外一个是isSuccess，但是他们自动生成的getter和setter方法名称都是isSuccess和setSuccess。
+
+
+在Java体系中，共用三种常量池。分别是字符串常量池、Class常量池和运行时常量池。
+> Class 常量池
+
+Class常量池可以理解为是Class文件中的资源仓库。 Class文件中除了包含类的版本、字段、方法、接口等描述信息外，还有一项信息就是常量池(constant pool table)，用于存放编译器生成的各种字面量(Literal)和符号引用(Symbolic References)。 Class是用来保存常量的一个媒介场所，并且是一个中间场所。在JVM真的运行时，需要把常量池中的常量加载到内存中。
+HelloWorld.class文件中的前八个字母是cafe babe，这就是Class文件的魔数（Java中的”魔数”）
+
+我们需要知道的是，在Class文件的4个字节的魔数后面的分别是4个字节的Class文件的版本号（第5、6个字节是次版本号，第7、8个字节是主版本号，我生成的Class文件的版本号是52，这时Java 8对应的版本。也就是说，这个版本的字节码，在JDK 1.8以下的版本中无法运行）在版本号后面的，就是Class常量池入口了。
+
 ## String
 
 String 创建的字符串存储在公共池中，而 new 创建的字符串对象在堆上：
@@ -69,9 +143,40 @@ Stream API可以极大提高Java程序员的生产力，让程序员写出高效
 
 https://www.runoob.com/java/java-hashmap.html
 
+## Set
+Set主要分为两类:
+1、TreeSet 是二叉树实现的，TreeSet中的数据是自动排好序的，不允许放入 null值
+
+TreeSet的底层是TreeMap的keySet()，而TreeMap是基于红黑树实现的，红黑树是一种平衡二叉查找树，它能保证任何一个节点的左右子树的高度差不会超过较矮的那棵的一倍。
+
+TreeMap是按key排序的，元素在插入TreeSet时compareTo()方法要被调用，所以TreeSet中的元素要实现Comparable接口。TreeSet作为一种Set，它不允许出现重复元素。TreeSet是用compareTo()来判断重复元素的。
+
+2、HashSet 是哈希表实现的，HashSet中的数据是无序的，可以放入 null值，但只能放入一个null，两者中的值都不能重复，就如数据库中的唯一约束
+
+在HashSet中，基本的操作都是由HashMap底层实现的，因为HashSet底层是用HashMap存储数据的。当向HashSet中添加元素的时候，首先计算元素的hashCode值，然后通过扰动计算和按位与的方式计算出这个元素的存储位置，如果这个位置为空，就将元素添加进去；如果不为空，则用equals方法比较元素是否相等，相等就不添加，否则找一个空位添加。
+
 ## HashMap
 
+ConcurrentHashMap和HashMap的实现方式不一样，虽然都是使用桶数组实现的，但是还是有区别，ConcurrentHashMap对桶数组进行了分段，而HashMap并没有。
+
+ConcurrentHashMap在每一个分段上都用锁进行了保护。HashMap没有锁机制。所以，前者线程安全的，后者不是线程安全的。
+
+https://hollischuang.github.io/toBeTopJavaer/#/basics/java-basic/HashMap-HashTable-ConcurrentHashMap
+
 https://tech.meituan.com/2016/06/24/java-hashmap.html
+
+## Copy-On-Write
+
+Copy-On-Write简称COW，是一种用于程序设计中的优化策略。其基本思路是，从一开始大家都在共享同一个内容，当某个人想要修改这个内容的时候，才会真正把内容Copy出去形成一个新的内容然后再改，这是一种延时懒惰策略。从JDK1.5开始Java并发包里提供了两个使用CopyOnWrite机制实现的并发容器,它们是CopyOnWriteArrayList和CopyOnWriteArraySet。CopyOnWrite容器非常有用，可以在非常多的并发场景中使用到.
+
+CopyOnWriteArrayList相当于线程安全的ArrayList，CopyOnWriteArrayList使用了一种叫写时复制的方法，当有新元素add到CopyOnWriteArrayList时，先从原有的数组中拷贝一份出来，然后在新的数组做写操作，写完之后，再将原来的数组引用指向到新数组。
+
+ConcurrentSkipListMap 和 ConcurrentHashMap 的主要区别：
+- 底层实现方式不同。ConcurrentSkipListMap底层基于跳表。ConcurrentHashMap底层基于Hash桶和红黑树。
+- ConcurrentHashMap不支持排序。ConcurrentSkipListMap支持排序。
+
+> fail-fast机制
+> 我们通常说的Java中的fail-fast机制，默认指的是Java集合的一种错误检测机制。当多个线程对部分集合进行结构上的改变的操作时，有可能会产生fail-fast机制，这个时候就会抛出ConcurrentModificationException（后文用CME代替）。CMException，当方法检测到对象的并发修改，但不允许这种修改时就抛出该异常。在Java中， 如果在foreach 循环里对某些集合元素进行元素的 remove/add 操作的时候，就会触发fail-fast机制，进而抛出CMException。
 
 # 自定义注解
 

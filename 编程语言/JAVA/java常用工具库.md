@@ -3,9 +3,44 @@
 
 ## 集合类 CollectionUtils
 
+Commons Collections增强了Java Collections Framework。 它提供了几个功能，使收集处理变得容易。 它提供了许多新的接口，实现和实用程序。 Commons Collections的主要功能如下
+
+Bag - Bag界面简化了每个对象具有多个副本的集合。
+
+BidiMap - BidiMap接口提供双向映射，可用于使用值使用键或键查找值。
+
+MapIterator - MapIterator接口提供简单而容易的迭代迭代。
+
+Transforming Decorators - 转换装饰器可以在将集合添加到集合时更改集合的每个对象。
+
+Composite Collections - 在需要统一处理多个集合的情况下使用复合集合。
+
+Ordered Map - 有序地图保留添加元素的顺序。
+
+Ordered Set - 有序集保留了添加元素的顺序。
+
+Reference map - 参考图允许在密切控制下对键/值进行垃圾收集。
+
+Comparator implementations - 可以使用许多Comparator实现。
+
+Iterator implementations - 许多Iterator实现都可用。
+
+Adapter Classes - 适配器类可用于将数组和枚举转换为集合。
+
+Utilities - 实用程序可用于测试测试或创建集合的典型集合论属性，例如union，intersection。 支持关闭。
+
+
 ```java
 import org.apache.commons.collections.CollectionUtils;
 
+List<String> list1 = Arrays.asList("A","A","A","C","B","B");
+List<String> list2 = Arrays.asList("A","A","B","B");
+
+// 交集
+CollectionUtils.intersection(list1, list2);
+
+// 并集
+CollectionUtils.union(list1, list2);
 ```
 集合的交集, 并集, 补集, 差集.
 
@@ -59,7 +94,7 @@ ApiModel 注解是作用在接口相关实体类上的注解，用来对该接�
 ApiModelProperty 注解是作用在接口相关实体类的参数上的注解，用来对具体的接口相关实体类中的参数添加额外的描述信息，常常和 @ApiModel 注解关联使用，有时也会单独拿出来用。
 
 ```java
-@ApiModelProperty(value = "Address", name = "addLines", 
+@ApiModelProperty(value = "Address", name = "addLines",
     example = "[\"AddLine1\",\"AddLine2\",\"AddLine3\",\"AddLine4\"]")
 ```
 
@@ -239,7 +274,7 @@ https://blog.mythsman.com/post/5d301cf2976abc05b34546be/
 https://www.cnblogs.com/yxx123/p/6665736.html
 
 
-# java security 
+# java security
 
 ## Principal
 
@@ -377,3 +412,20 @@ http://www.macrozheng.com/#/reference/arthas_start
 # 钻石依赖问题
 
 https://blog.csdn.net/john1337/article/details/96825349
+
+# shiro的ip白名单问题
+
+https://www.kancloud.cn/iotdev/vue_java_springboot_antd_iot/1972298
+
+https://www.moyundong.com/java/springboot2/14springboot%E9%9B%86%E6%88%90shiro.html
+
+
+https://segmentfault.com/a/1190000022631899
+
+https://www.cnblogs.com/LeeScofiled/p/10511948.html
+
+https://cloud.tencent.com/developer/article/1367702
+
+https://www.iocoder.cn/Shiro/xiaoqiyiye/ShiroFilterFactoryBean/
+
+https://syshlang.com/96db3174/

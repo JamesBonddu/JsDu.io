@@ -17,3 +17,14 @@ https://help.aliyun.com/document_detail/295435.html
 # 缓慢变化维数据如何更新
 
 https://blog.csdn.net/u014337370/article/details/110677017
+
+
+# Slowly Changing Dimension
+
+https://blog.csdn.net/qq_36039236/article/details/107819326
+
+https://help.aliyun.com/document_detail/295435.html
+
+https://cloud.tencent.com/developer/article/17805291
+
+https://vinxikk.github.io/2019/01/21/datawarehouse/dw-scd/#%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86SCD%E9%97%AE%E9%A2%98

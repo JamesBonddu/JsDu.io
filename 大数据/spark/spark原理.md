@@ -12,7 +12,7 @@ https://www.cnblogs.com/yy3b2007com/p/11087180.html
 https://bbs.huaweicloud.com/blogs/216441
 
 
-# spark driver 
+# spark driver
 
 spark驱动程序是声明数据RDD上的转换和操作并将此类请求提交给master的程序。
 
@@ -123,14 +123,14 @@ https://hadoop.apache.org/docs/r3.1.0/hadoop-yarn/hadoop-yarn-site/yarn-service/
 21/10/26 18:13:16 INFO util.SignalUtils: Registered signal handler for INT
 21/10/26 18:13:17 INFO spark.SecurityManager: Changing view acls to: yarn,root
 21/10/26 18:13:17 INFO spark.SecurityManager: Changing modify acls to: yarn,root
-21/10/26 18:13:17 INFO spark.SecurityManager: Changing view acls groups to: 
-21/10/26 18:13:17 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/10/26 18:13:17 INFO spark.SecurityManager: Changing view acls groups to:
+21/10/26 18:13:17 INFO spark.SecurityManager: Changing modify acls groups to:
 21/10/26 18:13:17 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(yarn, root); groups with view permissions: Set(); users  with modify permissions: Set(yarn, root); groups with modify permissions: Set()
 21/10/26 18:13:17 INFO client.TransportClientFactory: Successfully created connection to cdh02.com/172.19.211.141:40761 after 61 ms (0 ms spent in bootstraps)
 21/10/26 18:13:17 INFO spark.SecurityManager: Changing view acls to: yarn,root
 21/10/26 18:13:17 INFO spark.SecurityManager: Changing modify acls to: yarn,root
-21/10/26 18:13:17 INFO spark.SecurityManager: Changing view acls groups to: 
-21/10/26 18:13:17 INFO spark.SecurityManager: Changing modify acls groups to: 
+21/10/26 18:13:17 INFO spark.SecurityManager: Changing view acls groups to:
+21/10/26 18:13:17 INFO spark.SecurityManager: Changing modify acls groups to:
 21/10/26 18:13:17 INFO spark.SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(yarn, root); groups with view permissions: Set(); users  with modify permissions: Set(yarn, root); groups with modify permissions: Set()
 21/10/26 18:13:17 INFO client.TransportClientFactory: Successfully created connection to cdh02.com/172.19.211.141:40761 after 1 ms (0 ms spent in bootstraps)
 21/10/26 18:13:17 INFO storage.DiskBlockManager: Created local directory at /yarn/nm/usercache/root/appcache/application_1635242602037_0001/blockmgr-decb13d0-488e-45ae-8f95-88af06ff54d5
@@ -217,7 +217,7 @@ https://blog.csdn.net/Young2018/article/details/108856622
 
 为了有效地支持特定于域的对象，Encoder需要一个。编码器将域特定类型映射T到 Spark 的内部类型系统。例如，给定一个Person 具有name(string) 和age(int)两个字段的类，编码器用于告诉 Spark 在运行时生成代码以将Person对象序列化为二进制结构。这种二进制结构通常具有低得多的内存占用，并且针对数据处理的效率进行了优化（例如，以列格式）。要了解数据的内部二进制表示，请使用该 schema函数。
 
-static Dataset<Row>	ofRows(SparkSession sparkSession, org.apache.spark.sql.catalyst.plans.logical.LogicalPlan logicalPlan) 
+static Dataset<Row>	ofRows(SparkSession sparkSession, org.apache.spark.sql.catalyst.plans.logical.LogicalPlan logicalPlan)
 static Dataset<Row>	ofRows(SparkSession sparkSession, org.apache.spark.sql.catalyst.plans.logical.LogicalPlan logicalPlan, org.apache.spark.sql.catalyst.QueryPlanningTracker tracker)
 
 ofRows 的一种变体，它允许传入跟踪器，以便我们可以跟踪查询解析时间。
@@ -268,3 +268,22 @@ https://spark.apache.org/docs/latest/api/java/org/apache/spark/sql/Dataset.html
 https://zhuanlan.zhihu.com/p/28893155
 
 https://zhuanlan.zhihu.com/p/55127453
+
+
+# 同源 DataFrame JOIN 陷阱
+当同源 DataFrame（衍生于同一个 DataFrame ）之间进行 Join 时，可能会导致一些意想不到的错误。
+
+有多种方式可以解决这个问题：
+
+- 使用 SQL 表达式
+
+- 为 DataFrame 起别名
+- withColumn 重命名列
+- toDF 重新定义其中一个 DataFrame 的 Schema：
+
+https://liketea.xyz/Spark/Spark/Spark%20%E6%8C%87%E5%8D%97%EF%BC%9ASpark%20SQL%EF%BC%88%E4%BA%8C%EF%BC%89%E2%80%94%E2%80%94%20%E7%BB%93%E6%9E%84%E5%8C%96%E6%93%8D%E4%BD%9C/
+
+
+# mysql data_type base64列
+
+https://marsishandsome.github.io/2019/10/Base64
