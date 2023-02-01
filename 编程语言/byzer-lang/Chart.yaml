@@ -1,0 +1,12 @@
+apiVersion: v2
+appVersion: 2.4.0
+description: Byzer is a low-code, open-sourced and distributed programming language
+  for data pipeline, analytics and AI in cloud native way.
+home: https://https://byzer.org/
+keywords:
+- sql-like-dsl
+- bigdata
+- machine-learning
+name: byzer-lang
+type: application
+version: 0.1.5

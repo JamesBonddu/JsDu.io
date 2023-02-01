@@ -1,0 +1,187 @@
+# Default values for byzer-lang.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+## To use cloud storage, set fs.cloud.storage.enabled=true
+## All fs.* go to core-site.xml
+
+## Azure Blob config  
+#fs:
+#  cloud:
+#    storage:
+#      enabled: true
+#  defaultFS: wasb://<storage_account>@<container_name>.blob.core.chinacloudapi.cn/
+#  AbstractFileSystem.wasb.impl: org.apache.hadoop.fs.azure.Wasb
+#  wasb.impl: org.apache.hadoop.fs.azure.NativeAzureFileSystem
+#  azure.rename.threads: 10
+#  azure.delete.threads: 10
+#  azure.account.key.flagk8sstorage.blob.core.chinacloudapi.cn: abcdef
+
+## JuiceFS Settings using Hadoop SDK
+fs:
+  cloud:
+    storage:
+      enabled: true
+  jfs.impl: io.juicefs.JuiceFileSystem
+  AbstractFileSystem.jfs.impl: io.juicefs.JuiceFS
+  defaultFS: jfs://<jfs_fs_name>/
+  
+juicefs:
+  name: <jfs_fs_name>
+  meta: <meta_url>
+  ## azure blob - wasb, aws s3 - s3, aliyun - oss
+  storage: <storage_type>
+  # 小写，请勿使用驼峰式
+  AccessKey: <access_key>
+  # 小写，请勿使用驼峰式
+  SecretKey: <secret_key>
+  bucket: <bucket_full_url>
+  cache-dir: /tmp/jfs
+  cache-size: 1024
+  access-log: /work/logs/juicefs.access.log
+  debug: true
+
+## To use pvc
+pvc:
+  enabled: false
+  claimName: juicefs-pvc
+  mountPath: /byzer
+
+clusterUrl: <k8s_api_server_url>
+
+byzer:
+  mainJar: local:///home/deploy/byzer-lang/main/byzer-lang-3.3.0-2.12-2.4.0-SNAPSHOT.jar
+
+## Byzer-lang config
+streaming:
+  executor:
+    log:
+      in:
+        driver: true
+  datalake:
+    path: /work/
+  enableHiveSupport: false
+  plugin:
+    clzznames: tech.mlsql.plugins.mllib.app.MLSQLMllib
+
+# Add local:///home/deploy/byzer-lang/libs/aws-s3_3.3.1-1.0.1-SNAPSHOT.jar to driver.extraClassPath & executor.extraClassPath if you use aws s3 and change image to byzer/byzer-lang-k8s-aws
+# local:///home/deploy/byzer-lang/libs/azure-blob_3.2-1.0-SNAPSHOT.jar for azure blob , and change image to byzer/byzer-lang-k8s-azure
+spark:
+  driver.memory: 8g
+  driver.cores: 2
+  driver.maxResultSize: 4g
+  driver.extraClassPath: local:///home/deploy/byzer-lang/plugin/mlsql-assert-3.3_2.12-0.1.0-SNAPSHOT.jar:local:///home/deploy/byzer-lang/plugin/mlsql-excel-3.3_2.12-0.1.0-SNAPSHOT.jar:local:///home/deploy/byzer-lang/plugin/mlsql-ext-ets-3.3_2.12-0.1.0-SNAPSHOT.jar:local:///home/deploy/byzer-lang/plugin/mlsql-shell-3.3_2.12-0.1.0-SNAPSHOT.jar:local:///home/deploy/byzer-lang/plugin/mlsql-mllib-3.3_2.12-0.1.0-SNAPSHOT.jar:local:///home/deploy/byzer-lang/main/byzer-lang-3.3.0-2.12-2.4.0-SNAPSHOT.jar:local:///home/deploy/byzer-lang/libs/juicefs-hadoop-1.0.0.jar
+  executor.memory: 4g
+  executor.cores: 1
+  executor.instances: 1
+  executor.extraClassPath: local:///home/deploy/byzer-lang/plugin/mlsql-assert-3.3_2.12-0.1.0-SNAPSHOT.jar:local:///home/deploy/byzer-lang/plugin/mlsql-excel-3.3_2.12-0.1.0-SNAPSHOT.jar:local:///home/deploy/byzer-lang/plugin/mlsql-ext-ets-3.3_2.12-0.1.0-SNAPSHOT.jar:local:///home/deploy/byzer-lang/plugin/mlsql-shell-3.3_2.12-0.1.0-SNAPSHOT.jar:local:///home/deploy/byzer-lang/plugin/mlsql-mllib-3.3_2.12-0.1.0-SNAPSHOT.jar:local:///home/deploy/byzer-lang/main/byzer-lang-3.3.0-2.12-2.4.0-SNAPSHOT.jar:local:///home/deploy/byzer-lang/libs/juicefs-hadoop-1.0.0.jar
+  hadoop.mapreduce.input.fileinputformat.list-status.num-threads: 10
+  sql.cbo.enabled: true
+  sql.joinReorder.enabled: true
+  sql.planStats.enabled: true
+  sql.starSchemaDetection: true
+  sql.crossJoin.enabled: true
+  sql.adaptive.enabled: true
+  dynamicAllocation.enabled: false
+  serializer: org.apache.spark.serializer.KryoSerializer
+  kryoserializer.buffer.max: 1024m
+  scheduler.mode: FAIR
+  kubernetes.allocation.driver.readinessTimeout: 60s
+  local.dir: local:///tmp
+
+# Hive config
+# When streaming.enableHiveSupport true, Hive config is applied.
+#hive:
+#  hive.imetastoreclient.factory.class: com.amazonaws.glue.catalog.metastore.AWSGlueDataCatalogHiveClientFactory
+#  aws.region: us-west-2
+#  aws.glue.cache.table.enable: true
+#  aws.glue.cache.table.size: 1000
+#  aws.glue.cache.table.ttl-mins: 30
+#  aws.glue.cache.db.enable: true
+#  aws.glue.cache.db.size: 1000
+#  aws.glue.cache.db.ttl-mins: 30
+
+## log4j config
+log4j.logger.org.apache.hadoop.hive.metastore.RetryingHMSHandler: FATAL
+
+replicaCount: 1
+minReadySeconds: 30
+
+readinessProbe:
+  initialDelaySeconds: 30
+  periodSeconds: 60
+
+livenessProbe:
+  initialDelaySeconds: 30
+  periodSeconds: 300
+
+image:
+  repository: byzer/byzer-lang-k8s-base
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "3.3.0-latest"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  annotations: {}
+  name: "byzer"
+
+podAnnotations: 
+  name: byzer-lang
+
+podSecurityContext: {}
+# fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+# runAsNonRoot: true
+# runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 9003
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+#   cpu: 100m
+#   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+  # targetMemoryUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+## Byzer-lang ingress 
+ingress:
+  enabled: false
+  className: "nginx"
+  path: /byzer-lang(/|$)(.*)
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/proxy-body-size: 50m
+    nginx.ingress.kubernetes.io/whitelist-source-range: 192.168.50.1/8
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "300"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+  tls: [ ]

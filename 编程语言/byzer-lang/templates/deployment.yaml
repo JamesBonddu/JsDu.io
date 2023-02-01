@@ -1,0 +1,147 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "byzer-lang.fullname" . }}-deployment
+  labels:
+    {{- include "byzer-lang.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  minReadySeconds: {{ .Values.minReadySeconds }}
+
+  selector:
+    matchLabels: 
+      {{- include "byzer-lang.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      name: byzer-lang
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "byzer-lang.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "byzer-lang.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command:
+            - /bin/sh
+            - -c
+          args:
+            - cat << EOF | bash
+              spark-submit --master k8s://$(CLUSTER_URL)
+              --deploy-mode client
+              --class streaming.core.StreamingApp            
+              --conf spark.kubernetes.namespace=$(BYZER_LANG_NAMESPACE)
+              --conf spark.driver.host=$(POD_IP)
+              --conf spark.mlsql.auth.access_token=             
+              $(MAIN_JAR)
+              -streaming.name byzer-lang
+              -streaming.rest true 
+              -streaming.thrift false
+              -streaming.platform spark
+              -streaming.enableHiveSupport {{ .Values.streaming.enableHiveSupport }}
+              -streaming.spark.service true
+              -streaming.job.cancel true
+              -streaming.ps.cluster.enable true
+              -spark.ps.cluster.driver.port 7778
+              -streaming.driver.port $(DRIVER_PORT)
+              -streaming.datalake.path $(DELTALAKE_PATH)
+              -spark.mlsql.directquery.auth.enable false
+              -streaming.executor.log.in.driver {{ .Values.streaming.executor.log.in.driver }}
+              -streaming.plugin.clzznames $(PLUGIN_CLAZZNAMES)
+              EOF
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /health/liveness
+              port: {{ .Values.service.port }}
+            initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
+          readinessProbe:
+            httpGet:
+              path: /health/readiness
+              port: {{ .Values.service.port }}
+            initialDelaySeconds: {{ .Values.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          env:
+          - name: PLUGIN_CLAZZNAMES
+            value: {{ .Values.streaming.plugin.clzznames }}
+          - name: MAIN_JAR
+            value: {{ .Values.byzer.mainJar }}
+          - name: DRIVER_PORT
+            value: "{{ .Values.service.port }}"
+          - name: DELTALAKE_PATH
+            value: {{ .Values.streaming.datalake.path }}
+          - name: CLUSTER_URL
+            valueFrom:
+              secretKeyRef:
+                name: {{ include "byzer-lang.fullname" . }}-secret
+                key: CLUSTER_URL
+          - name: POD_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
+          - name: POD_NAME
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.name
+          - name: BYZER_LANG_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+          volumeMounts:
+            - name: spark-conf
+              mountPath: /work/spark-3.3.0-bin-hadoop3/conf
+            - name: {{ include "byzer-lang.fullname" . }}-volume
+              mountPath: {{ .Values.pvc.mountPath }}
+      volumes:
+        - name: spark-conf
+          configMap:
+            name: {{ include "byzer-lang.fullname" . }}-configmap
+            items:
+              - key: core-site-xml
+                path: core-site.xml
+              - key: log4j-properties
+                path: log4j.properties
+              - key: spark-defaults-conf
+                path: spark-defaults.conf
+              - key: hive-site-xml
+                path: hive-site.xml
+        - name: {{ include "byzer-lang.fullname" . }}-volume
+          {{- if .Values.pvc.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.pvc.claimName }}
+          {{- else }}
+          emptyDir: {}
+          {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      restartPolicy: Always

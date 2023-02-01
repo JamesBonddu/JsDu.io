@@ -83,3 +83,8 @@ https://www.cnblogs.com/dongying/p/4048828.html
 ## mybatis配置
 
 https://mp.weixin.qq.com/s/0_zTBooRV4RTWQa8VOwiWg
+
+
+## Mybatis 插件机制  Interceptor
+
+https://segmentfault.com/a/1190000040485072

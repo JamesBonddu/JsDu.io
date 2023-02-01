@@ -159,3 +159,10 @@ https://lonepatient.top/2019/07/14/transformer_xl
 ## 模型加载和下游任务使用
 
 https://dxzmpk.github.io/2020/04/23/HuggingFace-transformers%E7%B3%BB%E5%88%97%E7%9A%84%E4%BB%8B%E7%BB%8D%E4%BB%A5%E5%8F%8A%E5%9C%A8%E4%B8%8B%E6%B8%B8%E4%BB%BB%E5%8A%A1%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8/
+
+
+# Transformers源码阅读
+
+## Transformers包tokenizer.encode
+
+https://blog.csdn.net/qq_33293040/article/details/105439750

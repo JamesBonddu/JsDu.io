@@ -401,3 +401,15 @@ https://blog.csdn.net/zax_java/article/details/96964520
 ```
 
 https://www.cnblogs.com/chhyan-dream/p/13141097.html
+
+
+# spark 原理
+
+https://zhuanlan.zhihu.com/p/367590611
+
+https://blog.csdn.net/qq_30031221/article/details/109222355
+
+
+# spark shuffle
+
+https://developer.aliyun.com/article/900751

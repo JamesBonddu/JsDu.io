@@ -618,3 +618,7 @@ load
 
 DataFrameReader
 jdbc
+
+
+# jdbc 保存很慢
+https://blog.csdn.net/lovetechlovelife/article/details/112471839

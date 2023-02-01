@@ -287,3 +287,80 @@ https://liketea.xyz/Spark/Spark/Spark%20%E6%8C%87%E5%8D%97%EF%BC%9ASpark%20SQL%E
 # mysql data_type base64列
 
 https://marsishandsome.github.io/2019/10/Base64
+
+
+# spark 宽窄依赖
+
+窄依赖的各种依赖情况:
+- OneToOneDependency：一对一依赖。
+- RangeDependency：范围依赖。
+
+宽依赖 ShuffleDependency
+仔细看，NarrowDependency 虽然也有 child RDD 的一个分区依赖 parent RDD 的多个分区的情况，但都是依赖分区的全部。而 ShuffleDependency 中，child RDD 的一个分区依赖的是 parent RDD 中各个分区的某一部分。
+
+spark划分stage的整体思路是：从后往前推，遇到宽依赖就断开，划分为一个stage；遇到窄依赖就将这个RDD加入该stage中。
+
+https://blog.csdn.net/Colton_Null/article/details/112299969
+
+https://www.6aiq.com/article/1547041236424
+
+
+# map reduce shuffle
+
+Map:数据输入,做初步的处理,输出形式的中间结果；
+Shuffle:按照partition、key对中间结果进行排序合并,输出给reduce线程；
+Reduce:对相同key的输入进行最终的处理,并将结果写入到文件中。
+
+https://blog.csdn.net/ASN_forever/article/details/81233547
+
+http://matt33.com/2016/03/02/hadoop-shuffle/
+
+# spark 调优
+
+https://blog.csdn.net/yu0_zhang0/article/details/80457469
+
+
+# spark 扩展
+
+https://tidb.net/blog/a6ebee89
+
+
+# spark core 源码解读
+
+https://www.cnblogs.com/huanghanyu/p/12989067.html
+
+# spark sql 源码解析
+
+https://blog.csdn.net/Shockang/article/details/122069451?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522166174933116781790749193%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=166174933116781790749193&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_ecpm_v1~pc_rank_34-8-122069451-null-null.142^v42^pc_rank_34,185^v2^control&utm_term=spark&spm=1018.2226.3001.4187
+
+https://blog.csdn.net/shockang/category_11089155.html
+
+
+https://blog.csdn.net/Happy_Sunshine_Boy/article/details/108519396
+
+
+# spark RSS Remote Shuffle Service
+
+https://github.com/japila-books/apache-spark-internals
+
+https://jaceklaskowski.github.io/spark-kubernetes-book/demo/spark-and-local-filesystem-in-minikube/
+
+https://github.com/apache/incubator-uniffle
+
+https://bbs.huaweicloud.com/blogs/118178
+
+
+1. 在现有k8s 的spark集群上提交一个任务
+
+```sh
+kubectl run spark-base --rm -it --labels="app=spark-client" --image bde2020/spark-base:3.3.0-hadoop3.3 -- bash ./spark/bin/spark-submit --class CLASS_TO_RUN --master spark://spark-master:7077 --deploy-mode client --conf spark.driver.host=spark-client URL_TO_YOUR_APP
+
+kubectl run spark-base --rm -it --labels="app=spark-client" --image bde2020/spark-base:3.3.0-hadoop3.3 -- bash ./spark/bin/spark-submit --class org.apache.spark.examples.SparkPi --master spark://spark-master:7077 --deploy-mode client --conf spark.driver.host=spark-client /spark/examples/jars/spark-examples_2.12-3.3.0.jar
+
+./spark-submit --class org.apache.spark.examples.SparkPi --master spark://spark-master:7077 --deploy-mode client --conf spark.driver.host=spark-master /spark/examples/jars/spark-examples_2.12-3.3.0.jar
+```
+
+2. 在现有k8s 的spark集群上进行调优
+2.1 remote shuffle service 调优
+2.2 storage 调优
+2.3 使用alluxio 调优

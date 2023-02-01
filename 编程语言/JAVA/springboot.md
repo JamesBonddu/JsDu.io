@@ -68,7 +68,7 @@ Ribbon工作时分为两步：第一步先选择 Eureka Server, 它优先选择�
 Hystrix作为熔断流量控制，在客户端实现，在方法上注解，当请求出错时可以调用注解中的方法返回
 Hystrix熔断器，容错管理工具，旨在通过熔断机制控制服务和第三方库的节点,从而对延迟和故障提供更强大的容错能力。在Spring Cloud Hystrix中实现了线程隔离、断路器等一系列的服务保护功能。它也是基于Netflix的开源框架 Hystrix实现的，该框架目标在于通过控制那些访问远程系统、服务和第三方库的节点，从而对延迟和故障提供更强大的容错能力。Hystrix具备了服务降级、服务熔断、线程隔离、请求缓存、请求合并以及服务监控等强大功能。
 
-Springboot 整合 SpringCloud组件-Feign(Ribbon/Hystrix) 
+Springboot 整合 SpringCloud组件-Feign(Ribbon/Hystrix)
 
 https://blog.csdn.net/qq_35387940/article/details/94569189
 
@@ -240,3 +240,278 @@ https://blog.csdn.net/enthan809882/article/details/115626183
 https://www.cnblogs.com/lvbinbin2yujie/p/10574812.html
 
 https://www.cnblogs.com/UncleWang001/p/10949318.html
+
+
+# springSecurity 多种登录方式
+
+网上用的比较多的方式是UserDetailsService方案，这种方案难以实现多种登录方式。本文用Filter+Manager+Provider+Token的方案实现多种登录方式。
+
+jeecg-boot默认带的是JwtFilter
+
+https://juejin.cn/post/6914959662529904653
+
+同一用户同一角色的不同登录方式支持
+shiro realm
+
+CustomShiroFilter
+ShiroConfig
+
+https://blog.csdn.net/zhourenfei17/article/details/88826911
+
+https://greenhathg.github.io/2019/09/02/SpringBoot+Shiro+Jwt%E5%A1%AB%E5%9D%91-1/
+
+
+## 同一用户的多种登录方式 JWT + Shiro
+
+用户名 + 手机号登录使用shiro realm支持
+
+
+spring security 支持同一用户多种登录方式
+
+JWT 需要支持多种用户token方式
+根据loginType决定登录方式
+
+https://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html
+
+https://segmentfault.com/a/1190000042038695
+
+https://www.shouxicto.com/article/2179.html
+
+https://blog.csdn.net/cckevincyh/article/details/79629022
+
+
+### 在 Shiro 配置多Realm 可以通过如下两种方式：
+
+方式一 在 ModularRealmAuthenticator 中配置多个Realm
+方式一 在 SecurityManager 中配置多个Realm
+
+https://github.com/pengjunlee/coder_source/blob/d0af669fbf23e3cbd68b8231ad8bfa72ac326931/source/_posts/%E5%AE%89%E5%85%A8%E6%A1%86%E6%9E%B6/Shiro%E8%AE%A4%E8%AF%81%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE.md
+
+https://github.com/yiminyangguang520/shiro-sample/blob/2309424461d213764c84a39454d1397cf1e97015/spring-boot-shiro-mulit-realm-app-sample/src/main/java/com/lee/config/ShiroConfig.java
+
+https://github.com/Kevin091827/kevin_blog/blob/29ea5447793f2d86b46076f7830a53be22a94353/shiro/shiro%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E5%9B%9B%EF%BC%89.md
+
+https://github.com/Kevin091827/kevin_blog/blob/29ea544779/shiro/shiro%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89.md
+
+### shiro
+
+https://www.iocoder.cn/Spring-Boot/Shiro/
+
+https://developer.aliyun.com/article/844718
+
+https://blog.csdn.net/leisure_life/article/details/104697225
+
+手机号登陆直接走登陆认证, 验证用户是否存在之后直接进行jwt认证颁发token
+
+```java
+/**
+    * 手机号登录接口
+    *
+    * @param jsonObject
+    * @return
+    */
+@ApiOperation("手机号登录接口")
+@PostMapping("/phoneLogin")
+public Result<JSONObject> phoneLogin(@RequestBody JSONObject jsonObject) {
+    Result<JSONObject> result = new Result<JSONObject>();
+    String phone = jsonObject.getString("mobile");
+
+    //校验用户有效性
+    SysUser sysUser = sysUserService.getUserByPhone(phone);
+    result = sysUserService.checkUserIsEffective(sysUser);
+    if (!result.isSuccess()) {
+        return result;
+    }
+
+    String smscode = jsonObject.getString("captcha");
+    Object code = redisUtil.get(phone);
+    if (!smscode.equals(code)) {
+        result.setMessage("手机验证码错误");
+        return result;
+    }
+    //用户信息
+    userInfo(sysUser, result);
+    //添加日志
+    baseCommonService.addLog("用户名: " + sysUser.getUsername() + ",登录成功！", CommonConstant.LOG_TYPE_1, null);
+
+    return result;
+}
+
+
+/**
+    * 用户信息
+    *
+    * @param sysUser
+    * @param result
+    * @return
+    */
+private Result<JSONObject> userInfo(SysUser sysUser, Result<JSONObject> result) {
+    String syspassword = sysUser.getPassword();
+    String username = sysUser.getUsername();
+    // 生成token
+    String token = JwtUtil.sign(username, syspassword);
+    // 设置token缓存有效时间
+    redisUtil.set(CommonConstant.PREFIX_USER_TOKEN + token, token);
+    redisUtil.expire(CommonConstant.PREFIX_USER_TOKEN + token, JwtUtil.EXPIRE_TIME * 2 / 1000);
+
+    // 设置 redis: key=token, value=userInfo
+    HashMap<String, String> userInfo = new HashMap<>();
+    List<String> role = sysUserService.getRole(username);
+    userInfo.put("id", sysUser.getId());
+    userInfo.put("username", sysUser.getUsername());
+    userInfo.put("realname", sysUser.getRealname());
+    userInfo.put("role", role.get(0));
+
+    String userInfoStr = JSON.toJSONString(userInfo);
+
+    redisUtil.set(token, userInfoStr);
+    System.out.println(userInfoStr);
+    redisUtil.expire(token, JwtUtil.EXPIRE_TIME * 2 / 1000);
+
+    // 获取用户部门信息
+    JSONObject obj = new JSONObject();
+    List<SysDepart> departs = sysDepartService.queryUserDeparts(sysUser.getId());
+    obj.put("departs", departs);
+    if (departs == null || departs.size() == 0) {
+        obj.put("multi_depart", 0);
+    } else if (departs.size() == 1) {
+        sysUserService.updateUserDepart(username, departs.get(0).getOrgCode());
+        obj.put("multi_depart", 1);
+    } else {
+        //查询当前是否有登录部门
+        // update-begin--Author:wangshuai Date:20200805 for：如果用戶为选择部门，数据库为存在上一次登录部门，则取一条存进去
+        SysUser sysUserById = sysUserService.getById(sysUser.getId());
+        if (oConvertUtils.isEmpty(sysUserById.getOrgCode())) {
+            sysUserService.updateUserDepart(username, departs.get(0).getOrgCode());
+        }
+        // update-end--Author:wangshuai Date:20200805 for：如果用戶为选择部门，数据库为存在上一次登录部门，则取一条存进去
+        obj.put("multi_depart", 2);
+    }
+    obj.put("token", token);
+    obj.put("userInfo", sysUser);
+    obj.put("sysAllDictItems", sysDictService.queryAllDictItems());
+    result.setResult(obj);
+    result.success("登录成功");
+    return result;
+}
+
+
+@Bean("securityManager")
+public DefaultWebSecurityManager securityManager() {
+    ...
+    /*
+    * 关闭shiro自带的session，详情见文档
+    * http://shiro.apache.org/session-management.html#SessionManagement-
+    * StatelessApplications%28Sessionless%29
+    */
+    DefaultSubjectDAO subjectDAO = new DefaultSubjectDAO();
+    DefaultSessionStorageEvaluator defaultSessionStorageEvaluator = new DefaultSessionStorageEvaluator();
+    defaultSessionStorageEvaluator.setSessionStorageEnabled(false);
+    subjectDAO.setSessionStorageEvaluator(defaultSessionStorageEvaluator);
+    securityManager.setSubjectDAO(subjectDAO);
+    //自定义缓存实现,使用redis
+    securityManager.setCacheManager(redisCacheManager());
+}
+
+// 认证的token
+
+/**
+ * @Author Scott
+ * @create 2018-07-12 15:19
+ * @desc
+ **/
+public class JwtToken implements AuthenticationToken {
+
+	private static final long serialVersionUID = 1L;
+	private String token;
+    private String loginType;
+
+    public JwtToken(String token) {
+        this.token = token;
+    }
+
+    public JwtToken(String token, String loginType) {
+        this.token = token;
+        this.loginType = loginType;
+    }
+
+    @Override
+    public Object getPrincipal() {
+        return token;
+    }
+
+    @Override
+    public Object getCredentials() {
+        return token;
+    }
+}
+
+
+/**
+ * @Description: 鉴权登录拦截器
+ * @Author: Scott
+ * @Date: 2018/10/7
+ **/
+@Slf4j
+public class JwtFilter extends BasicHttpAuthenticationFilter {
+}
+
+
+
+/**
+ShiroRealm 主要功能是, 实现用户认证和实现权限认证.
+
+添加MyShiroRealm并继承AuthorizingRealm，实现其中的两个方法。
+doGetAuthenticationInfo：实现用户认证，通过服务加载用户信息并构造认证对象返回。
+doGetAuthorizationInfo：实现权限认证，通过服务加载用户角色和权限信息设置进去。
+*/
+@Component
+@Slf4j
+public class ShiroRealm extends AuthorizingRealm {
+
+}
+
+// 认证完成后可以通过获取Subject获取到当前登陆用户.
+// 1.根据当前用户过滤(当前用户), 2.根据流程状态过滤(未提交流程)
+LoginUser sysUser = (LoginUser) SecurityUtils.getSubject().getPrincipal();
+
+
+
+// 通过JwtFilter过滤器
+@Slf4j
+public class JwtFilter extends BasicHttpAuthenticationFilter {
+/**
+    *
+    */
+@Override
+protected boolean executeLogin(ServletRequest request, ServletResponse response) throws Exception {
+    HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+    String token = httpServletRequest.getHeader(CommonConstant.X_ACCESS_TOKEN);
+    // TODO: jsdu添加登录类型字段辅助多用户表,多登录方式登录
+    String loginType = httpServletRequest.getHeader(CommonConstant.LOGIN_TYPE);
+
+    // update-begin--Author:lvdandan Date:20210105 for：JT-355 OA聊天添加token验证，获取token参数
+    if(token == null){
+        token = httpServletRequest.getParameter("token");
+    }
+    // update-end--Author:lvdandan Date:20210105 for：JT-355 OA聊天添加token验证，获取token参数
+
+
+    // realm登录
+    JwtToken jwtToken = new JwtToken(token, loginType);
+    // 提交给realm进行登入，如果错误他会抛出异常并被捕获
+    getSubject(request, response).login(jwtToken);
+    // 如果没有抛出异常则代表登入成功，返回true
+    return true;
+}
+```
+
+## 不同用户表登录支持
+
+https://blog.csdn.net/qq_26383975/article/details/109462695
+
+https://blog.csdn.net/u012702547/article/details/107330001
+
+sa-token认证框架
+
+https://github.com/dromara/sa-token

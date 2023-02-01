@@ -1,0 +1,67 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "byzer-lang.fullname" . }}-configmap
+data:
+  hive-site-xml: |
+    <configuration>
+      {{- range $key, $value := .Values.hive }}
+        <property>
+          <name>{{- $key }}</name>
+          <value>{{- $value }}</value>
+        </property>
+      {{- end }}
+    </configuration>
+  core-site-xml: |
+    <configuration>
+      {{- if .Values.fs.cloud.storage.enabled }}    
+        {{- range $key, $value := .Values.fs }}
+        <property>
+          <name>fs.{{- $key }}</name>
+          <value>{{- $value }}</value>
+        </property>
+        {{- end }}
+        {{- range $key, $value := .Values.juicefs }}
+        <property>
+          <name>juicefs.{{- $key }}</name>
+          <value>{{- $value }}</value>
+        </property>
+        {{- end }}
+      {{- end }}
+    </configuration>
+  # There has to be "|-"
+  log4j-properties: |-
+    log4j.rootCategory=INFO,file, console
+    log4j.appender.console=org.apache.log4j.ConsoleAppender
+    log4j.appender.console.target=System.err
+    log4j.appender.console.layout=org.apache.log4j.PatternLayout
+    log4j.appender.console.layout.ConversionPattern=%d{yy/MM/dd HH:mm:ss} %X{owner} %p %c{1}: %m%n
+    log4j.appender.file=org.apache.log4j.RollingFileAppender
+    log4j.appender.file.File=./mlsql_engine.log
+    log4j.appender.file.rollingPolicy=org.apache.log4j.rolling.TimeBasedRollingPolicy
+    log4j.appender.file.rollingPolicy.fileNamePattern=./mlsql_engine.%d.gz
+    log4j.appender.file.layout=org.apache.log4j.PatternLayout
+    log4j.appender.file.layout.ConversionPattern=%d{yy/MM/dd HH:mm:ss} %X{owner} %p %c{1}: %m%n
+    log4j.appender.file.MaxBackupIndex=5
+    log4j.logger.org.apache.spark.repl.Main=WARN
+    log4j.logger.org.apache.spark=WARN
+    log4j.logger.streaming.core.strategy.platform.SparkRuntime=WARN
+    log4j.logger.org.spark_project.jetty=WARN
+    log4j.logger.org.spark_project.jetty.util.component.AbstractLifeCycle=ERROR
+    log4j.logger.org.apache.spark.repl.SparkIMain$exprTyper=INFO
+    log4j.logger.org.apache.spark.repl.SparkILoop$SparkILoopInterpreter=INFO
+    log4j.logger.org.apache.parquet=ERROR
+    log4j.logger.parquet=ERROR
+    log4j.logger.org.apache.hadoop.hive.metastore.RetryingHMSHandler=FATAL
+    {{- range $key, $value := .Values.log4j }}
+    log4j.{{- $key }}={{- $value }}  
+    {{- end }}
+  # Spark default configuration, read by spark-submit
+  spark-defaults-conf: |-
+    {{- range $key, $value := .Values.spark }}
+    spark.{{- $key }} {{ $value }}
+    {{- end }}
+    spark.kubernetes.container.image.pullPolicy {{ .Values.image.pullPolicy }}
+    spark.kubernetes.authenticate.driver.serviceAccountName {{ include "byzer-lang.serviceAccountName" . }}
+    spark.kubernetes.container.image {{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}
+

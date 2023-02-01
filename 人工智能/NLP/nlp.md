@@ -152,3 +152,10 @@ Search Guard所有基本安全功能（非全部）都是免费的，并且内�
 地址：https://www.oschina.net/p/searchguard
 
 https://gitee.com/mirrors/SearchGuard
+
+
+# 句法分析与依存解析
+
+https://www.showmeai.tech/article-detail/237
+
+https://web.stanford.edu/class/cs224n/

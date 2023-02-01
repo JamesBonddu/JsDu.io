@@ -22,3 +22,13 @@ cur_year_table
 
 https://blog.csdn.net/qq_45272190/article/details/115675045
 https://blog.csdn.net/qq_36654629/article/details/98595763
+
+
+# postgresql
+
+```sql
+-- pg查看表
+SELECT table_name FROM information_schema.tables WHERE table_schema = 'public';
+-- pg查看表结构
+SELECT column_name FROM information_schema.columns WHERE table_name ='point_logs';
+```
